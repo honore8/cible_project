@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
 Route::view('/','welcome');
+// Route::get('/agences', [ 'uses' => 'AgenceController@index']);
+Route::view('agence','compte-agence');
+Route::view('inscriptionOrgani','layouts.InscriptionOrganisateurs');
+Route::view('connexion','Account.connexion');
+Route::view('Renouvellement','Account.RenouvellementPassword');
+Route::view('Renouveller','Account.ForgetPassword');
+Route::view('proposdenous','Apropos');
+Route::view('fonctionnement','Fonctionnement');
+Route::view('tarification','Tarification');
+Route::view('acceuil','Welcome');
+Route::view('menuParticipant','layouts.model-participants-account');
+

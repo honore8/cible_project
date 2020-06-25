@@ -1,0 +1,131 @@
+.custom-card-date{
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+.custom-card {
+    border-radius: 20px;
+}
+.custom-card-header {
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+    background-color: #01177d !important;
+}
+.custom-btn {
+    border-radius: 19px;
+    background-color: #01177d;
+}
+
+.vertical-bar{
+    border-left: 3px solid white;
+    height: 75%;
+}
+
+.top-button-color, ._btn_blue{
+    background-color: #1043c7;
+    color: white;
+}
+.reseau-sociaux{
+    margin-left: 0%;
+}
+.input-search{
+    margin-left: 0%;
+}
+.top{
+    color: #1043c7;
+}
+@media only screen and (min-width: 600px) {
+    .reseau-sociaux{
+        margin-left: 23%;
+    }
+    .input-search{
+        margin-left: 20%;
+    }
+    .reseau-sociaux2
+    {
+        margin-left: 33%;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .reseau-sociaux{
+        margin-left: 23%;
+    }
+    .input-search{
+        margin-left: 61%;
+    }
+    .reseau-sociaux2
+    {
+        margin-left: -31.666667%;
+    }
+}
+.modal-content
+{
+    width: 60% !important;
+}
+.propos {
+    color:#01177d ;
+}
+.test
+{
+    color: aliceblue;
+}
+@media(max-width: 360px){
+    ._about p{
+            font-size: 13px !important;
+    }
+    .__about {
+            font-size: 15px;
+    }
+}
+@media(min-width:361px) and (max-width:576px){
+    ._about p{
+            font-size: 15px !important;
+    }
+    .__about {
+            font-size: 17px;
+    }
+}
+@media(min-width:577px) and (max-width:768px){
+    ._about p{
+            font-size: 17px !important;
+    }
+    .__about {
+            font-size: 20px;
+    }
+}
+._menu ul li{
+  
+    border-radius: 3rem;
+    padding: 5px;
+    cursor: pointer;
+    color:black;
+}
+.gauche {
+    background-color: #020e49;
+    height:100%;
+
+}
+
+.barre {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+
+}
+
+.fluid
+{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+.shadow
+{
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
+}
+ /* @media only screen and (min-width: 2000px) {
+    .reseau-sociaux{
+        margin-left: 23%;
+    }
+    .input-search{
+        margin-left: 61%;
+    }
+}  */
