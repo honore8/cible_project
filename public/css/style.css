@@ -22,7 +22,12 @@
 }
 
 .top-button-color, ._btn_blue{
-    background-color: #1043c7;
+    background-color:#01177d;
+    color: white;
+}
+.sign
+{
+    background-color:maroon;
     color: white;
 }
 .reseau-sociaux{
@@ -120,6 +125,11 @@
 .shadow
 {
     box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
+}
+.btn_blue:hover
+{
+    color: white;
+    text-decoration: none;
 }
  /* @media only screen and (min-width: 2000px) {
     .reseau-sociaux{

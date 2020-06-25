@@ -7,10 +7,10 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> --}}
     <link href="fontawesome-free-5.13.0-web/css/all.min.css" rel="stylesheet">
     <!--load all styles -->
-    
+    <link rel="icon" type="image/png" href="{{url('images\favicon.png')}}">
     <link rel="stylesheet" href="{{asset('bootstrap-4.5.0-dist/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css\style.css')}}">
-    <title>CIBLE</title>
+    <title>CIBLE | {{ $Var ?? ''}}</title>
 </head>
 <body>
     <header>

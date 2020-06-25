@@ -1,3 +1,6 @@
+@php
+    $Var = "Mon Profil";
+@endphp
 @extends('layoutNav')
 @section('content')
 <!DOCTYPE html>
@@ -26,14 +29,14 @@
             </button>
             <div class="collapse navbar-collapse row" id="navbarNav">
                 <ul class="navbar-nav col-sm-12 col-lg-4 offset-lg-3 reseau-sociaux">
-                    <li class="nav-item active barre" style="display: none;">
+                     <li class="nav-item active barre" style="display: none;">
                         <a class="nav-link" href="#">Nous contacter <span class="sr-only">(current)</span></a>
                       </li>
                       <li class="nav-item barre" style="display: none;">
                         <a class="nav-link" href="#">A propos</a>
                       </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{Url('acceuil')}}">Acceuil <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{Url('/')}}">Acceuil <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{Url('fonctionnement')}}">Fonctionnement</a>
@@ -43,7 +46,7 @@
                     </li>
                 </ul>
                 <div class="col-lg-2 offset-lg-3 float-right">
-                    <button class="btn btn-sm _btn_blue " ><a class="test" href="{{url('connexion')}}">Signaler un evenement </a></button>
+                    <button class="btn btn-sm sign" ><a class="test" href="{{url('signaler')}}">Signaler un evenement </a></button>
                 </div>
             </div> 
         

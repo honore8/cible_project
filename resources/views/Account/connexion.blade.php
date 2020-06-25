@@ -1,3 +1,6 @@
+@php
+    $Var = "Connexion";
+@endphp
 @extends('layout')
 @section('content')
 <br><br>  

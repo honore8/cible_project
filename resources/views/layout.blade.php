@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> --}}
+        <link rel="icon" type="image/png" href="{{url('images\favicon.png')}}">
     <link href="fontawesome-free-5.13.0-web/css/all.min.css" rel="stylesheet">
     <!--load all styles -->
     
     <link rel="stylesheet" href="{{asset('bootstrap-4.5.0-dist/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css\style.css')}}">
-    <title>CIBLE</title>
+    <title>CIBLE | {{ $Var ?? ''}}</title> 
 </head>
 <body>
     <header>
@@ -72,7 +74,7 @@
                         <a class="nav-link" href="#">A propos</a>
                       </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{Url('acceuil')}}">Acceuil <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{Url('/')}}">Acceuil <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{Url('fonctionnement')}}">Fonctionnement</a>

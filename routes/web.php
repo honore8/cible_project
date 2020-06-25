@@ -23,6 +23,8 @@ Route::view('Renouveller','Account.ForgetPassword');
 Route::view('proposdenous','Apropos');
 Route::view('fonctionnement','Fonctionnement');
 Route::view('tarification','Tarification');
-Route::view('acceuil','Welcome');
+Route::view('signaler','layouts.SignalerEvenement');
+Route::view('signalement','layouts.SignalerVideo');
+// Route::view('acceuil','Welcome');
 Route::view('menuParticipant','layouts.model-participants-account');
 
