@@ -7,7 +7,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> --}}
     <link href="fontawesome-free-5.13.0-web/css/all.min.css" rel="stylesheet">
     <!--load all styles -->
-    <link rel="icon" type="image/png" href="{{url('images\favicon.png')}}">
+    <link rel="icon" type="image/png" href="{{url('images\favicon1.png')}}">
     <link rel="stylesheet" href="{{asset('bootstrap-4.5.0-dist/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css\style.css')}}">
     <title>CIBLE | {{ $Var ?? ''}}</title>
@@ -25,7 +25,7 @@
                             <a href=" https://www.linkedin.com/company/kp10is/?viewAsMember=true"><i class="fab fa-linkedin fa-lg" style="color: #2962ff;"></i></a>
                         </div>
                     </div>
-                    <div class="col-md-4 offset-md-2 col-lg-3 offset-lg-4 boutons">
+                    <div class="col-md-4 offset-md-2 col-lg-3 offset-lg-4 boutons" style="margin-left: 35.333333%;">
                         <div class="">
                             <button class="btn _btn_blue btn-sm top-button-color"><a href="{{Url('proposdenous')}}" class="test"> A propos de</a></button>
                             <button class="btn _btn_blue btn-sm top-button-color" data-toggle="modal" data-target="#exampleModal">Nous Ecrire</button>
@@ -35,20 +35,21 @@
             </div>
         </nav>
         <div class="container">
+          
             <router-view></router-view>
         </div>
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-6 col-md-3 col-lg-2 pr-0 d-flex ">
-                    <img class="mx-auto my-auto" style="max-width: 80%;" src="{{asset('images/cible.jpeg')}}"
+                    <img class="mx-auto my-auto" style="max-width: 80%;" src="{{asset('images\cible.png')}}"
                         alt="logo1">
                 </div>
-                <div class="col-6 col-md-9 col-lg-10 pl-0 pr-0 " style="background-image: url(images/image.jpeg);height: 287px;
+                <div class="col-6 col-md-9 col-lg-10 pl-0 pr-0 " style="background-image: url(images/BANNIERE_NEW.png);height: 287px;
                 border-top-left-radius: 125px; border-bottom-left-radius: 115px;background-size: cover">
                     <div class="row h-100">
                         <div class="col-md-3 offset-md-7 my-auto input-search">
                             <form action="" class=" ">
-                                <input type="text" placeholder="Search" class="form-control w-100 text-right ">
+                                <input type="text" placeholder="Rechercher" class="form-control w-100 text-right ">
                             </form>
                         </div>
                     </div>

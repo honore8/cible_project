@@ -1,14 +1,14 @@
 @php
     $Var = "Signaler";
 @endphp
-@extends('layout')
-@section('content')
+@extends('layouts.model-participants-account')
+@section('content_1')
 <br><br>  
 <div class="container mb-5 ">
     <div class="row justify-content-center">
             <div class="col-md-8 mt-4">
                     <div class="card">
-                            <div class="card-header h2 test" style="background-color: #020e49">Renouvellement du mot de passe</div>
+                            <div class="card-header h2 test" style="background-color: #020e49">Signaler video</div>
 
                             <div class="card-body">
                                     <form class="form-inline">
@@ -22,9 +22,7 @@
                                             <button type="submit" class="btn btn-primary mb-2" style="background-color: #020e49 ; border-color: #020e49">Signaler</button>
                                             </div>
                                       </form>
-                                      <div class="card-action">
-                                        <p class="top"><a href="{{url('Renouveller')}}">Apres renouvellement</a></p>
-                                      </div>
+                                 
                             </div>
                     </div>
             </div>

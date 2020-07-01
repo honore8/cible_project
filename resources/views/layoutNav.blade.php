@@ -7,7 +7,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> --}}
     <link href="fontawesome-free-5.13.0-web/css/all.min.css" rel="stylesheet">
     <!--load all styles -->
-    <link rel="icon" type="image/png" href="{{url('images\favicon.png')}}">
+    <link rel="icon" type="image/png" href="{{url('images\favicon1.png')}}">
     <link rel="stylesheet" href="{{asset('bootstrap-4.5.0-dist/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css\style.css')}}">
     <title>CIBLE | {{ $Var ?? ''}}</title>
@@ -19,47 +19,7 @@
 
     @yield('content')
 
- <!-- debut footer -->
- <footer>
-    <div class="container-fluid fluid">
-        <div class="row text-white text-center p-2" style="background-color: #020e49;">
-            <div class="col ">Nous contacter au </div>
-            <div class="col">Types de Ticket</div>
-            <div class="col"> Lieu d'utilisation</div>
-        </div>
-        <div class="row text-white p-2 " style="background-color: #03177a;">
-            <div class="col">
-              <div class="mt-md-0 mt-3">
-                <div id="bas">
-                        <i class="fas fa-home mr-3"></i> Amadahomé à 100m du bvd du 30 Août, sur la route du cap, Lomé-TOGO
-                </div>
-                <div id="bas">
-                        <i class="fas fa-envelope mr-3"></i> infos@kp10is.com
-                </div>
-                <div id="bas">
-                        <i class="fas fa-phone-alt mr-3"></i> +228 91 01 59 80 / 91 01 61 47
-                </div> </div>
-            </div>
-            <div class="col-1 d-flex">
-                <div class="vertical-bar mx-auto"></div>
-            </div>
-            <div class="col">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse in amet alias provident asperiores
-                corporis
-                molestias cupiditate labore delectus ipsa. Ipsa pariatur architecto quo ut culpa.
-            </div>
-            <div class="col-1 d-flex">
-                <div class="vertical-bar mx-auto"></div>
-            </div>
-            <div class="col">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse in amet alias provident asperiores
-                corporis
-                molestias cupiditate labore delectus ipsa. Ipsa pariatur architecto quo ut culpa.
-            </div>
-
-        </div>
-    </div>
-</footer>
+ 
 
 {{-- Modal contacter --}}
     <div class="modal " id="exampleModal" tabindex="-1" role="dialog">

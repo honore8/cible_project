@@ -1,3 +1,6 @@
+@php
+    $Var = "A propos";
+@endphp
 @extends('layout')
 @section('content')
 <h4 class="text-center my-5 __about propos"> <strong> A PROPOS DE NOUS </strong></h4>

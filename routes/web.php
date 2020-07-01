@@ -25,6 +25,12 @@ Route::view('fonctionnement','Fonctionnement');
 Route::view('tarification','Tarification');
 Route::view('signaler','layouts.SignalerEvenement');
 Route::view('signalement','layouts.SignalerVideo');
+Route::view('Declaration','layouts.DeclarationPerte');
+Route::view('Reserver','layouts.ReservationTicket');
+Route::view('Sondage','layouts.Sondage');
 // Route::view('acceuil','Welcome');
-Route::view('menuParticipant','layouts.model-participants-account');
+Route::view('menu','layouts.model-organisateurs-account');
+Route::view('liste','layouts.listeextras');
+Route::view('menusponsors','sponsors.sponsors-account');
+Route::view('profile','sponsors.profile');
 

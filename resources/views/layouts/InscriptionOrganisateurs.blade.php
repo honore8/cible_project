@@ -1,7 +1,65 @@
+@php
+    $Var = "Inscription";
+@endphp
 @extends('layout')
 @section('content')
-<br><br>  
-<div class="container mb-5 ">
+<div class="container">
+    <div class="row justify-content-center">
+
+        <div class="col-xl-7 col-lg-12 col-md-9">
+    <div class="card o-hidden border-0 shadow-lg my-5">
+      <div class="card-body p-0">
+        <!-- Nested Row within Card Body -->
+        <div class="row">
+
+          <div class="col-lg-12">
+            <div class="p-5">
+              <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">Inscrivez-vous!</h1>
+              </div>
+              <form class="user">
+                <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="First Name">
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Last Name">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address">
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repeat Password">
+                  </div>
+                </div>
+                <a href="login.html" class="btn btn-primary btn-user btn-block" style="background-color: #020e49 ; border-color: #020e49">
+                  S'enregistrer
+                </a>
+                <hr>
+                
+              </form>
+              <hr>
+              <div class="text-center">
+                <a class="small" href="{{url('Renouveller')}}">Forgot Password?</a>
+              </div>
+              <div class="text-center">
+                <a class="small" href="{{url('connexion')}}">Already have an account? Login!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+
+  </div>
+{{-- <div class="container mb-5 ">
     <div class="row justify-content-center">
             <div class="col-md-8 mt-4">
                     <div class="card">
@@ -57,6 +115,6 @@
                     </div>
             </div>
     </div>
-</div>
+</div> --}}
 
       @endsection

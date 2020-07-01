@@ -1,8 +1,8 @@
 @php
     $Var = "Signaler";
 @endphp
-@extends('layout')
-@section('content')
+@extends('layouts.model-participants-account')
+@section('content_1')
 <br><br>  
 <div class="container mb-5 ">
     <div class="row justify-content-center">
@@ -47,28 +47,13 @@
                                                     Incitation au terrorisme
                                                 </label>
                                               </div>
-                                              <br><br>
-                                              <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                                                <label class="form-check-label" for="gridRadios1">
-                                                    Problèmes relatif aux sous-titres
-                                                </label>
-                                              </div>
-                                              <br><br>
+                                              <br><br>                                        
                                               <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
                                                 <label class="form-check-label" for="gridRadios1">
                                                     Non respect de mes droits
                                                 </label>
                                               </div>
-                                              <br><br>                              
-                                              <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                                                <label class="form-check-label" for="gridRadios1">
-                                                    Contenu trompeur
-                                                </label>
-                                              </div>
-                                              <br><br>
                                             <div class="form-group row ">
                                                 <div class="col-sm-12 d-flex">
                                                     <div class="mx-auto"> 

@@ -1,6 +1,53 @@
+@php
+    $Var = "Mot de passe oublié";
+@endphp
 @extends('layout')
 @section('content')
-<br><br>  
+
+<div class="container">
+
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+
+      <div class="col-xl-4 col-lg-12 col-md-9">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+          <div class="card-body p-0">
+            <!-- Nested Row within Card Body -->
+            <div class="row">   
+              <div class="col-lg-12">
+                <div class="p-5">
+                  <div class="text-center">
+                    <h1 class="h4 text-gray-900 mb-2">Forgot Your Password?</h1>
+                    <p class="mb-4">We get it, stuff happens. Just enter your email address below and we'll send you a link to reset your password!</p>
+                  </div>
+                  <form class="user">
+                    <div class="form-group">
+                      <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                    </div>
+                    <a href="login.html" class="btn btn-primary btn-user btn-block" style="background-color: #020e49 ; border-color: #020e49">
+                      Modifier mot de passe
+                    </a>
+                  </form>
+                  <hr>
+                  <div class="text-center">
+                    <a class="small" href="{{url('inscriptionOrgani')}}">Create an Account!</a>
+                  </div>
+                  <div class="text-center">
+                    <a class="small" href="{{url('connexion')}}">Already have an account? Login!</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+{{-- <br><br>  
 <div class="container mb-5 ">
     <div class="row justify-content-center">
             <div class="col-md-8 mt-4">
@@ -44,5 +91,5 @@
                     </div>
             </div>
     </div>
-</div>
+</div> --}}
       @endsection

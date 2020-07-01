@@ -39,6 +39,84 @@
 .top{
     color: #1043c7;
 }
+
+._menu ul li{
+  
+    border-radius: 3rem;
+    padding: 5px;
+    cursor: pointer;
+    color:black;
+}
+.gauche {
+    background-color: #06638A;
+    height:100%;
+
+}
+
+.barre {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    display: block;
+}
+
+.fluid
+{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+.shadow
+{
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
+}
+.btn_blue:hover
+{
+    color: white;
+    text-decoration: none;
+}
+.propos {
+    color:#01177d ;
+}
+.test
+{
+    color: aliceblue;
+}
+.boutons
+{
+    display: none; 
+   
+}
+.functioning{
+    background-color: #495057;
+    height: 5vh;
+}
+.functioning .btn-link:hover{
+    color: #fff;
+    text-decoration: none !important;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: black;
+}
+
+.connex {
+    border-radius: 3rem;
+    box-shadow: none !important;
+    border-color: 1px solid #383a3a !important;
+}
+.connex:focus {
+    border-radius: 3rem;
+    box-shadow: none !important;
+    border-color: 1px solid #383a3a !important;
+}
+
+
+
+
+
+.template
+{
+    font-size: 17px;
+}
+
 @media only screen and (min-width: 600px) {
     .reseau-sociaux{
         margin-left: 23%;
@@ -50,6 +128,7 @@
     {
         margin-left: 33%;
     }
+    
 }
 @media only screen and (min-width: 768px) {
     .reseau-sociaux{
@@ -62,18 +141,24 @@
     {
         margin-left: -31.666667%;
     }
+    .boutons
+    {
+        display: none; 
+        margin-left: 35.333333%;
+    }
 }
-.modal-content
-{
-    width: 60% !important;
+@media (min-width: 992px) { 
+    .boutons
+    {
+        display: block; 
+        margin-left: 35.333333%;
+    }
+    .barre {
+       
+        display: none;
+    }
 }
-.propos {
-    color:#01177d ;
-}
-.test
-{
-    color: aliceblue;
-}
+
 @media(max-width: 360px){
     ._about p{
             font-size: 13px !important;
@@ -98,44 +183,3 @@
             font-size: 20px;
     }
 }
-._menu ul li{
-  
-    border-radius: 3rem;
-    padding: 5px;
-    cursor: pointer;
-    color:black;
-}
-.gauche {
-    background-color: #020e49;
-    height:100%;
-
-}
-
-.barre {
-    margin-left: 0px !important;
-    margin-right: 0px !important;
-
-}
-
-.fluid
-{
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-}
-.shadow
-{
-    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
-}
-.btn_blue:hover
-{
-    color: white;
-    text-decoration: none;
-}
- /* @media only screen and (min-width: 2000px) {
-    .reseau-sociaux{
-        margin-left: 23%;
-    }
-    .input-search{
-        margin-left: 61%;
-    }
-}  */
