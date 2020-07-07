@@ -1,5 +1,5 @@
 @php
-    $Var = "Profil";
+    $Var = "Profil sponsors";
 @endphp
 <!DOCTYPE html>
 <html lang="en">
@@ -8,6 +8,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" type="image/png" href="{{url('images\favicon1.png')}}">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
@@ -31,20 +32,24 @@
       </a>
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
-    
+      <li class="nav-item">
+        <a class="nav-link" href="{{url('/')}}">
+          <i class="fa fa-home"></i>
+          <span>Acceuil</span></a>
+      </li>
       <!-- Divider -->
       <hr class="sidebar-divider">
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
+          <span>Paramètre de connexion</span>
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="">Login</a>
-            <a class="collapse-item" href="">Register</a>
-            <a class="collapse-item" href="">Forgot Password</a>
+            <a class="collapse-item" href="{{url('connexion')}}">Login</a>
+            <a class="collapse-item" href="{{url('inscription')}}">Register</a>
+            <a class="collapse-item" href="{{url('Renouveller')}}">Forgot Password</a>
             <div class="collapse-divider"></div>
         
           </div>
@@ -53,7 +58,7 @@
       <li class="nav-item">
         <a class="nav-link" href="{{url('')}}">
           <i class="fa fa-users"></i>
-          <span>Sponsors</span></a>
+          <span>Sponsors/Partenaires</span></a>
       </li>
 
 
@@ -227,7 +232,7 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="{{url('profile')}}">
+                <a class="dropdown-item" href="{{url('profile1')}}">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
@@ -238,7 +243,7 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
+                  Se deconnecter
                 </a>
               </div>
             </li>
@@ -275,15 +280,17 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">
+            Prêt à partir?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-body">
+          Sélectionnez "Déconnexion" ci-dessous si vous êtes prêt à terminer votre session en cours.</div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Fermer</button>
+          <a class="btn btn-primary" href="login.html">Deconnexion</a>
         </div>
       </div>
     </div>

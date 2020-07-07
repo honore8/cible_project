@@ -93,6 +93,10 @@
     color: #fff;
     text-decoration: none !important;
 }
+.functioning .btn-link
+{
+    color: #fff;
+}
 .navbar-light .navbar-nav .nav-link {
     color: black;
 }
@@ -107,16 +111,85 @@
     box-shadow: none !important;
     border-color: 1px solid #383a3a !important;
 }
+nav
+{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    z-index: 1;
+}
 
-
-
-
-
+  .cercle {
+    width: 100px;
+    height: 40px;
+    border-radius: 60px / 40px;
+    background:gray;
+}
+.ligne{
+    border: 1px solid black;
+}
 .template
 {
     font-size: 17px;
 }
-
+.image {
+    max-width: 67%; margin-top: 25px !important
+}
+@media(max-width: 576px){
+    .image {
+        max-width: 67%; margin-top: 25px !important
+    }
+    .cercle {
+        width: 200px;
+        height: 40px;
+        border-radius: 60px / 40px;
+        background:gray;
+        
+    }
+    .ligne{
+        border: 1x solid black;
+    }
+    .template
+{
+    font-size: 10px;
+}
+}
+@media(min-width:576px) and (max-width:770px){
+    .image {
+        max-width: 67%; margin-top: 25px !important
+    }
+    .cercle {
+        width: 200px;
+        height: 40px;
+        border-radius: 60px / 40px;
+        background:gray;
+    }
+    .ligne{
+        border: 1x solid black;
+    }
+    .template
+{
+    font-size: 12px;
+}
+}
+@media(min-width:770px) and (max-width:1500px){
+    .image {
+        max-width: 67%; margin-top: 25px !important
+    }
+    .cercle {
+        width: 200px;
+        height: 40px;
+        border-radius: 60px / 40px;
+        background:gray;
+    }
+    .ligne{
+        border: 1x solid black;
+    }
+    .template
+{
+    font-size: 12px;
+}
+}
 @media only screen and (min-width: 600px) {
     .reseau-sociaux{
         margin-left: 23%;
@@ -182,4 +255,9 @@
     .__about {
             font-size: 20px;
     }
+}
+
+@media(max-width: 768px){
+  .txt{font-size: 13px;}
+  .titre{ font-size: 15px;}
 }

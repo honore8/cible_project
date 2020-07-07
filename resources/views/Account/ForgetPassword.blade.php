@@ -18,24 +18,20 @@
               <div class="col-lg-12">
                 <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-2">Forgot Your Password?</h1>
-                    <p class="mb-4">We get it, stuff happens. Just enter your email address below and we'll send you a link to reset your password!</p>
+                    <h1 class="h4 text-gray-900 mb-2">Mot de passe oublié?</h1>
+                    <p class="mb-4">
+                      Nous l'obtenons, des choses arrivent. Entrez simplement votre adresse e-mail ci-dessous et nous vous enverrons un lien pour réinitialiser votre mot de passe!</p>
                   </div>
                   <form class="user">
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                      <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Addresse Email...">
                     </div>
                     <a href="login.html" class="btn btn-primary btn-user btn-block" style="background-color: #020e49 ; border-color: #020e49">
-                      Modifier mot de passe
+                      Envoyez
                     </a>
                   </form>
                   <hr>
-                  <div class="text-center">
-                    <a class="small" href="{{url('inscriptionOrgani')}}">Create an Account!</a>
-                  </div>
-                  <div class="text-center">
-                    <a class="small" href="{{url('connexion')}}">Already have an account? Login!</a>
-                  </div>
+                 
                 </div>
               </div>
             </div>

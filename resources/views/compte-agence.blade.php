@@ -34,8 +34,8 @@
                                 <img src="images\img.png" alt="" style="max-width: 100%">
                         </div>
                         <div class="d-flex justify-content-center">
-                            <button class=" mb-2 btn _btn_blue"><i class="fas fa-paper-plane-o ml-1 "><a class="test btn_blue" href="">Selectionner</a></i></button>
-                            <button class=" mb-2 btn _btn_blue ml-2 btn_blue" data-toggle="modal" data-target="#vendreModal"> Plus d'info<i class="fas fa-paper-plane-o ml-1"></i></button>
+                            <button class=" mb-2 btn _btn_blue"><a class="test btn_blue" href="">Selectionner</a></button>
+                            <button class=" mb-2 btn _btn_blue ml-2 btn_blue" data-toggle="modal" data-target="#vendreModal"> Plus d'info</button>
                         </div>
                     </div>
                 </div>
@@ -58,8 +58,8 @@
                                 <img src="images\img.png" alt="" style="max-width: 100%">
                         </div>
                         <div class="d-flex justify-content-center">
-                            <button class=" mb-2 btn _btn_blue"><i class="fas fa-paper-plane-o ml-1 "><a class="test btn_blue" href="">Selectionner</a></i></button>
-                            <button class=" mb-2 btn _btn_blue ml-2 btn_blue" data-toggle="modal" data-target="#vendreModal"> Plus d'info<i class="fas fa-paper-plane-o ml-1"></i></button>
+                            <button class=" mb-2 btn _btn_blue"><a class="test btn_blue" href="">Selectionner</a></button>
+                            <button class=" mb-2 btn _btn_blue ml-2 btn_blue" data-toggle="modal" data-target="#vendreModal"> Plus d'info</button>
                         </div>
                     </div>
                 </div>
@@ -81,8 +81,8 @@
                                 <img src="images\img.png" alt="" style="max-width: 100%">
                         </div>
                         <div class="d-flex justify-content-center">
-                            <button class=" mb-2 btn _btn_blue"><i class="fas fa-paper-plane-o ml-1 "><a class="test btn_blue" href="">Selectionner</a></i></button>
-                            <button class=" mb-2 btn _btn_blue ml-2 btn_blue" data-toggle="modal" data-target="#vendreModal"> Plus d'info<i class="fas fa-paper-plane-o ml-1"></i></button>
+                            <button class=" mb-2 btn _btn_blue"><a class="test btn_blue" href="">Selectionner</a></button>
+                            <button class=" mb-2 btn _btn_blue ml-2 btn_blue" data-toggle="modal" data-target="#vendreModal"> Plus d'info</button>
                         </div>
                     </div>
                 </div>
@@ -108,8 +108,8 @@
                                 <img src="images\img.png" alt="" style="max-width: 100%">
                         </div>
                         <div class="d-flex justify-content-center">
-                            <button class=" mb-2 btn _btn_blue"><i class="fas fa-paper-plane-o ml-1 "><a class="test btn_blue" href="">Selectionner</a></i></button>
-                            <button class=" mb-2 btn _btn_blue ml-2 btn_blue" data-toggle="modal" data-target="#vendreModal"> Plus d'info<i class="fas fa-paper-plane-o ml-1"></i></button>
+                            <button class=" mb-2 btn _btn_blue"><a class="test btn_blue" href="">Selectionner</a></button>
+                            <button class=" mb-2 btn _btn_blue ml-2 btn_blue" data-toggle="modal" data-target="#vendreModal"> Plus d'info</button>
                         </div>
                     </div>
                 </div>
@@ -132,8 +132,8 @@
                                 <img src="images\img.png" alt="" style="max-width: 100%">
                         </div>
                         <div class="d-flex justify-content-center">
-                            <button class=" mb-2 btn _btn_blue"><i class="fas fa-paper-plane-o ml-1 "><a class="test btn_blue" href="">Selectionner</a></i></button>
-                            <button class=" mb-2 btn _btn_blue ml-2 btn_blue" data-toggle="modal" data-target="#vendreModal"> Plus d'info<i class="fas fa-paper-plane-o ml-1"></i></button>
+                            <button class=" mb-2 btn _btn_blue"><a class="test btn_blue" href="">Selectionner</a></button>
+                            <button class=" mb-2 btn _btn_blue ml-2 btn_blue" data-toggle="modal" data-target="#vendreModal"> Plus d'info</button>
                         </div>
                     </div>
                 </div>
@@ -155,8 +155,8 @@
                                 <img src="images\img.png" alt="" style="max-width: 100%">
                         </div>
                         <div class="d-flex justify-content-center">
-                            <button class=" mb-2 btn _btn_blue"><i class="fas fa-paper-plane-o ml-1 "><a class="test btn_blue" href="">Selectionner</a></i></button>
-                            <button class=" mb-2 btn _btn_blue ml-2 btn_blue" data-toggle="modal" data-target="#vendreModal"> Plus d'info<i class="fas fa-paper-plane-o ml-1"></i></button>
+                            <button class=" mb-2 btn _btn_blue"><a class="test btn_blue" href="">Selectionner</a></button>
+                            <button class=" mb-2 btn _btn_blue ml-2 btn_blue" data-toggle="modal" data-target="#vendreModal"> Plus d'info</button>
                         </div>
                     </div>
                 </div>
@@ -181,85 +181,77 @@
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
                 <div class="modal-header" style="background-color: #020e49">
-                  <h5 class="modal-title text-white text-center">Renseignement sur votre Agence</h5>
+                  <h5 class="modal-title text-white text-center">Parlez-nous de votre Agence!</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true" class="text-white">&times;</span>
                   </button>
                 </div> 
                 <div class="modal-body">
-                  {{-- <p>Modal body text goes here.</p> --}}
                   <form action="">
-                    <form>
-                        <div class="form-group row">
-                            <label for="nom" class="col-sm-4 col-form-label "><b>Nom de l'agence</i></b></label>
-                            {{-- <label for="nom" class="col-sm-2 col-form-label "><b><i class="fad fa-mobile float-right"></i></b></label> --}}
-                            <div class="col-sm-8">
-                              <input type="tel" class="form-control" id="nom">
+                    <div class="col-lg-12">
+                        <div class="p-5">
+                          <div class="text-center">
+                          <form class="user">
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0" >
+                                    <input type="text" class="form-control form-control-user"  style="border-radius: 20px" id="exampleFirstName" placeholder="Nom de l'agence">
+                                  </div>
+                                  <div class="col-sm-6">
+                                    <input type="text" class="form-control form-control-user"  style="border-radius: 20px" id="exampleLastName" placeholder="Ancienneté">
+                                  </div>
                             </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="nom" class="col-sm-4 col-form-label "><b>Ancienneté</i></b></label>
-                            {{-- <label for="nom" class="col-sm-2 col-form-label "><b><i class="fad fa-mobile float-right"></i></b></label> --}}
-                            <div class="col-sm-8">
-                              <input type="tel" class="form-control" id="nom">
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="nom" class="col-sm-4 col-form-label "><b>Téléphone</i></b></label>
-                            {{-- <label for="nom" class="col-sm-2 col-form-label "><b><i class="fad fa-mobile float-right"></i></b></label> --}}
-                            <div class="col-sm-8">
-                              <input type="tel" class="form-control" id="nom">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                          <label for="inputEmail3" class="col-sm-4 col-form-label"><b>Email</b></label>
-                          <div class="col-sm-8">
-                            <input type="email" class="form-control" id="inputEmail3">
-                          </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="text" class="col-sm-4 col-form-label"><b>Secteur d'activité</b></label>
-                            <div class="col-sm-8">
-                                <textarea name="" id="text" class="form-control" placeholder="Decrivez votre Secteur d'activité en 3lignes"></textarea>
-                            </div>
-                          </div> 
-                          <div class="form-group row">
-                            <label for="text" class="col-sm-4 col-form-label"><b>Raison de vente</b></label>
-                            <div class="col-sm-8">
-                                <textarea name="" id="text" class="form-control" placeholder="Donnez nous les raisons en 3lignes"></textarea>
-                            </div>
-                          </div> 
-                                                
-                          <div class="form-group row">                          
-                            <label for="pet-select" class="col-sm-4 col-form-label "><b>Pays</i></b></label>
-                                  <select name="pets" id="pet-select" class="col-sm-8">
-                                      <option value="">Choisir...</option>
-                                      <option value="dog">Togo</option>
-                                      <option value="cat">France</option>  
-                                  </select>
-                            </div>
-                            <div class="form-group row">                          
-                              <label for="pet-select" class="col-sm-4 col-form-label "><b>Ville</i></b></label>
-                                    <select name="pets" id="pet-select" class="col-sm-8">
-                                        <option value="">Choisir...</option>
-                                        <option value="dog">Lome</option>
-                                        <option value="cat">Paris</option>
-                                        
-                                    </select>
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input type="tel" class="form-control form-control-user"  style="border-radius: 20px" id="exampleInputEmail" placeholder="Téléphone">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="tel" class="form-control form-control-user"  style="border-radius: 20px" id="exampleInputEmail" placeholder="Nombres de personnes">
+                                </div>
                               </div>
+                              <div class="form-group">
+                                
+                                <input name="" id="text" class="form-control form-control-user"  style="border-radius: 20px" id="exampleInputPassword" 
+                                  placeholder="Decrivez votre Secteur d'activité en 1lignes">
+                              </div>
+                              <div class="form-group">
                          
-                        <div class="form-group row ">
-                          <div class="col-sm-12 d-flex">
-                              <div class="mx-auto"> 
-                                <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49">Envoyez</button>
-                                <button type="button" class="btn btn-secondary bg-white" data-dismiss="modal" style="border-color: #020e49; color:#020e49">Fermer</button>
-                              </div>                       
-                          </div>                     
-                        </div>
-                      
-                      </form>
-                  </form>
+                                <input name="" id="text" class="form-control form-control-user"  style="border-radius: 20px" id="exampleInputPassword" 
+                                  placeholder="Dites nous les raisons de vente 1lignes">
+                              </div>
+                               
+                              <div class="form-group">
+                                {{-- <input type="" class="form-control form-control-user" id="exampleInputType" placeholder="Profil"> --}}
+                                <select name="exampleInputType" id="exampleInputType" class="form-control" style="border-radius: 20px" >
+                                  <option selected > Choisir votre pays</option>
+                                  <option value="Primaire">TOGO</option>
+                                  <option value="Collège">SENEGAL</option>
+                                  <option value="Lycée">BENIN</option>
+                                  <option value="Université">GHANA</option>
+                                  <option value="Université">GABON</option>
+                                </select>
+                              </div>
+                              <div class="form-group">
+                                {{-- <input type="" class="form-control form-control-user" id="exampleInputType" placeholder="Profil"> --}}
+                                <select name="exampleInputType" id="exampleInputType" class="form-control" style="border-radius: 20px" >
+                                  <option selected > Choix votre ville</option>
+                                  <option value="Primaire">Lome</option>
+                                  <option value="Collège">Dakar</option>
+                                  <option value="Lycée">Cotonou</option>
+                                  <option value="Université">Accra</option>
+                                  <option value="Université">Libreville</option>
+                                </select>
+                              </div>
+                            <a href="" class="btn btn-primary btn-user btn-block" style="background-color: #020e49 ; border-color: #020e49 ">
+                              Envoyez
+                            </a>
+                          </form>
+                          </div>
+                    </div>
+                  </div>
+                </form>
+                </div>
+                    
+                  
                 </div>
               </div>
             </div>

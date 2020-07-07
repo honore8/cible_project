@@ -63,7 +63,7 @@
                         <button class="btn btn-link" id="voir-moins3">Voir moins</button>
                         </span>
                     </p>          
-                    <a href="#" class="btn btn-primary custom-btn btn-sm float-right text-white">Trouver</a>
+                    <a href="#" data-toggle="modal" data-target="#evenementModal" class="btn btn-primary custom-btn btn-sm float-right text-white">Trouver</a>
                 </div>
             </div>
         </div>
@@ -91,7 +91,7 @@
                         <button class="btn btn-link" id="voir-moins4">Voir moins</button>
                         </span>
                     </p>          
-                    <a href="#" class="btn btn-primary custom-btn btn-sm float-right text-white">S'inscrire</a>
+                    <a href="{{Url('inscription')}}" class="btn btn-primary custom-btn btn-sm float-right text-white">S'inscrire</a>
                 </div>
             </div>
         </div>
@@ -111,7 +111,7 @@
                         <button class="btn btn-link" id="voir-moins5">Voir moins</button>
                         </span>
                     </p>          
-                    <a href="#" class="btn btn-primary custom-btn btn-sm float-right text-white">S'inscrire</a>
+                    <a href="{{Url('inscription')}}" class="btn btn-primary custom-btn btn-sm float-right text-white">S'inscrire</a>
                 </div>
             </div>
         </div>
@@ -131,7 +131,7 @@
                         <button class="btn btn-link" id="voir-moins6">Voir moins</button>
                         </span>
                     </p>          
-                    <a href="#" class="btn btn-primary custom-btn btn-sm float-right text-white">S'inscrire</a>
+                    <a href="{{Url('inscription')}}" class="btn btn-primary custom-btn btn-sm float-right text-white">S'inscrire</a>
                 </div>
             </div>
         </div>
@@ -148,16 +148,16 @@
                     <p class="card-text">
                         <span>
                             Homme/Femme d’affaire, votre appétence à investir dans le secteur de l’évènementiel n’est pas à discuter. 
-                            Grand favori de la plateforme, vous recevrez les demandes d’investissement selon vos exigences : faire un prêt,acheter des actions, acheter une boite etc...                                                   
+                            Grand favori de la plateforme, vous recevrez les demandes d’investissement selon vos exigences : faire un prêt, acheter des actions,                                                   
                         <button class="btn btn-link" id="voir-plus7">Voir plus</button> 
                         </span>
                         <span id="card7" style="display: none">
-                             
+                            acheter une boite etc...
                             Cliquez sur <b>S’INSCRIRE</b> et ne manquez plus d’opportunités ; nous vous les offrons avec un réel plaisir.
                         <button class="btn btn-link" id="voir-moins7">Voir moins</button>
                         </span>
                     </p>          
-                    <a href="#" class="btn btn-primary custom-btn btn-sm float-right text-white">S'inscrire</a>
+                    <a href="{{Url('inscription')}}" class="btn btn-primary custom-btn btn-sm float-right text-white">S'inscrire</a>
                 </div>
             </div>
         </div>
@@ -169,11 +169,12 @@
                     <p class="card-text">
                         <span>
                             Voulez-vous manquer des évènements en or de vos artistes, coachs, comédiens (…) préférés ? Bien-sûr que non… Bingo… 
-                            Cliquez sur <b>RECEVOIR</b> et remplissez ce formulaire et nous vous enverrons juste ce que vous voulez recevoir dans votre boite mail à la fréquence que vous  
+                            Cliquez sur <b>RECEVOIR</b> et remplissez ce formulaire et nous vous enverrons juste ce que vous voulez recevoir   
                                                                                 
                         <button class="btn btn-link" id="voir-plus8">Voir plus</button> 
                         </span>
                         <span id="card8" style="display: none">
+                            dans votre boite mail à la fréquence que vous
                             avez choisi. Vous pouvez à tout moment affiner d’avantage vos critères et nous les prendrons en compte.
                         <button class="btn btn-link" id="voir-moins8">Voir moins</button>
                         </span>
@@ -189,11 +190,12 @@
                     <p class="card-text">
                         <span>
                         Une plateforme, ce sont des chiffres : le nombre d’utilisateurs, les pays d’utilisation, le nombre d’agences, le nombre d’évènements 
-                        et ceci par secteur ; le nombre de sous-traiteurs par secteur, le nombre de sponsors et de projets sponsorisés,la somme  
+                        et ceci par secteur ; le nombre de sous-traiteurs par secteur,le nombre de sponsors   
                         
                         <button class="btn btn-link" id="voir-plus9">Voir plus</button> 
                         </span>
                         <span id="card9" style="display: none">
+                            et de projets sponsorisés,la somme
                             totale des tickets vendus etc. Envie de lire ces chiffres ? Cliquez sur <b>VOIR</b> et profitez de nos statistiques..
                         <button class="btn btn-link" id="voir-moins9">Voir moins</button>
                         </span>
@@ -204,141 +206,357 @@
         </div>
 
     </div>
-     
-
+      {{-- Modal Evenement --}}
+      <div class="modal fade" id="evenementModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header"style="background-color: #020e49">
+              <h5 class="modal-title text-white text-center" id="exampleModalLabel"> Voulez-vous participez a un évènement?</h5>
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p><i class="fas fa-check propos"></i> Sélectionnez <b>"S'inscrire"</b> ci-dessous si vous voulez avoir un compte sur notre plateforme et après réserver un ticket.
+                Vous serez informé à temps pour les nouveaux évènements à venir.</p> 
+              <p><i class="fas fa-check propos"></i> Sélectionnez <b> "Voir les évènements"</b> ci-dessous si vous voulez voir directement nos évènements et réserver sans vous inscrire.</p> 
+            </div>
+            <div class="modal-footer">            
+              <a class="btn btn-primary" href="{{Url('inscription')}}" style="background-color: #020e49 ; border-color: #020e49">S'incrire</a>
+              <a class="btn btn-primary" href="{{Url('reservationparticipants')}}" style="background-color: #020e49 ; border-color: #020e49">Voir les évènements</a>
+            </div>
+          </div>
+        </div>
+      </div>
       {{-- Modal Alerte --}}
       <div class="modal " id="alerteModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-md">
           <div class="modal-content">
             <div class="modal-header" style="background-color: #020e49">
-              <h5 class="modal-title text-white text-center">Alerte</h5>
+              <h5 class="modal-title text-white text-center">Alertes</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true" class="text-white">&times;</span>
               </button>
             </div> 
             <div class="modal-body">
-              {{-- <p>Modal body text goes here.</p> --}}
               <form action="">
-                <form>
-                    <div class="form-group row">
-                        <label for="nom" class="col-sm-2 col-form-label "><b>Prenom</i></b></label>
-                        {{-- <label for="nom" class="col-sm-2 col-form-label "><b><i class="fad fa-mobile float-right"></i></b></label> --}}
-                        <div class="col-sm-10">
-                          <input type="tel" class="form-control" id="nom">
+                <div class="col-lg-12">
+                    <div class="p-5">
+                      <div class="text-center">
+                      <form class="user">
+                          <h3>Parlons de vos préférences!</h3>
+                        <div class="form-group">                          
+                            <input name="" id="text" class="form-control form-control-user"  style="border-radius: 20px" id="exampleInputPassword" 
+                              placeholder="Email">
+                          </div>
+                          <div class="form-group">
+                            <select name="exampleInputType" id="exampleInputType" class="form-control" style="border-radius: 20px" >
+                              <option selected > Choisir du pays</option>
+                              <option value="Primaire">TOGO</option>
+                              <option value="Collège">SENEGAL</option>
+                              <option value="Lycée">BENIN</option>
+                              <option value="Université">GHANA</option>
+                              <option value="Université">GABON</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <select name="exampleInputType" id="exampleInputType" class="form-control" style="border-radius: 20px" >
+                              <option selected > Choix de la ville</option>
+                              <option value="Primaire">Lome</option>
+                              <option value="Collège">Dakar</option>
+                              <option value="Lycée">Cotonou</option>
+                              <option value="Université">Accra</option>
+                              <option value="Université">Libreville</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <select name="exampleInputType" id="exampleInputType" class="form-control" style="border-radius: 20px" >
+                              <option selected > Types d'évènements</option>
+                              <option value="1">Formation (conférences, forums, colloques, séminaires, symposiums, conventions)</option>
+                              <option value="2">Formation (Formations)</option>
+                              <option value="3">Evènement grand public distraction (Concert, Comédie)</option>
+                              <option value="3">Evènement grand public distraction (Sport)</option>
+                              <option value="3">Evènement grand public distraction (Miss, défilé de mode)</option>
+                              <option value="3">Evènement grand public découverte (Foire, Luxe)</option>
+                              <option value="3">Evènement grand public découverte (Lancement officiel, salon)</option>
+                              <option value="3">Autres (Réalité virtuelle, théâtre, cinéma)</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                <label class="form-check-label" for="inlineCheckbox1">Alerte journalier</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                <label class="form-check-label" for="inlineCheckbox2">Alerte hebdomadaire</label>
+                              </div>  
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                <label class="form-check-label" for="inlineCheckbox2">Alerte mensuel</label>
+                              </div>            
+                          </div>
+                        <a href="" class="btn btn-primary btn-user btn-block" style="background-color: #020e49 ; border-color: #020e49 ">
+                          Envoyez
+                        </a>
+                      </form>
+                      </div>
+                </div>
+              </div>
+            </form>
+            </div>
+                
+              
+            </div>
+          </div>
+        </div>
+
+    <!-- debut quatrieme groupe de card -->
+
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row row-cols-1 row-cols-md-4">
+                <!-- block a dupliquer -->
+                <div class="col mb-3">
+                    <div class="card pr-2 pl-2" style="background-color: #d1e2fc;">
+                        <div class="card-body p-3">
+                            <h5 class="card-title mb-1">
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                Abalo Yao
+                            </h5>
+                            <div class="row mb-3">
+                                <span class="col text-left custom-card-date">01/01/2020</span>
+                                <span class="col text-right custom-card-date">Lomé,Togo</span>
+                            </div>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
                         </div>
-                      </div>
-                    <div class="form-group row">
-                      <label for="inputEmail3" class="col-sm-2 col-form-label"><b>Email</b></label>
-                      <div class="col-sm-10">
-                        <input type="email" class="form-control" id="inputEmail3">
-                      </div>
                     </div>
-                    <div class="form-group row">
-                        <label for="text" class="col-sm-3 col-form-label"><b>Commentaire</b></label>
-                        <div class="col-sm-9">
-                            <textarea name="" id="text" class="form-control" placeholder="Dites-nous quels type d'annonce vous-voulez recevoir"></textarea>
+                </div>
+                <div class="col mb-3">
+                    <div class="card pr-2 pl-2" style="background-color: #d1e2fc;">
+                        <div class="card-body p-3">
+                            <h5 class="card-title mb-1">
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                Abalo Yao
+                            </h5>
+                            <div class="row mb-3">
+                                <span class="col text-left custom-card-date">01/01/2020</span>
+                                <span class="col text-right custom-card-date">Lomé,Togo</span>
+                            </div>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
                         </div>
-                      </div> 
-                      <div>
-                        <label>
-                            <input type="checkbox" checked="checked" name="subscribe"> Alerte journalier
-                        </label>
-                      </div>
-                     
-                    <div class="form-group row ">
-                      <div class="col-sm-12 d-flex">
-                          <div class="mx-auto"> 
-                            <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49">Enregistrer</button>
-                            <button type="button" class="btn btn-secondary bg-white" data-dismiss="modal" style="border-color: #020e49; color:#020e49">Fermer</button>
-                          </div>                       
-                      </div>                     
                     </div>
-                  
-                  </form>
-              </form>
+                </div>
+                <div class="col mb-3">
+                    <div class="card pr-2 pl-2" style="background-color: #d1e2fc;">
+                        <div class="card-body p-3">
+                            <h5 class="card-title mb-1">
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                Abalo Yao
+                            </h5>
+                            <div class="row mb-3">
+                                <span class="col text-left custom-card-date">01/01/2020</span>
+                                <span class="col text-right custom-card-date">Lomé,Togo</span>
+                            </div>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card pr-2 pl-2" style="background-color: #d1e2fc;">
+                        <div class="card-body p-3">
+                            <h5 class="card-title mb-1">
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                Abalo Yao
+                            </h5>
+                            <div class="row mb-3">
+                                <span class="col text-left custom-card-date">01/01/2020</span>
+                                <span class="col text-right custom-card-date">
+                                    Lomé,Togo</span>
+                            </div>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row row-cols-1 row-cols-md-4">
+                <!-- block a dupliquer -->
+                <div class="col mb-3">
+                    <div class="card pr-2 pl-2" style="background-color: #d1e2fc;">
+                        <div class="card-body p-3">
+                            <h5 class="card-title mb-1">
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                Abalo Yao
+                            </h5>
+                            <div class="row mb-3">
+                                <span class="col text-left custom-card-date">01/01/2020</span>
+                                <span class="col text-right custom-card-date">Lomé,Togo</span>
+                            </div>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card pr-2 pl-2" style="background-color: #d1e2fc;">
+                        <div class="card-body p-3">
+                            <h5 class="card-title mb-1">
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                Abalo Yao
+                            </h5>
+                            <div class="row mb-3">
+                                <span class="col text-left custom-card-date">01/01/2020</span>
+                                <span class="col text-right custom-card-date">Lomé,Togo</span>
+                            </div>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card pr-2 pl-2" style="background-color: #d1e2fc;">
+                        <div class="card-body p-3">
+                            <h5 class="card-title mb-1">
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                Abalo Yao
+                            </h5>
+                            <div class="row mb-3">
+                                <span class="col text-left custom-card-date">01/01/2020</span>
+                                <span class="col text-right custom-card-date">Lomé,Togo</span>
+                            </div>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card pr-2 pl-2" style="background-color: #d1e2fc;">
+                        <div class="card-body p-3">
+                            <h5 class="card-title mb-1">
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                Abalo Yao
+                            </h5>
+                            <div class="row mb-3">
+                                <span class="col text-left custom-card-date">01/01/2020</span>
+                                <span class="col text-right custom-card-date">
+                                    Lomé,Togo</span>
+                            </div>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row row-cols-1 row-cols-md-4">
+                <!-- block a dupliquer -->
+                <div class="col mb-3">
+                    <div class="card pr-2 pl-2" style="background-color: #d1e2fc;">
+                        <div class="card-body p-3">
+                            <h5 class="card-title mb-1">
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                Abalo Yao
+                            </h5>
+                            <div class="row mb-3">
+                                <span class="col text-left custom-card-date">01/01/2020</span>
+                                <span class="col text-right custom-card-date">Lomé,Togo</span>
+                            </div>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card pr-2 pl-2" style="background-color: #d1e2fc;">
+                        <div class="card-body p-3">
+                            <h5 class="card-title mb-1">
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                Abalo Yao
+                            </h5>
+                            <div class="row mb-3">
+                                <span class="col text-left custom-card-date">01/01/2020</span>
+                                <span class="col text-right custom-card-date">Lomé,Togo</span>
+                            </div>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card pr-2 pl-2" style="background-color: #d1e2fc;">
+                        <div class="card-body p-3">
+                            <h5 class="card-title mb-1">
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                Abalo Yao
+                            </h5>
+                            <div class="row mb-3">
+                                <span class="col text-left custom-card-date">01/01/2020</span>
+                                <span class="col text-right custom-card-date">Lomé,Togo</span>
+                            </div>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="card pr-2 pl-2" style="background-color: #d1e2fc;">
+                        <div class="card-body p-3">
+                            <h5 class="card-title mb-1">
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                                Abalo Yao
+                            </h5>
+                            <div class="row mb-3">
+                                <span class="col text-left custom-card-date">01/01/2020</span>
+                                <span class="col text-right custom-card-date">
+                                    Lomé,Togo</span>
+                            </div>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                </div>
+        
             </div>
           </div>
         </div>
       </div>
 
-    <!-- debut quatrieme groupe de card -->
-    <div class="row row-cols-1 row-cols-md-4">
-        <!-- block a dupliquer -->
-        <div class="col mb-3">
-            <div class="card pr-2 pl-2" style="background-color: #d1e2fc;">
-                <div class="card-body p-3">
-                    <h5 class="card-title mb-1">
-                        <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                        <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                        <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                        Abalo Yao
-                    </h5>
-                    <div class="row mb-3">
-                        <span class="col text-left custom-card-date">01/01/2020</span>
-                        <span class="col text-right custom-card-date">Lomé,Togo</span>
-                    </div>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col mb-3">
-            <div class="card pr-2 pl-2" style="background-color: #d1e2fc;">
-                <div class="card-body p-3">
-                    <h5 class="card-title mb-1">
-                        <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                        <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                        <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                        Abalo Yao
-                    </h5>
-                    <div class="row mb-3">
-                        <span class="col text-left custom-card-date">01/01/2020</span>
-                        <span class="col text-right custom-card-date">Lomé,Togo</span>
-                    </div>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col mb-3">
-            <div class="card pr-2 pl-2" style="background-color: #d1e2fc;">
-                <div class="card-body p-3">
-                    <h5 class="card-title mb-1">
-                        <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                        <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                        <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                        Abalo Yao
-                    </h5>
-                    <div class="row mb-3">
-                        <span class="col text-left custom-card-date">01/01/2020</span>
-                        <span class="col text-right custom-card-date">Lomé,Togo</span>
-                    </div>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col mb-3">
-            <div class="card pr-2 pl-2" style="background-color: #d1e2fc;">
-                <div class="card-body p-3">
-                    <h5 class="card-title mb-1">
-                        <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                        <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                        <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                        Abalo Yao
-                    </h5>
-                    <div class="row mb-3">
-                        <span class="col text-left custom-card-date">01/01/2020</span>
-                        <span class="col text-right custom-card-date">
-                            Lomé,Togo</span>
-                    </div>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                </div>
-            </div>
-        </div>
+    
 
-    </div>
 
 </div>
 @endsection
