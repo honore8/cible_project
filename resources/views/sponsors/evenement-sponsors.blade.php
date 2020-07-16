@@ -1,8 +1,8 @@
 @php
     $Var = "Evènement";
 @endphp
-@extends('layout')
-@section('content')
+@extends('sponsors.sponsors-account')
+@section('content-2')
 <br>
 <div class="row justify-content-end ">
 <nav aria-label="Page navigation example" class="col-4">
@@ -55,8 +55,8 @@
             <div class="form-group row ">
                 <div class="col-sm-12 d-flex">
                     <div class="mx-auto"> 
-                      <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" data-toggle="modal" data-target="#evenementModal" class="">Réserver</a> </button>
-                      <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
+                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Sponsoriser</a>
+                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
                     </div>                  
                 </div>                     
               </div>
@@ -82,8 +82,8 @@
               <div class="form-group row ">
                   <div class="col-sm-12 d-flex">
                       <div class="mx-auto"> 
-                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
+                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Sponsoriser</a>
+                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
                       </div>                  
                   </div>                     
                 </div>
@@ -109,8 +109,8 @@
               <div class="form-group row ">
                   <div class="col-sm-12 d-flex">
                       <div class="mx-auto"> 
-                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
+                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Sponsoriser</a>
+                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
                       </div>                  
                   </div>                     
                 </div>
@@ -164,8 +164,8 @@
             <div class="form-group row ">
                 <div class="col-sm-12 d-flex">
                     <div class="mx-auto"> 
-                      <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
-                      <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
+                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Sponsoriser</a>
+                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
                     </div>                  
                 </div>                     
               </div>
@@ -191,8 +191,8 @@
               <div class="form-group row ">
                   <div class="col-sm-12 d-flex">
                       <div class="mx-auto"> 
-                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
+                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Sponsoriser</a>
+                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
                       </div>                  
                   </div>                     
                 </div>
@@ -218,8 +218,8 @@
               <div class="form-group row ">
                   <div class="col-sm-12 d-flex">
                       <div class="mx-auto"> 
-                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
+                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Sponsoriser</a>
+                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
                       </div>                  
                   </div>                     
                 </div>
@@ -273,8 +273,8 @@
             <div class="form-group row ">
                 <div class="col-sm-12 d-flex">
                     <div class="mx-auto"> 
-                      <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
-                      <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
+                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Sponsoriser</a>
+                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
                     </div>                  
                 </div>                     
               </div>
@@ -300,8 +300,8 @@
               <div class="form-group row ">
                   <div class="col-sm-12 d-flex">
                       <div class="mx-auto"> 
-                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
+                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Sponsoriser</a>
+                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal""  style="border-color: #020e49; color:#020e49">Voir plus</a>
                       </div>                  
                   </div>                     
                 </div>
@@ -327,8 +327,8 @@
               <div class="form-group row ">
                   <div class="col-sm-12 d-flex">
                       <div class="mx-auto"> 
-                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
+                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Sponsoriser</a>
+                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
                       </div>                  
                   </div>                     
                 </div>
@@ -382,8 +382,8 @@
             <div class="form-group row ">
                 <div class="col-sm-12 d-flex">
                     <div class="mx-auto"> 
-                      <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
-                      <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
+                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Sponsoriser</a>
+                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
                     </div>                  
                 </div>                     
               </div>
@@ -409,8 +409,8 @@
               <div class="form-group row ">
                   <div class="col-sm-12 d-flex">
                       <div class="mx-auto"> 
-                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
+                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Sponsoriser</a>
+                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
                       </div>                  
                   </div>                     
                 </div>
@@ -436,8 +436,8 @@
               <div class="form-group row ">
                   <div class="col-sm-12 d-flex">
                       <div class="mx-auto"> 
-                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
+                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Sponsoriser</a>
+                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
                       </div>                  
                   </div>                     
                 </div>
@@ -491,8 +491,8 @@
             <div class="form-group row ">
                 <div class="col-sm-12 d-flex">
                     <div class="mx-auto"> 
-                      <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
-                      <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
+                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Sponsoriser</a>
+                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
                     </div>                  
                 </div>                     
               </div>
@@ -518,8 +518,8 @@
               <div class="form-group row ">
                   <div class="col-sm-12 d-flex">
                       <div class="mx-auto"> 
-                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
+                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Sponsoriser</a>
+                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
                       </div>                  
                   </div>                     
                 </div>
@@ -545,8 +545,8 @@
               <div class="form-group row ">
                   <div class="col-sm-12 d-flex">
                       <div class="mx-auto"> 
-                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
+                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Sponsoriser</a>
+                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
                       </div>                  
                   </div>                     
                 </div>
@@ -600,8 +600,8 @@
             <div class="form-group row ">
                 <div class="col-sm-12 d-flex">
                     <div class="mx-auto"> 
-                      <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
-                      <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
+                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Sponsoriser</a>
+                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
                     </div>                  
                 </div>                     
               </div>
@@ -627,8 +627,8 @@
               <div class="form-group row ">
                   <div class="col-sm-12 d-flex">
                       <div class="mx-auto"> 
-                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
+                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Sponsoriser</a>
+                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
                       </div>                  
                   </div>                     
                 </div>
@@ -654,8 +654,8 @@
               <div class="form-group row ">
                   <div class="col-sm-12 d-flex">
                       <div class="mx-auto"> 
-                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
+                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Sponsoriser</a>
+                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
                       </div>                  
                   </div>                     
                 </div>
@@ -709,8 +709,8 @@
             <div class="form-group row ">
                 <div class="col-sm-12 d-flex">
                     <div class="mx-auto"> 
-                      <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
-                      <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
+                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Sponsoriser</a>
+                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
                     </div>                  
                 </div>                     
               </div>
@@ -736,8 +736,8 @@
               <div class="form-group row ">
                   <div class="col-sm-12 d-flex">
                       <div class="mx-auto"> 
-                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
+                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Sponsoriser</a>
+                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
                       </div>                  
                   </div>                     
                 </div>
@@ -763,10 +763,10 @@
               <div class="form-group row ">
                   <div class="col-sm-12 d-flex">
                       <div class="mx-auto"> 
-                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
-                      </div>                  
+                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Sponsoriser</a>
+                        <a class="btn btn-secondary bg-white"data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
                   </div>                     
+                </div>                     
                 </div>
           </div>
         </div>
@@ -818,8 +818,8 @@
             <div class="form-group row ">
                 <div class="col-sm-12 d-flex">
                     <div class="mx-auto"> 
-                      <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
-                      <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
+                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Sponsoriser</a>
+                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
                     </div>                  
                 </div>                     
               </div>
@@ -845,8 +845,8 @@
               <div class="form-group row ">
                   <div class="col-sm-12 d-flex">
                       <div class="mx-auto"> 
-                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
+                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Sponsoriser</a>
+                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal" style="border-color: #020e49; color:#020e49">Voir plus</a>
                       </div>                  
                   </div>                     
                 </div>
@@ -872,8 +872,8 @@
               <div class="form-group row ">
                   <div class="col-sm-12 d-flex">
                       <div class="mx-auto"> 
-                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
-                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
+                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Sponsoriser</a>
+                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
                       </div>                  
                   </div>                     
                 </div>
@@ -893,28 +893,36 @@
         </ul>
       </nav>
    </div>
-</div>
- {{-- Modal Evenement --}}
-      <div class="modal fade" id="evenementModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header"style="background-color: #020e49">
-              <h5 class="modal-title text-white text-center" id="exampleModalLabel">Choisir</h5>
-              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">×</span>
-              </button>
+     {{-- Modal plus dinfo --}}
+     <div class="modal " id="infoModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header" style="background-color: #020e49">
+            <h5 class="modal-title text-white text-center">Les informations sur l'évènement!</h5>
+          </div> 
+          <div class="modal-body">
+            <form action="">
+              <div class="col-lg-12">
+                  <div class="p-5">
+                    <div class="text-center">
+                    <form class="user">
+                          <p >This is a longer card with supporting text below as a natural lead-in to
+                          additional content. This content is a little bit longer.This is a longer card with supporting text below as a natural lead-in to
+                          additional content. This content is a little bit longer.This is a longer card with supporting text below as a natural lead-in to
+                          additional content. This content is a little bit longer.This is a longer card with supporting text below as a natural lead-in to
+                          additional content. This content is a little bit longer.</p> 
+                        <button type="button" class="btn btn-secondary bg-white" data-dismiss="modal" style="border-color: #020e49; color:#020e49">Fermer</button>
+                    </form>
+                    </div>
+              </div>
             </div>
-            <div class="modal-body">
-              <p><i class="fas fa-check propos"></i> Sélectionnez <b>"S'inscrire"</b> ci-dessous si vous voulez avoir un compte sur notre plateforme.
-                Vous serez informé à temps pour les nouveaux évènements à venir.</p> 
-              <p><i class="fas fa-check propos"></i> Sélectionnez <b> "Décliner"</b> ci-dessous si vous voulez faire directement votre paiement sans vous inscrire.</p> 
-            </div>
-            <div class="modal-footer">            
-              <a class="btn btn-primary" href="{{Url('inscription')}}" style="background-color: #020e49 ; border-color: #020e49">S'incrire</a>
-              <a class="btn btn-secondary bg-white" href="{{Url('payer')}}"  style="border-color: #020e49; color:#020e49">Décliner</a> 
-              {{-- <a type="button" class="btn btn-secondary bg-white" href="{{Url('payer')}}" data-dismiss="modal" style="border-color: #020e49; color:#020e49"> Décliner</a> --}}
-            </div>
+          </form>
+          </div>
+              
+            
           </div>
         </div>
-      </div> 
+      </div>
+</div>
+
 @endsection

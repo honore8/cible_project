@@ -20,7 +20,7 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-2">Mot de passe oublié?</h1>
                     <p class="mb-4">
-                      Nous l'obtenons, des choses arrivent. Entrez simplement votre adresse e-mail ci-dessous et nous vous enverrons un lien pour réinitialiser votre mot de passe!</p>
+                      Entrez votre adresse e-mail ci-dessous et nous vous enverrons un lien pour réinitialiser votre mot de passe!</p>
                   </div>
                   <form class="user">
                     <div class="form-group">

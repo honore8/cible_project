@@ -1,8 +1,8 @@
 @php
-    $Var = "Declaration de perte";
+    $Var = "Objet trouvé";
 @endphp
-@extends('participants.participants-account')
-@section('content-6')
+@extends('jobs.jobs-account')
+@section('content-3')
 <br><br>  
 <h3 class="text-center mt-4">Declaration d'objet trouvé </h3>
      <div class="formulaire d-flex justify-content-center">

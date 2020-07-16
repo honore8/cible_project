@@ -25,21 +25,11 @@
                         <div class="form-group">
                           <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Mot de passe">
                         </div>                  
-                        <div class="form-group">
-                          {{-- <input type="" class="form-control form-control-user" id="exampleInputType" placeholder="Profil"> --}}
-                          <select name="exampleInputType" id="exampleInputType" class="form-control" style="border-radius: 20px" >
-                            <option selected > Choix de profil</option>
-                            <option value="Primaire">Organisateurs</option>
-                            <option value="Collège">Sponsors/Partenaines</option>
-                            <option value="Lycée">Investisseurs/Actionnaires</option>
-                            <option value="Université">Sous-traiteurs</option>
-                            <option value="Université">Extras</option>
-                          </select>
-                        </div>
+                   
                         <div class="form-group">
                           <div class="custom-control custom-checkbox small">
-                            <input type="checkbox" class="custom-control-input" id="customCheck">
-                            <label class="custom-control-label" for="customCheck"> Se souvenir</label>
+                            <input type="checkbox" class="custom-control-input " id="customCheck">
+                            <label class="custom-control-label offset-4" for="customCheck"> Se souvenir</label>
                           </div>
                         </div>
                         <a href="index.html" class="btn btn-primary btn-user btn-block " style="background-color: #020e49 ; border-color: #020e49">

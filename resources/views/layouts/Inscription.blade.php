@@ -18,14 +18,6 @@
                 <h1 class="h4 text-gray-900 mb-4">Inscrivez-vous!</h1>
               </div>
               <form class="user">
-                <div class="form-group row">
-                  <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Nom">
-                  </div>
-                  <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Prenom">
-                  </div>
-                </div>
                 <div class="form-group">
                   <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email">
                 </div>
@@ -37,7 +29,27 @@
                     <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Confirmer mot de passe">
                   </div>
                 </div>
-                <label for="">Votre mot de passe doit contenir au moins 6 caractères.</label>
+                <label for="">Votre mot de passe doit contenir au moins 8 caractères.</label>
+                {{-- <div class="form-group">
+                   <input type="" class="form-control form-control-user" id="exampleInputType" placeholder="Profil"> 
+                  <select name="exampleInputType" id="exampleInputType" class="form-control" style="border-radius: 20px" >
+                    <option selected > Choix de profil</option>
+                    <option value="Primaire">Organisateurs</option>
+                    <option value="Collège">Sponsors/Partenaines</option>
+                    <option value="Lycée">Investisseurs/Actionnaires</option>
+                    <option value="Université">Sous-traiteurs</option>
+                    <option value="Université">Extras</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Mot de passe"> 
+                  <select name="exampleInputType" id="exampleInputType" class="form-control" style="border-radius: 20px" >
+                    <option selected > Statut</option>
+                    <option value="Primaire">Individu</option>
+                    <option value="Collège">Entreprise</option>
+                  </select>
+                </div>  --}}
+                
                 <div class="form-group">
                   <div class="custom-control custom-checkbox small">
                     <input type="checkbox" class="custom-control-input" id="customCheck">
