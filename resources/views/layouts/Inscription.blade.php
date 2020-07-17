@@ -3,7 +3,9 @@
 @endphp
 @extends('layout')
 @section('content')
+
 <div class="container">
+
     <div class="row justify-content-center">
 
         <div class="col-xl-7 col-lg-12 col-md-9">
@@ -17,39 +19,30 @@
               <div class="text-center">
                 <h1 class="h4 text-gray-900 mb-4">Inscrivez-vous!</h1>
               </div>
-              <form class="user">
+              <form class="user"method="POST" action="{{ route('register') }}">
+                        @csrf
+         
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email">
-                </div>
+                  <input id="email" placeholder="Email" type="email" class="form-control form-control-user @error('email') is-invalid @enderror" name="email" value="{{old('email')}}" required autocomplete="email" >
+
+
+                </div>                  
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Mot de passe">
+               
+                    <input  id="password" type="password" placeholder="Mot de passe "class=" form-control form-control-user @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+@error('password')
+    <span class="invalid-feedback" role="alert">
+        <strong>{{ $message }}</strong>
+    </span>
+@enderror
                   </div>
                   <div class="col-sm-6">
-                    <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Confirmer mot de passe">
+                    <input  class="form-control form-control-user" id="password-confirm" type="password" placeholder="Confirmez " name="password_confirmation" required autocomplete="new-password">
                   </div>
                 </div>
-                <label for="">Votre mot de passe doit contenir au moins 8 caractères.</label>
-                {{-- <div class="form-group">
-                   <input type="" class="form-control form-control-user" id="exampleInputType" placeholder="Profil"> 
-                  <select name="exampleInputType" id="exampleInputType" class="form-control" style="border-radius: 20px" >
-                    <option selected > Choix de profil</option>
-                    <option value="Primaire">Organisateurs</option>
-                    <option value="Collège">Sponsors/Partenaines</option>
-                    <option value="Lycée">Investisseurs/Actionnaires</option>
-                    <option value="Université">Sous-traiteurs</option>
-                    <option value="Université">Extras</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Mot de passe"> 
-                  <select name="exampleInputType" id="exampleInputType" class="form-control" style="border-radius: 20px" >
-                    <option selected > Statut</option>
-                    <option value="Primaire">Individu</option>
-                    <option value="Collège">Entreprise</option>
-                  </select>
-                </div>  --}}
-                
+                <label for="">Votre mot de passe doit contenir au moins 6 caractères.</label>
                 <div class="form-group">
                   <div class="custom-control custom-checkbox small">
                     <input type="checkbox" class="custom-control-input" id="customCheck">
@@ -59,9 +52,10 @@
                       </label>
                   </div>
                 </div>
-                <a href="" class="btn btn-primary btn-user btn-block" style="background-color: #020e49 ; border-color: #020e49">
-                  S'enregistrer
-                </a>
+                <button type="submit" class="btn btn-primary  btn-user btn-block" style="background-color: #020e49 ; border-color: #020e49">
+                                    {{ __("S'inscrire") }}
+                                </button>
+                
                 <hr>
                 
               </form>

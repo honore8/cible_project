@@ -18,29 +18,44 @@
                       <div class="text-center">
                         <h1 class="h4 text-gray-900 mb-4">Connectez-vous!</h1>
                       </div>
-                      <form class="user">
+                      <form class="user"method="POST" action="{{ route('login') }}">
+                        @csrf
                         <div class="form-group">
-                          <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Adresse email...">
+                          <input type="email"  placeholder='Email' type="email" class="form-control form-control-user @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                  @error('email')
+                                  <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                         </div>
                         <div class="form-group">
-                          <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Mot de passe">
+                          <input type="password" class="form-control form-control-user @error('password') is-invalid @enderror"  placeholder="Mot de passe" name="password" required autocomplete="current-password">
+@error('password')
+    <span class="invalid-feedback" role="alert">
+        <strong>{{ $message }}</strong>
+    </span>
+@enderror
                         </div>                  
                    
                         <div class="form-group">
                           <div class="custom-control custom-checkbox small">
-                            <input type="checkbox" class="custom-control-input " id="customCheck">
-                            <label class="custom-control-label offset-4" for="customCheck"> Se souvenir</label>
+                            <input type="checkbox" class="custom-control-input" id="customCheck">
+                            <label class="custom-control-label" for="customCheck"> 
+                            {{ __('Se Souvenir') }}
+                          </label>
                           </div>
                         </div>
-                        <a href="index.html" class="btn btn-primary btn-user btn-block " style="background-color: #020e49 ; border-color: #020e49">
-                          Se connecter
-                        </a>
-                        <hr>
+                   
+                        <button type="submit" class="btn btn-primary btn-user btn-block " style="background-color: #020e49 ; border-color: #020e49">
+                                    {{ __('Se connecter') }}
+                                </button>
+                      
                    
                       </form>
                       <hr>
+                      <hr>
                       <div class="text-center">
-                        <a class="small" href="{{url('Renouveller')}}">
+                        <a class="small" href="{{ route('password.request') }}">
                           Mot de passe oublié?</a>
                       </div>
                       <div class="text-center">

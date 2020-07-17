@@ -50,43 +50,45 @@
                               </button>
                           </div> 
                           <div class="modal-body">
-                              <form action="">
+                    
+                              <form action="{{route('contact')}}" method="POST">
+                              @csrf
                                   <div class="col-lg-12">
                                           <div class="p-5">
                                               <div class="text-center">
                                               <form class="user">
                                                   <div class="form-group row">
                                                           <div class="col-sm-6 mb-3 mb-sm-0" >
-                                                                  <input type="text" class="form-control form-control-user"   style="border-radius: 20px" id="exampleFirstName" placeholder="Nom">
-                                                              </div>
+                                                                  <input name="nom" type="text" class="form-control form-control-user"   style="border-radius: 20px"  required placeholder="Nom">
+                                                              </div> 
                                                               <div class="col-sm-6">
-                                                                  <input type="text" class="form-control form-control-user"   style="border-radius: 20px" id="exampleLastName" placeholder="Prenom">
+                                                                  <input name="prenom" type="text" class="form-control form-control-user"   style="border-radius: 20px"  required  placeholder="Prenom">
                                                               </div>
-                                                  </div>
+                                                  </div> 
                                                       <div class="form-group">
                                                           
-                                                          <input name="" id="text" class="form-control form-control-user"   style="border-radius: 20px" id="exampleInputPassword" 
+                                                          <input name="email"" class="form-control form-control-user"  required  style="border-radius: 20px"  type="email"
                                                               placeholder="Email">
                                                       </div>
                                                       <div class="form-group">
                                                         <label for="pays">Objet</label>
-                                                          <select id="liste" class="form-control" style="border-radius: 20px" >                                          
-                                                            <option value="Primaire">Demande de renseignement</option>
-                                                            <option value="Collège">problème technique</option>
-                                                            <option value="Lycée">Réclamation</option>
+                                                          <select  id="liste" name="sujet" class="form-control" style="border-radius: 20px" >                                          
+                                                            <option >Demande de renseignement</option>
+                                                            <option >problème technique</option>
+                                                            <option >Réclamation</option>
                                                             <option value="autre">Autres</option>                                                                                                                     
                                                           </select>
                                                           <br>                                                     
-                                                            <input type="text" id="autre" style="display: none" class="form-control border-radius: 20px">                                                                                                                                                                                                                     
+                                                            <input type="text"  id="autre" name="autre"   class="form-control border-radius: 20px">                                                                                                                                                                                                                     
                                                       </div>                                                   
                                                       <div class="md-form">
                                                           <label for="form103">Votre message</label>
-                                                          <textarea id="form103" class="md-textarea form-control" rows="5"></textarea>                                                           
+                                                          <textarea required id="form103" class="md-textarea form-control" rows="5"></textarea>                                                           
                                                       </div>
                                                       <br>
-                                                  <a href="" class="btn btn-primary btn-user btn-block" style="background-color: #020e49 ; border-color: #020e49">
+                                                  <button type="submit" class="btn btn-primary btn-user btn-block" style="background-color: #020e49 ; border-color: #020e49">
                                                       Envoyez
-                                                  </a>
+                                                  </button>
                                               </form>
                                               </div>
                                   </div>
@@ -480,24 +482,26 @@
                     </button>
                 </div> 
                 <div class="modal-body">
-                    <form action="">
+                    
                         <div class="col-lg-12">
                                 <div class="p-5">
                                     <div class="text-center">
-                                    <form class="user">
+                                    <form  method="POST" action="{{route('commenter')}}">
+                                    @csrf
                                             <div class="form-group">                                                       
-                                                <input name="" id="" class="form-control form-control-user"   style="border-radius: 20px" id="exampleInputPassword" 
-                                                    placeholder="Note">
+                              <input  name="note" class="form-control form-control-user" value="note" required  style="border-radius: 20px"  type="number" min=0 max=5
+                     placeholder="Note">
+                    
                                             </div>                                                   
                                             <div class="md-form">
                                                 <label for="">Votre message</label>
-                                                <textarea id="" class="md-textarea form-control" rows="5"></textarea>                                                           
+                                                <textarea name="texte"  value="texte" required  min class="md-textarea form-control" rows="5"></textarea>                                                           
                                             </div>
-                                            <br>
-                                        <a href="" class="btn btn-primary btn-user btn-block" style="background-color: #020e49 ; border-color: #020e49">
+                                        
+                                        <button type="submit"  class="btn btn-primary btn-user btn-block" style="background-color: #020e49 ; border-color: #020e49">
                                             Envoyez
-                                        </a>
-                                    </form>
+                                        </button>
+                                  
                                         </div>
                         </div>
                     </div>
@@ -534,17 +538,16 @@
 
 </body>
 <script language="JavaScript"> 
-$("#liste").change(function(){
-  
-  if($(this).val()=="autre")
-  {
-    
-    $("#autre").show();
-  }
-  else
-  {
-    $("#autre").hide();
-  }
+$(function() {
+    $('#autre').hide(); 
+    $('#liste').change(function(){
+        
+        if($('#liste').val() == 'autre') {
+            $('#autre').show(); 
+        } else {
+            $('#autre').hide(); 
+        } 
+    });
 });
   </script>
 </html>

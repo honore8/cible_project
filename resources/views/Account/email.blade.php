@@ -7,8 +7,9 @@
     <body>
         <h2>Objet : Problème technique</h2>
         <ul>
-            <li><strong>Nom</strong> : Gumedzoe</li>
+            <li><strong>Nom</strong> :{{$nom}}</li>
             <li><strong>Email</strong> : eldaaumedzoe@gmail.com</li>
+            <li><strong>Sujet</strong> {{$sujet}}</li>
             <li><strong>Message</strong> : je n'arrive pas a me connecter</li>      
         </ul>
     </body>
