@@ -26,12 +26,11 @@
                     <div class="form-group">
                       <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Addresse Email...">
                     </div>
-                    <a href="login.html" class="btn btn-primary btn-user btn-block" style="background-color: #020e49 ; border-color: #020e49">
+                    <a href="" class="btn btn-primary btn-user btn-block" style="background-color: #020e49 ; border-color: #020e49">
                       Envoyez
                     </a>
                   </form>
-                  <hr>
-                 
+                  <hr>                 
                 </div>
               </div>
             </div>

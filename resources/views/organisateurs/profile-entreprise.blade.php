@@ -1,4 +1,4 @@
-@extends('sponsors.sponsors-account')
+@extends('organisateurs.model-organisateurs-account')
 @section('content-2')
 <h3 class="text-center mt-4">Completer votre profil</h3>
      <div class="formulaire d-flex justify-content-center">

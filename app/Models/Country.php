@@ -9,5 +9,6 @@ class Country extends Model
 
     protected $table = 'countrys';
     public $timestamps = true;
+    protected $fillable=['code', 'countryname', 'countrycode'];
 
 }

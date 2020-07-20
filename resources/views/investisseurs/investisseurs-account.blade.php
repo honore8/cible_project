@@ -33,8 +33,8 @@
             <a href="{{Url('/')}}" class="" role="button" aria-pressed="true">Acceuil</a>
             <a href="{{Url('evenementinvestisseurs')}}" class="" role="button" aria-pressed="true">Tous les évènements</a>
             <a href="{{Url('achatagence')}}" class="" role="button" aria-pressed="true">Acheter une agence</a>
-            <a href="{{Url('perte')}}" class="" role="button" aria-pressed="true">Déclaration d'objet perdu</a>
-            <a href="{{Url('trouve')}}" class="" role="button" aria-pressed="true">Déclaration d'objet trouvé</a>
+            <a href="{{Url('investisseurs-perte')}}" class="" role="button" aria-pressed="true">Déclaration d'objet perdu</a>
+            <a href="{{Url('investisseurs-trouve')}}" class="" role="button" aria-pressed="true">Déclaration d'objet trouvé</a>
           
          
           </div>
@@ -162,7 +162,7 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="{{url('profileindividu')}}">
+                <a class="dropdown-item" href="{{url('investisseurs-profileindividu')}}">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>

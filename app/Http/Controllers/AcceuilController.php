@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Lieu;
 use App\Models\Commentaire;
+use App\Models\Country;
 use App\Repositories\LieuRepositoryInterface;
 use App\Repositories\CommentaireRepositoryInterface;
 
@@ -24,15 +25,23 @@ protected $commentaires, $lieux;
     {
         $lieux= $this->lieu->all();
         $commentaires= $this->commentaire->all();
+        $pays = Country::all();
 
-    return view('welcome', ['lieux'=>$lieux, 'commentaire'=>$commentaires]);
+    return view('welcome', ['lieux'=>$lieux, 'commentaire'=>$commentaires, 'pays'=>$pays]);
+
+    }
+    public function evenement ()
+    {
+
+        $pays = Country::all();
+       
+    return view('organisateurs.evenement', ['pays'=>$pays]);
 
     }
     
     public function connexion ()
     {
         
-
     return view('Account.connexion');
 
     }

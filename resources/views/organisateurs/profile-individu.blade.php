@@ -1,4 +1,4 @@
-@extends('sponsors.sponsors-account')
+@extends('organisateurs.model-organisateurs-account')
 @section('content-2')
 <h3 class="text-center mt-4">Completer votre profil</h3>
      <div class="formulaire d-flex justify-content-center">
@@ -59,12 +59,12 @@
     </select>
   </div>
   <div class="col-md-3 offset-md-1">
-    <label for="adresse">Adresse</label>
-    <input type="text" name="adresse" class="form-control connex" style="border-radius: 20px" required>
+    <label for="Profession">Profession</label>
+    <input type="text" name="Profession" class="form-control connex" style="border-radius: 20px" required>
   </div>
   <br>
   <div class="col-md-5 ml-xl-5 offset-md-1 my-xl-4">
-    <label for="">Profession</label>
+    <label for="">Adresse</label>
     <input type="" name="" class="form-control connex" id="" style="border-radius: 20px" required>
   </div>
  
