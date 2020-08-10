@@ -69,39 +69,6 @@
     
     <input type="text" name="zone_action" class="form-control connex" placeholder="Exemple: Infographiste" style="border-radius: 20px" required>
   </div>
-  {{-- <div class="col-md-3 offset-md-1">
-    <label for="ville">Investissement finacière?</label>
-    <select name="niveau" id="niveau" class="form-control" style="border-radius: 20px">
-      <option selected disabled> Choississez la tranche</option>
-      <option value="Primaire">100000 - 500000</option>
-      <option value="Primaire">500000 - 1000000</option>
-      <option value="Primaire">1500000 - 2000000</option>
-      <option value="Primaire">2500000 - 3000000</option>
-    </select>
-  </div>
-  <div class="col-md-3 offset-md-1">
-    <label for="adresse">Investissement matériel?</label>
-    <select name="filière" id="filière" class="form-control" style="border-radius: 20px" >
-      <option value="" selected>Choix</option>
-      <option value="">Meubles</option>
-      <option value="">matériels informatiques</option>
-      <option value="">Bashes</option>
-      <option value="">Autres</option>
-
-    </select>
-  </div> --}}
- 
-  {{-- <div class="col-md-3 col-lg-6 offset-md-3">
-    <br>
-    <div class="d-flex justify-content-center">
-      <label for="adresse"> Vos réalisations?</label>
-    </div>
-    
-    <div class="custom-file"> 
-      <input type="file" class="custom-file-input" id="" aria-describedby=""  style="border-radius: 20px">
-      <label class="custom-file-label" for="inputGroupFile01">Envoyez-nous vos réalisations en fichier pdf</label>
-    </div>
-  </div> --}}
   <div class="d-flex justify-content-center col-12 mt-4"><button type="submit" class="btn btn-primary col-4 ">Valider</button>
   </div>
 </div>

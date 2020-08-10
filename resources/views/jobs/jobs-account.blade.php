@@ -31,10 +31,10 @@
           </button>
           <div class="d-flex justify-content-around w-100">
             <a href="{{Url('/')}}" class="" role="button" aria-pressed="true">Acceuil</a>
-            <a href="{{Url('annonce')}}" class="" role="button" aria-pressed="true">Annonces</a>
+            <a href="{{Url('jobs-annonce')}}" class="" role="button" aria-pressed="true">Annonces</a>
             <a href="{{Url('evenement-jobs')}}" class="" role="button" aria-pressed="true">Tous les évènements</a>
-            <a href="{{Url('perte')}}" class="" role="button" aria-pressed="true">Déclaration d'objet perdu</a>
-            <a href="{{Url('trouve')}}" class="" role="button" aria-pressed="true">Déclaration d'objet trouvé</a>
+            <a href="{{Url('jobs-perte')}}" class="" role="button" aria-pressed="true">Déclaration d'objet perdu</a>
+            <a href="{{Url('jobs-trouve')}}" class="" role="button" aria-pressed="true">Déclaration d'objet trouvé</a>
           
          
           </div>
@@ -162,7 +162,7 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="{{url('profileindividu')}}" >
+                <a class="dropdown-item" href="{{url('jobs-profileindividu')}}" >
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>

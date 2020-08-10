@@ -1,5 +1,5 @@
 @php
-    $Var = "Evènement";
+    $Var = "Evènement sponsorisé";
 @endphp
 @extends('sponsors.sponsors-account')
 @section('content-2')

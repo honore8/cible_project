@@ -4,7 +4,8 @@
 @extends('layout')
 @section('content')
 <br>
-<div class="row justify-content-end ">
+<div class="row justify-content-end " style="z-index: 9999;
+position: fixed;">
 <nav aria-label="Page navigation example" class="col-4">
   <ul class="pagination ">
     <li class="page-item">

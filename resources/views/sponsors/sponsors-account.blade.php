@@ -12,11 +12,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-
   <title>CIBLE | {{ $Var ?? ''}}</title> 
-  <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
   <link href="vendor\datatables\dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
@@ -33,8 +30,8 @@
             <a href="{{Url('/')}}" class="" role="button" aria-pressed="true">Acceuil</a>
             <a href="{{Url('evenementsponsors')}}" class="" role="button" aria-pressed="true">Tous les évènements</a>
             <a href="{{Url('evenementsponsorisé')}}" class="" role="button" aria-pressed="true">Evènements sponsorisés</a>
-            <a href="{{Url('perte')}}" class="" role="button" aria-pressed="true">Déclaration d'objet perdu</a>
-            <a href="{{Url('trouve')}}" class="" role="button" aria-pressed="true">Déclaration d'objet trouvé</a>
+            <a href="{{Url('sponsors-perte')}}" class="" role="button" aria-pressed="true">Déclaration d'objet perdu</a>
+            <a href="{{Url('sponsors-trouve')}}" class="" role="button" aria-pressed="true">Déclaration d'objet trouvé</a>
           
          
           </div>
@@ -162,7 +159,7 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="{{url('profileindividu')}}">
+                <a class="dropdown-item" href="{{url('sponsors-profileindividu')}}">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>

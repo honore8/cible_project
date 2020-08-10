@@ -6,11 +6,11 @@
       <link rel="icon" type="image/png" href="{{url('images\favicon1.png')}}">
       <link href="fontawesome-free-5.13.0-web/css/all.min.css" rel="stylesheet">
       <link href="css/sb-admin-2.min.css" rel="stylesheet">
-      <!--load all styles -->
-      
+      <!--load all styles -->     
       <link rel="stylesheet" href="{{asset('bootstrap-4.5.0-dist/css/bootstrap.min.css')}}">
       <link rel="stylesheet" href="{{asset('css\style.css')}}">
       <link rel="stylesheet" href="{{asset('css\chosen.css')}}">
+      <link rel="stylesheet" href="{{asset('select\select2.min.css')}}">  
       <title>CIBLE | {{ $Var ?? ''}}</title> 
 </head>
 <body>
@@ -34,15 +34,13 @@
                                 <button class="btn _btn_blue btn-sm top-button-color btn_blue" data-toggle="modal" data-target="#exampleModal"> Nous Ecrire</button>
                               </div>
                               @auth
-                                <a href="{{url('/logout')}}">Se déconnecter</a>
+                                <a href="{{url('/logout')}}"  class="font-weight-bold" style="border: solid 2px black; padding-bottom: 5px;border-radius: 5px"> <span class="fa fa-user"></span>Se déconnecter</a>
                                 @endauth
                         </div>
                         </div>
                     </div>
                 </div>
             </nav>
-            
-
               {{-- Modal Ecrire --}}
               <div class="modal " id="exampleModal" tabindex="-1" role="dialog">
                   <div class="modal-dialog modal-md">
@@ -69,10 +67,9 @@
                                                               <div class="col-sm-6">
                                                                   <input name="prenom" type="text" class="form-control form-control-user"   style="border-radius: 20px"  required  placeholder="Prenom">
                                                               </div>
-                                                  </div> 
-                                                      <div class="form-group">
-                                                          
-                                                          <input name="email"" class="form-control form-control-user"  required  style="border-radius: 20px"  type="email"
+                                                            </div> 
+                                                      <div class="form-group">                                                        
+                                                          <input name="email" class="form-control form-control-user"  required  style="border-radius: 20px"  type="email"
                                                               placeholder="Email">
                                                       </div>
                                                       <div class="form-group">
@@ -95,13 +92,11 @@
                                                       Envoyez
                                                   </button>
                                               </form>
-                                              </div>
+                                       </div>
                                   </div>
                               </div>
                           </form>
-                          </div>
-                                  
-                              
+                          </div>                                                               
                           </div>
                       </div>
                   </div>
@@ -146,7 +141,7 @@
                                       <li class="nav-item">
                                               <a class="nav-link .navbar-light .navbar-nav .nav-link" href="{{Url('tarification')}}"><b>Tarification</b></a>
                                       </li>
-                                   
+                                    
                                       <li class="nav-item barre" >
                                           <a class="nav-link" href="{{Url('proposdenous')}}"><b>A propos</b> </a>
                                       </li>
@@ -403,36 +398,7 @@
                     
                       </div>
                       </div>
-                      {{-- <div class="row text-white text-center p-2" style="background-color: #020e49;">
-                        <div class="col titre">Types d'évènement</div>
-                    </div> --}}
-                    {{-- <div class="row text-white p-2 d-flex justify-content-around " style="background-color: #03177a;">
-                        <div class="row">
-                            <div class="form-group col-6">
-                                <div   class="txt">
-                                    <label for="">Vip</label>
-                                </div>
-                                <div   class="txt">
-                                    <label for="">Privilège</label>
-                                </div>
-                                <div   class="txt">
-                                    <label for="">Adulte</label>
-                                </div>                           
-                            </div>
-                            <div class="form-group col-6">
-                                <div   class="txt">
-                                    <label for="">Couple</label>
-                                </div>
-                                <div   class="txt">
-                                    <label for="">Enfant</label>
-                                </div>
-                                <div   class="txt">
-                                    <label for="">Groupe</label>
-                                </div>                           
-                            </div>
-                  
-                    </div>
-                    </div> --}}
+
                       <div class="row text-white text-center p-2" style="background-color: #020e49;">
                           <div class="col titre"> Lieu d'utilisation</div>
                       </div>
@@ -459,6 +425,7 @@
       <script src="{{asset('bootstrap-4.5.0-dist\js\bootstrap.min.js')}}" integrity=""></script>
       <script src="{{asset('docsupport/prism.js')}}" type="text/javascript" charset="utf-8"></script>
       <script src=" {{asset('docsupport/init.js')}}" type="text/javascript" charset="utf-8"></script>
+      <script src=" {{asset('select\select2.min.js')}}" type="text/javascript" charset="utf-8"></script>
       {{-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js&quot;
               integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
       </script>
@@ -484,6 +451,13 @@ $(function() {
             $('#autre').hide(); 
         } 
     });
+    $('.js-example-basic-multiple').select2({
+        placeholder: 'Choix du pays',
+        width: '100%',
+        
+    });
+    $('.select2-selection').css('border-radius','20px')
+$('.select2-container').children().css('border-radius','20px')
 });
   </script>
 </html>

@@ -148,11 +148,11 @@
                     <p class="card-text">
                         <span>
                             Homme/Femme d’affaire, votre appétence à investir dans le secteur de l’évènementiel n’est pas à discuter. 
-                            Grand favori de la plateforme, vous recevrez les demandes d’investissement selon vos exigences : faire un prêt, acheter des actions,                                                   
+                            Grand favori de la plateforme, vous recevrez les demandes d’investissement selon vos exigences : faire un prêt,                                                   
                         <button class="btn btn-link" id="voir-plus7">Voir plus</button> 
                         </span>
                         <span id="card7" style="display: none">
-                            acheter une boite etc...
+                            acheter des actions,acheter une boite etc...
                             Cliquez sur <b>S’INSCRIRE</b> et ne manquez plus d’opportunités ; nous vous les offrons avec un réel plaisir.
                         <button class="btn btn-link" id="voir-moins7">Voir moins</button>
                         </span>
@@ -229,13 +229,10 @@
                               placeholder="Email">
                           </div>
                           <div class="form-group">
-                            <select name="exampleInputType" id="exampleInputType" class="form-control" style="border-radius: 20px" >
-                              <option selected > Choix du pays</option>
-                              <option value="Primaire">TOGO</option>
-                              <option value="Collège">SENEGAL</option>
-                              <option value="Lycée">BENIN</option>
-                              <option value="Université">GHANA</option>
-                              <option value="Université">GABON</option>
+                            <select name="exampleInputType" id="exampleInputType" class="js-example-basic-multiple form-control" multiple="multiple" style="border-radius: 20px" >
+                            @foreach ($pays as $item)
+                                <option value="liste">{{$item->countryname}}</option>
+                              @endforeach
                             </select>
                           </div>
                           <div class="form-group">

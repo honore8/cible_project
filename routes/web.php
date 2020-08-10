@@ -54,7 +54,6 @@ Route::view('commentaire','commentaire');
 
 // connexion
 Route::view('inscription','layouts.Inscription');
-
 Route::view('Renouvellement','Account.ModifierPassword');
 Route::view('Renouveller','Account.ForgetPassword');
 
@@ -93,6 +92,24 @@ Route::view('evenement-jobs','jobs.evenement-jobs');
 Route::view('jobs-annonce','jobs.annonce');
 
 // organisateurs
+Route::view('menu','organisateurs.model-organisateurs-account');
+Route::view('organisateurs-individu','organisateurs.profile-individu');
+Route::view('organisateurs-entreprise','organisateurs.profile-entreprise');
+Route::view('liste','organisateurs.liste');
+Route::view('sponsoring','organisateurs.sponsoring');
+Route::view('organisateurs-annonce','organisateurs.annonces');
+Route::view('evenement-organisateur','organisateurs.evenement-organisateur');
+Route::view('prix-organisateur','organisateurs.liste-paiement');
+
+// jobs
+Route::view('menujobs','jobs.jobs-account');
+Route::view('jobs-profileindividu','jobs.profile-individu');
+Route::view('jobs-perte','jobs.DeclarationPerte');
+Route::view('jobs-trouve','jobs.Déclarer-objet-trouvé');
+Route::view('evenement-jobs','jobs.evenement-jobs');
+Route::view('jobs-annonce','jobs.annonce');
+
+// organisateurs
 
 Route::group(['prefix' => 'organisateur',  'middleware' => ['role:organisateur']], function()
 {
@@ -120,3 +137,8 @@ Route::group(['prefix' => 'profil',  'middleware' => 'auth'], function()
 
 Route::get('organisateur', 'RoleController@organisateur')->name('organisateur');
 Route::get('role', 'ProfilController@assignrole')->name('role');
+Route::get('/creer-evenement', 'AcceuilController@evenement')->name('creer-evenement');
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
