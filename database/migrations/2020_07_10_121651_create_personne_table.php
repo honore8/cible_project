@@ -26,6 +26,7 @@ class CreatePersonneTable extends Migration
             $table->binary('piece_jointe')->nullable();
             $table->timestamps();
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('restrict');
+            $table->softDeletes();
                
         });
     }
@@ -38,6 +39,9 @@ class CreatePersonneTable extends Migration
     public function down()
     {
 
+        Schema::table('personne', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
         Schema::table('personne', function(Blueprint $table){
             $table->dropForeign('personne_user_id_foreign');
                  });

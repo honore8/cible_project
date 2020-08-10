@@ -15,10 +15,12 @@ class CreateAlerteTable extends Migration
     {
         Schema::create('alerte', function (Blueprint $table) {
             $table->id();
-            $table->string('email');
             $table->enum('type', ['gratuit', 'payant','all']);
             $table->enum('frequence', ['jour', 'semaine','mois']);
             $table->timestamps();
+
+            $table->foreignId('user_id')->references('id')->on('users');
+            $table->softDeletes();
         });
     }
 
@@ -29,6 +31,12 @@ class CreateAlerteTable extends Migration
      */
     public function down()
     {
+        Schema::table('alerte', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
+        Schema::table('alerte', function(Blueprint $table){
+            $table->dropForeign('alerte_user_id_foreign');
+                 });
         Schema::dropIfExists('alerte');
     }
 }

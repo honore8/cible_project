@@ -18,7 +18,7 @@ class CreateLieuxTable extends Migration
             $table->string('pays');
             $table->timestamps();
             $table->foreignId('user_id')->references('id') ->on('users');
-            $table->string('countrycode',3)->references('countrycode') ->on('countrys');
+            $table->softDeletes();
             });
     }
 
@@ -29,14 +29,12 @@ class CreateLieuxTable extends Migration
      */
     public function down()
     {
-
+        Schema::table('lieux', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
         Schema::table('lieux', function(Blueprint $table){
             $table->dropForeign('lieux_user_id_foreign');
                  });
-        
-        Schema::table('lieux', function(Blueprint $table){
-            $table->dropForeign('lieux_countrys_id_foreign');
-          });
                  
         Schema::dropIfExists('lieux');
     }

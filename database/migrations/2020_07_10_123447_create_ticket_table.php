@@ -24,6 +24,7 @@ class CreateTicketTable extends Migration
             $table->binary('image');
             $table->timestamps();
             $table->foreignId('evenement_id')->references('id')->on('evenement') ->onDelete('cascade')->onUpdate('cascade');
+            $table->softDeletes();
         });
     
     }
@@ -35,9 +36,18 @@ class CreateTicketTable extends Migration
      */
     public function down()
     {
+        Schema::table('ticket', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
         Schema::table('ticket', function(Blueprint $table){
             $table->dropForeign('ticket_evenement_id_foreign');
                  });
+        Schema::table('ticket', function(Blueprint $table){
+             $table->dropForeign('ticket_achat_id_foreign');
+                         });
+         Schema::table('ticket', function(Blueprint $table){
+              $table->dropForeign('ticket_revente_id_foreign');
+             });
         Schema::dropIfExists('ticket');
     }
 }

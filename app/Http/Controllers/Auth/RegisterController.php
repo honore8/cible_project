@@ -29,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/role';
 
     /**
      * Create a new controller instance.
@@ -58,7 +58,7 @@ class RegisterController extends Controller
     
     protected function messages(){
         return [
-            'min:8'=> 'Mot de asse trop court',
+            'min:8'=> 'Mot de passe trop court',
         'required' => 'Vous devez remplir ce champ',
         'email' => 'Vous devez saisir une adresse mail valide',
         'confirmed'=>'Les mots de passe ne correspondent pas '

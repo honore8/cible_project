@@ -17,11 +17,13 @@ class CreateObjetTable extends Migration
             $table->id();
             $table->string('label');
             $table->longtext('description');
+            $table->enum('type', ['perdu', 'trouvé']);
             $table->binary('img')->nullable();
             $table->timestamps();
 
             $table->foreignId('user_id')->references('id')->on('users');
             $table->foreignId('evenement_id')->references('id')->on('evenement');
+            $table->softDeletes();
         });
     }
 
@@ -33,6 +35,9 @@ class CreateObjetTable extends Migration
     public function down()
     {
 
+        Schema::table('objet', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
         Schema::table('objet', function(Blueprint $table){
             $table->dropForeign('objet_user_id_foreign');
                  });

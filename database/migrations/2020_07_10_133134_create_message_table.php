@@ -16,6 +16,7 @@ class CreateMessageTable extends Migration
         Schema::create('message', function (Blueprint $table) {
             $table->id();
             $table->longText('texte');
+            $table->boolean('lu');
             $table->timestamps();
             $table->foreignId('sender_id')->references('id')->on('users');
             $table->foreignId('receiver_id')->references('id')->on('users');
@@ -29,6 +30,9 @@ class CreateMessageTable extends Migration
      */
     public function down()
     {
+        Schema::table('message', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
         Schema::table('message', function(Blueprint $table){
             $table->dropForeign('message_sender_id_foreign');
                  });

@@ -24,6 +24,7 @@ class CreateComporterSondageTable extends Migration
                     ->references('id')
                     ->on('question_sondage')
                     ;
+            $table->softDeletes();
         });
     }
 
@@ -34,6 +35,9 @@ class CreateComporterSondageTable extends Migration
      */
     public function down()
     {
+        Schema::table('comporter_sondage', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
            
         Schema::table('comporter_sondage', function(Blueprint $table){
             $table->dropForeign('comporter_sondage_type_sondage_id_foreign');

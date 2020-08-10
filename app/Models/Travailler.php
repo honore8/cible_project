@@ -2,9 +2,10 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Pivot;
+use SoftDeletes;
 
-class Travailler extends Model
+class Travailler extends Pivot
 {
-    //
+    
 }

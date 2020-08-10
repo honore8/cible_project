@@ -15,8 +15,11 @@ class CreateAchatTable extends Migration
     {
         Schema::create('achat', function (Blueprint $table) {
             $table->id();
+            $table->integer('nbtickets');
+            $table->datetime('date');
             $table->timestamps();
-            $table->foreignId('ticket_id')->references('id')->on('ticket');
+            $table->softDeletes();
+            $table->foreignId('ticket_id')->references('id')->on('ticket')->onUpdate('cascade');
             $table->foreignId('user_id')->references('id')->on('users')->onUpdate('cascade');
         });
     }
@@ -28,16 +31,18 @@ class CreateAchatTable extends Migration
      */
     public function down()
     {
-           
-        Schema::table('achat', function(Blueprint $table){
-            $table->dropForeign('achat_ticket_id_foreign');
-                 });
+        Schema::table('achat', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
         
         
         Schema::table('achat', function(Blueprint $table){
              $table->dropForeign('achat_user_id_foreign');
                     });
-                
+                    Schema::table('achat', function(Blueprint $table){
+                        $table->dropForeign('achat_evenement_id_foreign');
+                               });
+                           
         
         Schema::dropIfExists('achat');
     }

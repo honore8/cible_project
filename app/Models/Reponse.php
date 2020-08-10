@@ -2,12 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Reponse extends Model
+use Illuminate\Database\Eloquent\Pivot;
+use SoftDeletes;
+class Reponse extends Pivot
 {
-  protected $table= 'reponse';
-  protected $fillable= [
-        'echelle'
-  ];
+  
 }

@@ -15,8 +15,11 @@ class CreateQuestionFaqTable extends Migration
     {
         Schema::create('question_faq', function (Blueprint $table) {
             $table->id();
+            $table->string('texte');
+            $table->longText('reponse');
             $table->timestamps();
             $table->foreignId('evenement_id') ->references('id')->on('evenement') ->onDelete('cascade');
+            $table->softDeletes();
         });
     }
 
@@ -27,6 +30,9 @@ class CreateQuestionFaqTable extends Migration
      */
     public function down()
     {
+        Schema::table('question_faq', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
            
         Schema::table('question_faq', function(Blueprint $table){
             $table->dropForeign('question_faq_evenement_id_foreign');

@@ -16,9 +16,10 @@ class CreateCommentaireTable extends Migration
         Schema::create('commentaire', function (Blueprint $table) {
             $table->id();
             $table->integer('note');
-        $table->text('texte');
+            $table->text('texte');
             $table->timestamps();
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->softDeletes();
         });
     }
 
@@ -29,6 +30,9 @@ class CreateCommentaireTable extends Migration
      */
     public function down()
     {
+        Schema::table('commentaire', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
         Schema::table('commentaire', function(Blueprint $table){
             $table->dropForeign('commentaire_user_id_foreign');
                  });

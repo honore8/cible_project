@@ -23,5 +23,10 @@ class BackendServiceProvider extends ServiceProvider
             'App\Repositories\LieuRepository'
         );
 
+        $this->app->bind(
+            'App\Repositories\EvenementRepositoryInterface',
+            'App\Repositories\EvenementRepository'
+        );
+
     }
 }

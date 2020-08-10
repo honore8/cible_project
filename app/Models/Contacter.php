@@ -2,9 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Contacter extends Model
+use Illuminate\Database\Eloquent\Pivot;
+use SoftDeletes;
+class Contacter extends Pivot
 {
    protected $table= 'contacter'; 
 }

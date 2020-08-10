@@ -20,6 +20,7 @@ class CreateTravaillerTable extends Migration
             
             $table->foreignId('user_id')->references('id')->on('users');
             $table->foreignId('evenement_id')->references('id')->on('evenement');
+            $table->softDeletes();
         });
     }
 
@@ -30,7 +31,9 @@ class CreateTravaillerTable extends Migration
      */
     public function down()
     {
-
+        Schema::table('travailler', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
         Schema::table('travailler', function(Blueprint $table){
             $table->dropForeign('objet_user_id_foreign');
                  });

@@ -17,10 +17,12 @@ class CreateAnnonceTable extends Migration
             $table->id();
             $table->string('titre');
             $table->longtext('contenu');
-            $table->string('type');
+            $table->enum('type', ['recrutement_extra', 'recrutement_prestataire','investissement','sponsoring']);
             $table->timestamps();
        
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreignId('evenement_id')->references('id')->on('evenement');
+            $table->softDeletes();
             
         });
     }
@@ -32,6 +34,9 @@ class CreateAnnonceTable extends Migration
      */
     public function down()
     {
+        Schema::table('annonce', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
         Schema::table('annonce', function(Blueprint $table){
             $table->dropForeign('annonce_user_id_foreign');
                  });

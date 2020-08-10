@@ -19,6 +19,7 @@ class CreateReponseTable extends Migration
             $table->timestamps();
             $table->foreignId('question_sondage_id')->references('id')->on('question_sondage')->onDelete('cascade');
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->softDeletes();
         });
     }
 
@@ -29,6 +30,9 @@ class CreateReponseTable extends Migration
      */
     public function down()
     {
+        Schema::table('reponse', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
 
         Schema::table('reponse', function(Blueprint $table){
             $table->dropForeign('reponse_question_sondage_id_foreign');

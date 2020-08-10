@@ -27,16 +27,20 @@
                                 <a  target="_blank" href=" https://www.linkedin.com/company/kp10is/?viewAsMember=true"><i class="fab fa-linkedin fa-lg" style="color: #2962ff;"></i></a>
                             </div>
                         </div>
+                  
                         <div class="col-md-4 offset-md-2 col-lg-3 offset-lg-4 boutons" >
-                            <div class="">
+                            <div>
                                 <button class="btn _btn_blue btn-sm top-button-color"><a href="{{Url('proposdenous')}}" class="test btn_blue"> A propos de</a></button>
                                 <button class="btn _btn_blue btn-sm top-button-color btn_blue" data-toggle="modal" data-target="#exampleModal"> Nous Ecrire</button>
-                            </div>
+                              </div>
+                              @auth
+                                <a href="{{url('/logout')}}">Se déconnecter</a>
+                                @endauth
+                        </div>
                         </div>
                     </div>
                 </div>
             </nav>
-
             
 
               {{-- Modal Ecrire --}}
@@ -44,6 +48,7 @@
                   <div class="modal-dialog modal-md">
                       <div class="modal-content">
                           <div class="modal-header" style="background-color: #020e49">
+                    
                               <h5 class="modal-title text-white text-center">Contactez-nous!</h5>
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                   <span aria-hidden="true" class="text-white">×</span>
@@ -119,7 +124,7 @@
                               </div>
                       </div>
               </div>
-
+         
               <!-- debut navbar -->
               <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #cfe3ff;">
                       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -141,25 +146,22 @@
                                       <li class="nav-item">
                                               <a class="nav-link .navbar-light .navbar-nav .nav-link" href="{{Url('tarification')}}"><b>Tarification</b></a>
                                       </li>
-                                      <li class="nav-item">
-                                        <a class="nav-link .navbar-light .navbar-nav .nav-link" data-toggle="modal" data-target="#commentaireModal" ><b>Ajouter un commentaire</b></a>
-                                     </li>
+                                   
                                       <li class="nav-item barre" >
                                           <a class="nav-link" href="{{Url('proposdenous')}}"><b>A propos</b> </a>
                                       </li>
                                       <div class="col-lg-12 offset-lg-3 d-block d-md-none">
 
-  
-                                          <button class="btn btn-sm _btn_blue col-3" ><a class="test btn_blue" href="{{url('connexion')}}">Connexion</a></button>
-                                          
+                                         
                                               <button class="btn btn-sm _btn_blue col-3" data-toggle="modal" data-target="#exampleModal"><a class="test btn_blue" href="">Nous ecrire </a> <span class="sr-only">(current)</span></button>
                                         
                                       </div>
                               </ul>
+                              @guest
                               <div class="col-lg-2 offset-lg-3 d-none d-md-block">                         
-                                      <button class="btn btn-sm _btn_blue " ><a class="test btn_blue" href="{{url('connexion')}}">Connexion</a></button>
+                                      <button class="btn btn-sm _btn_blue" ><a class="test btn_blue" href="{{route('connexion')}}">Connexion</a></button>
                               </div>
-                      </div>
+                              @endguest
                       {{-- petit ecran --}}
                       
 
@@ -172,7 +174,7 @@
               <div class="container-fluid fluid d-none d-lg-block">
                       <div class="row text-white text-center p-2" style="background-color: #020e49;">
                               <div class="col ">Nous contacter </div>
-                              <div class="col">Types de Ticket</div>
+                              <div class="col">Types d'evenements</div>
                               {{-- <div class="col"> Types d'évènement</div> --}}
                               <div class="col"> Lieu d'utilisation</div>
                       </div>
@@ -296,23 +298,11 @@
                                 <div class="vertical-bar mx-auto"></div>
                         </div>
                               <div class="col">
-
+                              @if (is_array($lieux ?? '') || is_object($lieux ?? ''))
+                                @foreach ($lieux ?? '' as $drapeau)
                                       <img src="images\drapeau-de-france-icone.png" alt="" width="40px">
-                                      <img src="images\drapeau-de-france-icone.png" alt="" width="40px">
-                                      <img src="images\drapeau-de-france-icone.png" alt="" width="40px">
-                                      <img src="images\drapeau-de-france-icone.png" alt="" width="40px">
-                                      <img src="images\drapeau-de-france-icone.png" alt="" width="40px">
-                                      <img src="images\drapeau-de-france-icone.png" alt="" width="40px">
-                                      <img src="images\drapeau-de-france-icone.png" alt="" width="40px">
-                                      <img src="images\drapeau-de-france-icone.png" alt="" width="40px">
-                                      <img src="images\drapeau-de-france-icone.png" alt="" width="40px">
-                                      <img src="images\drapeau-de-france-icone.png" alt="" width="40px">
-                                      <img src="images\drapeau-de-france-icone.png" alt="" width="40px">
-                                      <img src="images\drapeau-de-france-icone.png" alt="" width="40px">
-                                      <img src="images\drapeau-de-france-icone.png" alt="" width="40px">
-                                      <img src="images\drapeau-de-france-icone.png" alt="" width="40px">
-                                      <img src="images\drapeau-de-france-icone.png" alt="" width="40px">
-                                      <img src="images\drapeau-de-france-icone.png" alt="" width="40px">
+                               @endforeach 
+                               @endif 
                                       
                               </div>
                       </div>
@@ -340,7 +330,7 @@
                       </div>
 
                       <div class="row text-white text-center p-2" style="background-color: #020e49;">
-                          <div class="col titre">Types de Ticket</div>
+                          <div class="col titre">Types d'evenements</div>
                       </div>
                       <div class="row text-white p-2 d-flex justify-content-around " style="background-color: #03177a;">
                           <div class="row">
@@ -451,66 +441,12 @@
                           <div class="col">
                                
                                   <img src="images\drapeau-de-france-icone.png" alt="" width="40px">
-                                  <img src="images\drapeau-de-france-icone.png" alt="" width="40px">
-                                  <img src="images\drapeau-de-france-icone.png" alt="" width="40px">
-                                  <img src="images\drapeau-de-france-icone.png" alt="" width="40px">
-                                  <img src="images\drapeau-de-france-icone.png" alt="" width="40px">
-                                  <img src="images\drapeau-de-france-icone.png" alt="" width="40px">
-                                  <img src="images\drapeau-de-france-icone.png" alt="" width="40px">
-                                  <img src="images\drapeau-de-france-icone.png" alt="" width="40px">
-                                  <img src="images\drapeau-de-france-icone.png" alt="" width="40px">
-                                  <img src="images\drapeau-de-france-icone.png" alt="" width="40px">
-                                  <img src="images\drapeau-de-france-icone.png" alt="" width="40px">
-                                  <img src="images\drapeau-de-france-icone.png" alt="" width="40px">
-                                  <img src="images\drapeau-de-france-icone.png" alt="" width="40px">
-                                  <img src="images\drapeau-de-france-icone.png" alt="" width="40px">
-                                  <img src="images\drapeau-de-france-icone.png" alt="" width="40px">
-                                  <img src="images\drapeau-de-france-icone.png" alt="" width="40px">                          
+                                                    
                           </div>
                   </div>             
           </div>     
       </footer>
 
-       {{-- Modal Commentaire --}}
-       <div class="modal " id="commentaireModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-md">
-            <div class="modal-content">
-                <div class="modal-header" style="background-color: #020e49">
-                    <h5 class="modal-title text-white text-center">Commentaire!</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" class="text-white">×</span>
-                    </button>
-                </div> 
-                <div class="modal-body">
-                    
-                        <div class="col-lg-12">
-                                <div class="p-5">
-                                    <div class="text-center">
-                                    <form  method="POST" action="{{route('commenter')}}">
-                                    @csrf
-                                            <div class="form-group">                                                       
-                              <input  name="note" class="form-control form-control-user" value="note" required  style="border-radius: 20px"  type="number" min=0 max=5
-                     placeholder="Note">
-                    
-                                            </div>                                                   
-                                            <div class="md-form">
-                                                <label for="">Votre message</label>
-                                                <textarea name="texte"  value="texte" required  min class="md-textarea form-control" rows="5"></textarea>                                                           
-                                            </div>
-                                        
-                                        <button type="submit"  class="btn btn-primary btn-user btn-block" style="background-color: #020e49 ; border-color: #020e49">
-                                            Envoyez
-                                        </button>
-                                  
-                                        </div>
-                        </div>
-                    </div>
-                </form>
-                </div>
-   
-                </div>
-            </div>
-        </div>
       {{-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js&quot;
               integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
       </script> --}}

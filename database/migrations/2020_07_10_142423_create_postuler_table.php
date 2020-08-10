@@ -19,13 +19,12 @@ class CreatePostulerTable extends Migration
             $table->foreignId('user_id')
                     ->references('id')
                     ->on('users')
-                    ->onDelete('restrict')
-                    ->onUpdate('restrict');
+                    ;
             $table->foreignId('annonce_id')
                     ->references('id')
                     ->on('users')
-                    ->onDelete('restrict')
-                    ->onUpdate('restrict');
+                    ;
+            $table->softDeletes();
         });
        
     }
@@ -37,6 +36,9 @@ class CreatePostulerTable extends Migration
      */
     public function down()
     {
+        Schema::table('postuler', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
         Schema::table('postuler', function(Blueprint $table){
             $table->dropForeign('postuler_user_id_foreign');
                  });

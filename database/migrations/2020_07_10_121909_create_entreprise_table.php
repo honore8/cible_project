@@ -25,6 +25,7 @@ class CreateEntrepriseTable extends Migration
             $table->string('num_immatriculation')->nullable();
             $table->timestamps();
             $table->foreignId('user_id')->references('id')->on('users') ->onDelete('restrict');
+            $table->softDeletes();
         });
     
     }
@@ -36,6 +37,9 @@ class CreateEntrepriseTable extends Migration
      */
     public function down()
     {
+        Schema::table('entreprise', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
         Schema::table('entreprise', function(Blueprint $table){
             $table->dropForeign('entreprise_user_id_foreign');
                  });

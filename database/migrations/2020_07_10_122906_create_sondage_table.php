@@ -19,6 +19,7 @@ class CreateSondageTable extends Migration
             $table->timestamps();
             $table->foreignId('evenement_id')->references('id')  ->on('evenement');
             $table->foreignId('type_sondage_id')->references('id')->on('type_sondage');
+            $table->softDeletes();
         });
     }
 
@@ -29,6 +30,9 @@ class CreateSondageTable extends Migration
      */
     public function down()
     {
+        Schema::table('sondage', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
         Schema::table('sondage', function(Blueprint $table){
             $table->dropForeign('sondage_evenement_id_foreign');
                  });

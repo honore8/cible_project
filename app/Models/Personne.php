@@ -1,9 +1,9 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
+use SoftDeletes;
 class Personne extends Model
 {
        /**
@@ -13,11 +13,12 @@ class Personne extends Model
      */
 
      protected $table='personne';
-    protected $guarded=[
-
-    ];
+    protected $guarded=['user_id'];
 
 
-  
+    public function user()
+    {
+        return $this->hasOne('App\Models\User');
+    }
   
 }

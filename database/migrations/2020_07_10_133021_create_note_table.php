@@ -18,6 +18,7 @@ class CreateNoteTable extends Migration
             $table->integer('note');
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -28,6 +29,10 @@ class CreateNoteTable extends Migration
      */
     public function down()
     {
+
+        Schema::table('note', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
         Schema::table('note', function(Blueprint $table){
             $table->dropForeign('note_user_id_foreign');
                  });

@@ -23,14 +23,15 @@ class CreateEvenementTable extends Migration
             $table->datetime('date_fin')->nullable();
             $table->string('categorie');
             $table->string('type');
-            $table->string('description');
-            $table->boolean('prive ?')->default(false);
-            $table->boolean('professionnel ?')->default(false);;
-            $table->boolean('social ?')->default(false);
-            $table->boolean('communication ?')->default(false);
-            $table->boolean('signaler?')->default(false);
-            $table->text('descrption')->nullable();
+            $table->boolean('prive')->default(false);
+            $table->boolean('professionnel')->default(false);;
+            $table->boolean('social')->default(false);
+            $table->boolean('communication')->default(false);
+            $table->boolean('signaler')->default(false);
+            $table->text('description')->nullable();
+            $table->boolean('public')->default(false);
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->softDeletes();
             
             $table->timestamps();
         });
@@ -44,6 +45,9 @@ class CreateEvenementTable extends Migration
      */
     public function down()
     {
+        Schema::table('evenement', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
         Schema::table('evenement', function(Blueprint $table){
             $table->dropForeign('evenement_user_id_foreign');
                  });
@@ -51,3 +55,5 @@ class CreateEvenementTable extends Migration
         Schema::dropIfExists('evenement');
     }
 }
+
+

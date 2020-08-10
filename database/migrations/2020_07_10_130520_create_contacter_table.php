@@ -18,6 +18,7 @@ class CreateContacterTable extends Migration
             $table->timestamps();
             $table->foreignId('user_id')->references('id') ->on('users')->onDelete('cascade');
             $table->foreignId('demandeur_id')->references('id') ->on('demandeur')->onDelete('cascade');
+            $table->softDeletes();
         });
     }
 
@@ -27,7 +28,10 @@ class CreateContacterTable extends Migration
      * @return void
      */
     public function down()
-    {
+    { Schema::table('contacter', function (Blueprint $table) {
+        $table->dropSoftDeletes();
+    });
+        
         Schema::table('contacter', function(Blueprint $table){
             $table->dropForeign('contacter_user_id_foreign');
                  });

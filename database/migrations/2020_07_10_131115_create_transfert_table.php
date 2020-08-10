@@ -20,6 +20,7 @@ class CreateTransfertTable extends Migration
             $table->timestamps();
             $table->foreignId('evenement_id') ->references('id') ->on('evenement')->onDelete('restrict');
             $table->foreignId('user_id') ->references('id')->on('users');
+            $table->softDeletes();
             
         });
     }
@@ -31,6 +32,9 @@ class CreateTransfertTable extends Migration
      */
     public function down()
     {
+        Schema::table('transfert', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
         Schema::table('transfert', function(Blueprint $table){
             $table->dropForeign('transfert_evenement_id_foreign');
                  });

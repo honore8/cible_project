@@ -17,7 +17,8 @@ class CreateQuestionSondageTable extends Migration
             $table->id();
             $table->text('texte');
             $table->timestamps();
-     
+            $table->softDeletes();
+       
         });
     }
 
@@ -28,7 +29,9 @@ class CreateQuestionSondageTable extends Migration
      */
     public function down()
     {
-     
+        Schema::table('question_sondage', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
         Schema::dropIfExists('question_sondage');
     }
 }

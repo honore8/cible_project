@@ -43,7 +43,7 @@
                             <button class="btn btn-link" id="voir-moins2">Voir moins</button>
                         </span>
                     </p>          
-                    <a href="{{url('inscription')}}" class="btn btn-primary custom-btn btn-sm float-right text-white">Créer</a>
+                    <a href="{{route('organisateur')}}" class="btn btn-primary custom-btn btn-sm float-right text-white">Créer</a>
                 </div>
             </div>
         </div>
@@ -230,7 +230,7 @@
                           </div>
                           <div class="form-group">
                             <select name="exampleInputType" id="exampleInputType" class="form-control" style="border-radius: 20px" >
-                              <option selected > Choisir du pays</option>
+                              <option selected > Choix du pays</option>
                               <option value="Primaire">TOGO</option>
                               <option value="Collège">SENEGAL</option>
                               <option value="Lycée">BENIN</option>
@@ -303,235 +303,25 @@
             <div class="carousel-item active">
               <div class="row row-cols-1 row-cols-md-4">
                   <!-- block a dupliquer -->
+                  @foreach($commentaire as $comment)
                   <div class="col mb-3">
                       <div class="card pr-2 pl-2" style="background-color: #d1e2fc;">
                           <div class="card-body p-3">
                               <h5 class="card-title mb-1">
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  Abalo Yao
+                              @for ($i = 0; $i < $comment->note; $i++)
+                              <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
+                              @endfor
+                              
                               </h5>
                               <div class="row mb-3">
-                                  <span class="col text-left custom-card-date">01/01/2020</span>
-                                  <span class="col text-right custom-card-date">Lomé,Togo</span>
+                                  <span class="col text-left custom-card-date"></span>
+                                  <span class="col text-right custom-card-date"></span>
                               </div>
-                              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                                  additional content. This content is a little bit longer.</p>
+                              <p class="card-text">{{$comment->texte}}</p>
                           </div>
                       </div>
-                  </div>
-                  <div class="col mb-3">
-                      <div class="card pr-2 pl-2" style="background-color: #d1e2fc;">
-                          <div class="card-body p-3">
-                              <h5 class="card-title mb-1">
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  Abalo Yao
-                              </h5>
-                              <div class="row mb-3">
-                                  <span class="col text-left custom-card-date">01/01/2020</span>
-                                  <span class="col text-right custom-card-date">Lomé,Togo</span>
-                              </div>
-                              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                                  additional content. This content is a little bit longer.</p>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col mb-3">
-                      <div class="card pr-2 pl-2" style="background-color: #d1e2fc;">
-                          <div class="card-body p-3">
-                              <h5 class="card-title mb-1">
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  Abalo Yao
-                              </h5>
-                              <div class="row mb-3">
-                                  <span class="col text-left custom-card-date">01/01/2020</span>
-                                  <span class="col text-right custom-card-date">Lomé,Togo</span>
-                              </div>
-                              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                                  additional content. This content is a little bit longer.</p>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col mb-3">
-                      <div class="card pr-2 pl-2" style="background-color: #d1e2fc;">
-                          <div class="card-body p-3">
-                              <h5 class="card-title mb-1">
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  Abalo Yao
-                              </h5>
-                              <div class="row mb-3">
-                                  <span class="col text-left custom-card-date">01/01/2020</span>
-                                  <span class="col text-right custom-card-date">
-                                      Lomé,Togo</span>
-                              </div>
-                              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                                  additional content. This content is a little bit longer.</p>
-                          </div>
-                      </div>
-                  </div>
-          
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row row-cols-1 row-cols-md-4">
-                  <!-- block a dupliquer -->
-                  <div class="col mb-3">
-                      <div class="card pr-2 pl-2" style="background-color: #d1e2fc;">
-                          <div class="card-body p-3">
-                              <h5 class="card-title mb-1">
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  Abalo Yao
-                              </h5>
-                              <div class="row mb-3">
-                                  <span class="col text-left custom-card-date">01/01/2020</span>
-                                  <span class="col text-right custom-card-date">Lomé,Togo</span>
-                              </div>
-                              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                                  additional content. This content is a little bit longer.</p>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col mb-3">
-                      <div class="card pr-2 pl-2" style="background-color: #d1e2fc;">
-                          <div class="card-body p-3">
-                              <h5 class="card-title mb-1">
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  Abalo Yao
-                              </h5>
-                              <div class="row mb-3">
-                                  <span class="col text-left custom-card-date">01/01/2020</span>
-                                  <span class="col text-right custom-card-date">Lomé,Togo</span>
-                              </div>
-                              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                                  additional content. This content is a little bit longer.</p>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col mb-3">
-                      <div class="card pr-2 pl-2" style="background-color: #d1e2fc;">
-                          <div class="card-body p-3">
-                              <h5 class="card-title mb-1">
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  Abalo Yao
-                              </h5>
-                              <div class="row mb-3">
-                                  <span class="col text-left custom-card-date">01/01/2020</span>
-                                  <span class="col text-right custom-card-date">Lomé,Togo</span>
-                              </div>
-                              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                                  additional content. This content is a little bit longer.</p>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col mb-3">
-                      <div class="card pr-2 pl-2" style="background-color: #d1e2fc;">
-                          <div class="card-body p-3">
-                              <h5 class="card-title mb-1">
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  Abalo Yao
-                              </h5>
-                              <div class="row mb-3">
-                                  <span class="col text-left custom-card-date">01/01/2020</span>
-                                  <span class="col text-right custom-card-date">
-                                      Lomé,Togo</span>
-                              </div>
-                              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                                  additional content. This content is a little bit longer.</p>
-                          </div>
-                      </div>
-                  </div>
-          
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row row-cols-1 row-cols-md-4">
-                  <!-- block a dupliquer -->
-                  <div class="col mb-3">
-                      <div class="card pr-2 pl-2" style="background-color: #d1e2fc;">
-                          <div class="card-body p-3">
-                              <h5 class="card-title mb-1">
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  Abalo Yao
-                              </h5>
-                              <div class="row mb-3">
-                                  <span class="col text-left custom-card-date">01/01/2020</span>
-                                  <span class="col text-right custom-card-date">Lomé,Togo</span>
-                              </div>
-                              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                                  additional content. This content is a little bit longer.</p>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col mb-3">
-                      <div class="card pr-2 pl-2" style="background-color: #d1e2fc;">
-                          <div class="card-body p-3">
-                              <h5 class="card-title mb-1">
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  Abalo Yao
-                              </h5>
-                              <div class="row mb-3">
-                                  <span class="col text-left custom-card-date">01/01/2020</span>
-                                  <span class="col text-right custom-card-date">Lomé,Togo</span>
-                              </div>
-                              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                                  additional content. This content is a little bit longer.</p>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col mb-3">
-                      <div class="card pr-2 pl-2" style="background-color: #d1e2fc;">
-                          <div class="card-body p-3">
-                              <h5 class="card-title mb-1">
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  Abalo Yao
-                              </h5>
-                              <div class="row mb-3">
-                                  <span class="col text-left custom-card-date">01/01/2020</span>
-                                  <span class="col text-right custom-card-date">Lomé,Togo</span>
-                              </div>
-                              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                                  additional content. This content is a little bit longer.</p>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col mb-3">
-                      <div class="card pr-2 pl-2" style="background-color: #d1e2fc;">
-                          <div class="card-body p-3">
-                              <h5 class="card-title mb-1">
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
-                                  Abalo Yao
-                              </h5>
-                              <div class="row mb-3">
-                                  <span class="col text-left custom-card-date">01/01/2020</span>
-                                  <span class="col text-right custom-card-date">
-                                      Lomé,Togo</span>
-                              </div>
-                              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                                  additional content. This content is a little bit longer.</p>
-                          </div>
+                  </div>  
+                  @endforeach         
                       </div>
                   </div>        
               </div>

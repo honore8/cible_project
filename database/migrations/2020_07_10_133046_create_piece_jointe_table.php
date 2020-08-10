@@ -18,6 +18,7 @@ class CreatePieceJointeTable extends Migration
             $table->binary('piece');
             $table->timestamps();
             $table->foreignId('evenement_id')->references('id') ->on('evenement')->onDelete('cascade');
+            $table->softDeletes();
         });
     }
 
@@ -28,6 +29,9 @@ class CreatePieceJointeTable extends Migration
      */
     public function down()
     {
+        Schema::table('piece_jointe', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
         Schema::table('piece_jointe', function(Blueprint $table){
             $table->dropForeign('piece_jointe_evenement_id_foreign');
                  });

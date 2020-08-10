@@ -17,6 +17,7 @@ class CreateTypeSondageTable extends Migration
             $table->id();
             $table->string('libelle');
             $table->timestamps();
+            $table->softDeletes();
             
         });
     }
@@ -30,7 +31,9 @@ class CreateTypeSondageTable extends Migration
     public function down()
     {
        
-
+        Schema::table('type_sondage', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
         Schema::dropIfExists('type_sondage');
     }
 }
