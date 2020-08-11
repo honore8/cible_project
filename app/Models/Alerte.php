@@ -6,18 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 use SoftDeletes;
 class Alerte extends Model
 {
-    protected $table= 'alerte';
-    protected $fillable=[
-      'type','frequence'
-    ];
+    protected $table = 'alertes';
+    public $timestamps = true;
 
-    public function filtres()
-    {
-        return $this->hasMany('App\Model\Filtres');
-    }
-    public function user()
-    {
-        return $this->belongsTo('App\Model\User');
-    }
+    use SoftDeletes;
 
+    protected $dates = ['deleted_at'];
+    protected $fillable = array('email', 'ville', 'pays', 'events', 'type_event');
 }

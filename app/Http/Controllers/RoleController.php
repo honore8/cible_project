@@ -17,6 +17,7 @@ class RoleController extends Controller
  {
    
     $request->session()->put('profil', 'organisateur');
+
     
     return redirect('inscription');
  }
@@ -25,15 +26,15 @@ class RoleController extends Controller
       
     $request->session()->put('profil', 'participant');
 
-    return redirect('profil/home');
+    return redirect('inscription');
  }
 
  public function sponsor(Request $request)
  {
-      
+ 
     $request->session()->put('profil', 'sponsor');
 
-    return redirect('profil/home');
+    return redirect('inscription');
  }
 
  public function extra(Request $request)
@@ -41,14 +42,14 @@ class RoleController extends Controller
       
     $request->session()->put('profil', 'extra');
 
-    return redirect('profil/home');
+    return redirect('inscription');
  }
  public function prestataire(Request $request)
  {
       
     $request->session()->put('profil', 'prestataire');
 
-    return redirect('profil/home');
+    return redirect('inscription');
  }
 
 

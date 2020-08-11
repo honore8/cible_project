@@ -10,17 +10,13 @@ class Achat extends Model
     protected $table= 'achat';
 
 
-    public function tickets()
-    {
-        return $this->hasMany('App\Model\Ticket');
-    }
     public function user()
     {
         return $this->belongsTo('App\Model\User');
     }
-    public function evenement()
+    public function ticket()
     {
-        return $this->belongsTo('App\Model\Evenement');
+        return $this->belongsToMany('App\Model\Ticket');
     }
  
 }

@@ -1,27 +1,34 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Annonce extends Model
+class Annonce extends Model 
 {
-  protected $table='annonce';
-  protected $filable = [
-      'titre', 'contenu', 'type'
-  ];
 
-  public function user()
-  {
-      return $this->belongsTo('App\Model\User');
-  }
-  public function evenement()
-  {
-      return $this->belongsTo('App\Model\Evenement');
-  }
-  public function users()
+    protected $table = 'annonces';
+    public $timestamps = true;
+
+    use SoftDeletes;
+
+    protected $dates = ['deleted_at'];
+    protected $fillable = array('taches', 'date_limite', 'type');
+
+    public function jobers()
     {
-        return $this->belongsToMany('App\Model\User');
+        return $this->belongsToMany('Jober');
     }
-  
+
+    public function prestataires()
+    {
+        return $this->belongsToMany('Prestataire');
+    }
+
+    public function evenement()
+    {
+        return $this->belongsTo('Evenement');
+    }
+
 }

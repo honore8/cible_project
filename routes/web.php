@@ -136,6 +136,12 @@ Route::group(['prefix' => 'profil',  'middleware' => 'auth'], function()
 });
 
 Route::get('organisateur', 'RoleController@organisateur')->name('organisateur');
+Route::get('sponsor', 'RoleController@sponsor')->name('sponsor');
+Route::get('prestataire', 'RoleController@jober')->name('jober');
+Route::get('jober', 'RoleController@prestataire')->name('prestataire');
+Route::get('participant', 'RoleController@participant')->name('participant');
+Route::get('investisseur', 'RoleController@investisseur')->name('investisseur');
+
 Route::get('role', 'ProfilController@assignrole')->name('role');
 Route::get('/creer-evenement', 'AcceuilController@evenement')->name('creer-evenement');
 Auth::routes();

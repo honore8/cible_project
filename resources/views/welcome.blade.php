@@ -91,7 +91,7 @@
                         <button class="btn btn-link" id="voir-moins4">Voir moins</button>
                         </span>
                     </p>          
-                    <a href="{{Url('inscription')}}" class="btn btn-primary custom-btn btn-sm float-right text-white">S'inscrire</a>
+                    <a href="{{route('sponsor')}}" class="btn btn-primary custom-btn btn-sm float-right text-white">S'inscrire</a>
                 </div>
             </div>
         </div>
@@ -111,7 +111,7 @@
                         <button class="btn btn-link" id="voir-moins5">Voir moins</button>
                         </span>
                     </p>          
-                    <a href="{{Url('inscription')}}" class="btn btn-primary custom-btn btn-sm float-right text-white">S'inscrire</a>
+                    <a href="{{Url('prestataire')}}" class="btn btn-primary custom-btn btn-sm float-right text-white">S'inscrire</a>
                 </div>
             </div>
         </div>
@@ -131,7 +131,7 @@
                         <button class="btn btn-link" id="voir-moins6">Voir moins</button>
                         </span>
                     </p>          
-                    <a href="{{Url('inscription')}}" class="btn btn-primary custom-btn btn-sm float-right text-white">S'inscrire</a>
+                    <a href="{{Url('jober')}}" class="btn btn-primary custom-btn btn-sm float-right text-white">S'inscrire</a>
                 </div>
             </div>
         </div>
@@ -157,7 +157,7 @@
                         <button class="btn btn-link" id="voir-moins7">Voir moins</button>
                         </span>
                     </p>          
-                    <a href="{{Url('inscription')}}" class="btn btn-primary custom-btn btn-sm float-right text-white">S'inscrire</a>
+                    <a href="{{Url('investisseur')}}" class="btn btn-primary custom-btn btn-sm float-right text-white">S'inscrire</a>
                 </div>
             </div>
         </div>

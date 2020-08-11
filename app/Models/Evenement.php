@@ -1,47 +1,64 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use SoftDeletes;
-class Evenement extends Model
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class Evenement extends Model 
 {
-    protected $table='evenement';
-    protected $guarded=[
-        'signaler', 'user_id'
-    ];
 
+    protected $table = 'evenements';
+    public $timestamps = true;
 
-    protected $attributes = [
-        'prive' => false,
-        'professionnel' => false,
-        'social' => false,
-        'communication' => false,
-        'signaler' => false,
-        'public' => false,
-    ];
+    use SoftDeletes;
 
-    public function user()
+    protected $dates = ['deleted_at'];
+    protected $fillable = array('type_event', 'description', 'pays', 'adresse');
+
+    public function tickets()
     {
-        return $this->belongsTo('App\Model\User');
-    }
-    public function piece_jointes()
-    {
-        return $this->hasMany('App\Model\Piece_jointe');
-    }
-    public function question_faqs()
-    {
-        return $this->hasMany('App\Model\question_faq');
+        return $this->hasMany('Ticket');
     }
 
-    public function sondages()
+    public function organisateur()
     {
-        return $this->hasMany('App\Model\Sondage');
+        return $this->belongsTo('Organisateur');
     }
 
-    public function users()
+    public function prestataires()
     {
-        return $this->belongsToMany('Users')
-        ->as('travailler');
+        return $this->belongsToMany('Prestataire');
     }
+
+    public function jobers()
+    {
+        return $this->belongsToMany('Jober');
+    }
+
+    public function sondage()
+    {
+        return $this->hasOne('Sondage');
+    }
+
+    public function annonces()
+    
+        return $this->hasMany('Annonce');
+    }
+
+    public function sponsors()
+    {
+        return $this->belongsToMany('Sponsor');
+    }
+
+    public function demande_de_sponsorings()
+    {
+        return $this->hasMany('Demande_de_sponsoring');
+    }
+
+    public function transfert()
+    {
+        return $this->hasOne('Transfert');
+    }
+
 }

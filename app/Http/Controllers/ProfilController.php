@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Entreprise;
-use App\Models\Personne;
+use App\Models\Particulier;
 use Spatie\Permission\Traits\HasRoles;
+use App\Models\User;
 use Auth;
 class ProfilController extends Controller{
 
@@ -17,13 +18,15 @@ public function __construct()
 }
 
 public function assignRole(Request $request)
- {auth()->user()->assignRole($request->session()->get('profil'));}
+ {auth()->user()->assignRole($request->session()->get('profil'));
+    return redirect('/profil/home');
+}
 
 
     public function index()
     {
         
-        if(!(Personne::whereHas('User') and (Entreprise::WhereHas('User'))))
+        if(!(Particulier::has('user')and (Entreprise::has('user'))))
         {
         if (auth()->user()->hasrole('participant'))
          return view('profile-individu');
@@ -47,6 +50,8 @@ public function assignRole(Request $request)
             return redirect('sous-traiteurs.menu');
             else if ( auth()->user()->hasRole('investisseur'))
             return redirect('investisseur.menu');
+       
+           
         
         }
       
@@ -105,7 +110,7 @@ public function assignRole(Request $request)
                         ->withErrors($validator);
         }
         else{
-         $personne= Personne::create($request->all());
+         $personne= Particulier::create($request->all());
           $personne->associate(auth()->user());
         }
 

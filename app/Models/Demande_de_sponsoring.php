@@ -5,25 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Ticket extends Model 
+class Demande_de_sponsoring extends Model 
 {
 
-    protected $table = 'tickets';
+    protected $table = 'demande_sponsorings';
     public $timestamps = true;
 
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
-    protected $fillable = array('type', 'cout', 'description');
+    protected $fillable = array('avantages', 'besoins', 'date_limite', 'contact', 'beneficiaires');
 
     public function evenement()
     {
         return $this->belongsTo('Evenement');
-    }
-
-    public function achat()
-    {
-        return $this->belongsTo('Achat');
     }
 
 }

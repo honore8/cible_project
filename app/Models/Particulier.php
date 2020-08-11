@@ -4,20 +4,18 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Models\User;
 
 
-class Entreprise extends Model 
+class Particulier extends Model 
 {
-    
 
-    protected $table = 'entreprises';
+    protected $table = 'particuliers';
     public $timestamps = true;
 
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
-    protected $fillable = array('raison_sociale', 'annee_creation', 'url_piece');
+    protected $fillable = array('nom', 'prenom', 'date_nais', 'genre', 'profession', 'situation_mat');
 
     public function user()
     {

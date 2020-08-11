@@ -911,7 +911,7 @@ position: fixed;">
               <p><i class="fas fa-check propos"></i> Sélectionnez <b> "Décliner"</b> ci-dessous si vous voulez faire directement votre paiement sans vous inscrire.</p> 
             </div>
             <div class="modal-footer">            
-              <a class="btn btn-primary" href="{{Url('inscription')}}" style="background-color: #020e49 ; border-color: #020e49">S'incrire</a>
+              <a class="btn btn-primary" href="{{route('participant')}}" style="background-color: #020e49 ; border-color: #020e49">S'incrire</a>
               <a class="btn btn-secondary bg-white" href="{{Url('payer')}}"  style="border-color: #020e49; color:#020e49">Décliner</a> 
               {{-- <a type="button" class="btn btn-secondary bg-white" href="{{Url('payer')}}" data-dismiss="modal" style="border-color: #020e49; color:#020e49"> Décliner</a> --}}
             </div>
