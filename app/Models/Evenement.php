@@ -69,4 +69,9 @@ class Evenement extends Model
     {
         return $this->hasMany('App\Models\Objet');
     }
+
+    public function achats()
+    {
+        return $this->hasManyThrough('App\Models\Achat', 'App\Models\Ticket');
+    }
 }

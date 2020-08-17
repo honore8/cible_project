@@ -4,12 +4,12 @@ use App\Models\Ticket;
 use Illuminate\Support\Facades\DB;
 
 
-class LieuRepository implements TransfertRepositoryInterface{
+class LieuRepository implements TicketRepositoryInterface{
 
-public function all($id)
+public function find_event($id)
 {
-    $users = DB::table('transfert')
-            ->where('user_id','=', $id);
+    return Ticket::where('evenement_id','=', $id)
+    ->groupby('type');
 }
 
 }

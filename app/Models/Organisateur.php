@@ -41,4 +41,10 @@ class Organisateur extends Model
         return $this->hasMany('Demande_vente_investissement');
     }
 
+
+    public function transferts()
+    {
+        return $this->hasManyThrough('App\Models\Transfert', 'App\Models\Evenement');
+    }
+
 }
