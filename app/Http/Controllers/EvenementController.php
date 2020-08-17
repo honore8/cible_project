@@ -24,7 +24,7 @@ class EvenementController extends Controller
 for($i=o; i<$request->date.count();$i++)
 array_push($dates,$request->date[i].'|'.$request->heure_deb[i].'|'.$request->heure_fin[i]);
 
-    
+       $request->date=implodes("|", $dates);
        $request->acteurs_principaux= implode("|", $request->acteurs_principaux);
        $request->invites_speciaux= implode("|", $request->invites_speciaux);
 
@@ -69,6 +69,6 @@ array_push($dates,$request->date[i].'|'.$request->heure_deb[i].'|'.$request->heu
          $event = Evenement::find($id);
          $acteurs_principaux=explode('|', $request->acteurs_principaux);
          $invites_speciaux= explode('|', $request->invites_speciaux);
-         
+         $dates = explode('|')
     }
 }
