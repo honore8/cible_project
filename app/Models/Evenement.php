@@ -41,7 +41,7 @@ class Evenement extends Model
         return $this->hasOne('Sondage');
     }
 
-    public function annonces()
+    public function annonces(){
     
         return $this->hasMany('Annonce');
     }
@@ -60,5 +60,13 @@ class Evenement extends Model
     {
         return $this->hasOne('Transfert');
     }
+     public function ressources()
+     {
+         return $this->hasMany('App\Models\Ressources');
+     }
 
+     public function objets()
+    {
+        return $this->hasMany('App\Models\Objet');
+    }
 }

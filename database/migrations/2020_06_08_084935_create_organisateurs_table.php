@@ -14,6 +14,7 @@ class CreateOrganisateursTable extends Migration {
 			$table->text('valeurs')->nullable();
 			$table->longText('conditions_paiement')->nullable();
 			$table->text('pourquoi_vous');
+			$table->text("materiel");
 			$table->timestamps();
 			$table->softDeletes();
 			$table->foreignId('user_id')->references('id')->on('users');

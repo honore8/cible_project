@@ -20,8 +20,8 @@ class CreateInvestisseursTable extends Migration {
 
 	public function down()
 	{
-		 Schema::table('investisseurs', function(Blueprint $table){
-            $table->dropForeign('investisseur_user_id_foreign');
+		Schema::table('investisseurs', function(Blueprint $table){
+			$table->dropSoftDeletes();
                  });
 		Schema::drop('investisseurs');
 		

@@ -22,10 +22,7 @@ class CreateDemandeVenteInvestisssementsTable extends Migration {
 	}
 
 	public function down()
-	{  Schema::table('demande_vente_investisssements', function(Blueprint $table){
-            $table->dropForeign('demande_vente_investisssement_organisateur_id_foreign');
-				 });
-	
+	{  
 		Schema::table('demande_vente_investisssements', function(Blueprint $table){
 			$table->dropSoftDeletes();
                  });			 

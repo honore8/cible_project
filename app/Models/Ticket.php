@@ -26,4 +26,9 @@ class Ticket extends Model
         return $this->belongsTo('Achat');
     }
 
+    public function reventes()
+    {
+        return $this->belongsToMany('App\Models\Revente')->withPivot(['nombre','prix']);
+    }
+
 }

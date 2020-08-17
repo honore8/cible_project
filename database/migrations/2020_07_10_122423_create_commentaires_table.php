@@ -33,9 +33,7 @@ class CreateCommentairesTable extends Migration
         Schema::table('commentaires', function (Blueprint $table) {
             $table->dropSoftDeletes();
         });
-        Schema::table('commentaires', function(Blueprint $table){
-            $table->dropForeign('commentaire_user_id_foreign');
-                 });
+   
                  
         Schema::dropIfExists('commentaires');
     }

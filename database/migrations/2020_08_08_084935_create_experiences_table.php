@@ -26,8 +26,8 @@ class CreateExperiencesTable extends Migration {
 	public function down()
 	{
 		
-		 Schema::table('experiences', function(Blueprint $table){
-            $table->dropForeign('experience_user_id_foreign');
+		Schema::table('experiences', function(Blueprint $table){
+			$table->dropSoftDeletes();
                  });
 		Schema::drop('experiences');
 	}

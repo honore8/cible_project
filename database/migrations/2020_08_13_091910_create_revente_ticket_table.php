@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAchatTicketTable extends Migration
+class CreateReventeTicketTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateAchatTicketTable extends Migration
      */
     public function up()
     {
-        Schema::create('achat_ticket', function (Blueprint $table) {
+        Schema::create('revente_ticket', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('achat_id')->references('id')->on('achats');
+            $table->foreignId('revente_id')->references('id')->on('reventes');
             $table->foreignId('ticket_id')->references('id')->on('tickets');
+            $table->decimal('prix', 10,2);
             $table->timestamps();
             $table->softDeletes();
-            
         });
     }
 
@@ -30,13 +30,10 @@ class CreateAchatTicketTable extends Migration
      */
     public function down()
     {
-        
-        
-		Schema::table('achat_ticket', function(Blueprint $table){
+        Schema::table('revente_ticket', function(Blueprint $table){
 			$table->dropSoftDeletes();
                  });
-		
-        Schema::dropIfExists('achat_ticket');
         
+        Schema::dropIfExists('revente_ticket');
     }
 }

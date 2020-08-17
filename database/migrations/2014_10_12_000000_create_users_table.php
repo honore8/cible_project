@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
-            $table->string('critere_pays')->nullable();
+            $table->text('critere_pays')->nullable();
             $table->enum('type_event', array('gratuit', 'payant'))->nullable();
             $table->text('categorie_event')->nullable();
             $table->string('ville')->nullable();
@@ -45,8 +45,6 @@ class CreateUsersTable extends Migration
             $table->dropSoftDeletes();
         });
         Schema::dropIfExists('users');
-        Schema::table('users', function(Blueprint $table){
-            $table->dropForeign('user_lieux_id_foreign');
-                 });
+     
     }
 }

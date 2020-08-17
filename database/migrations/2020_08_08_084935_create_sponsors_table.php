@@ -24,9 +24,7 @@ class CreateSponsorsTable extends Migration {
 		Schema::table('sponsors', function(Blueprint $table){
 			$table->dropSoftDeletes();
                  });
-		 Schema::table('sponsors', function(Blueprint $table){
-            $table->dropForeign('sponsor_user_id_foreign');
-                 });
+	
 		Schema::dropIfExists('sponsors');
 		
 	}

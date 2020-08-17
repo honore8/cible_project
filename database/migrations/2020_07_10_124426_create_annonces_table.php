@@ -43,17 +43,7 @@ class CreateAnnoncesTable extends Migration
         Schema::table('annonces', function (Blueprint $table) {
             $table->dropSoftDeletes();
         });
-        Schema::table('annonces', function(Blueprint $table){
-            $table->dropForeign('annonce_jober_id_foreign');
-                 });
-				 
-		  Schema::table('annonces', function(Blueprint $table){
-            $table->dropForeign('annonce_evenement_id_foreign');
-                 });
-        Schema::table('annonces', function(Blueprint $table){
-            $table->dropForeign('annonce_prestataire_id_foreign');
-                 });
-      
+
       
         Schema::dropIfExists('annonces');
     }

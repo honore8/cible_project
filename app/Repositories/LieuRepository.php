@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 class LieuRepository implements LieuRepositoryInterface{
 public function store(Array $inputs)
 {
+    $lieu= new Lieu();
     $lieu->pays=inputs['pays'];
     $lieu->code=inputs['code'];
 

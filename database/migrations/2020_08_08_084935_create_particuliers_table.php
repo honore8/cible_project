@@ -29,8 +29,6 @@ class CreateParticuliersTable extends Migration {
 		Schema::table('particuliers', function (Blueprint $table) {
             $table->dropSoftDeletes();
         });
-		Schema::table('particuliers', function(Blueprint $table){
-            $table->dropForeign('particulier_user_id_foreign');
-                 });
+
 	}
 }

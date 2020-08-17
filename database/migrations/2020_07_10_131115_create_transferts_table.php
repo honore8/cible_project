@@ -34,10 +34,7 @@ class CreateTransfertsTable extends Migration
         Schema::table('transferts', function (Blueprint $table) {
             $table->dropSoftDeletes();
         });
-        Schema::table('transferts', function(Blueprint $table){
-            $table->dropForeign('transfert_evenement_id_foreign');
-                 });
-     
+  
         Schema::dropIfExists('transferts');
     }
 }

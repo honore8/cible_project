@@ -13,10 +13,16 @@ class CreateUserSondageTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_sondage_', function (Blueprint $table) {
+        Schema::create('user_sondage', function (Blueprint $table) {
             $table->id();
             $table->foreignId('sondage_id')->references('id')->on('sondages');
             $table->foreignId('user_id')->references('id')->on('users');
+            $table->string('reponse1');
+            $table->string('reponse2');
+            $table->string('reponse3');
+            $table->string('reponse4');
+            $table->string('reponse5');
+            $table->date('date');
             $table->softDeletes();     
             $table->timestamps();
         });

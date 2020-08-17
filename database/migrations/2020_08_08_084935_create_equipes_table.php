@@ -20,9 +20,9 @@ class CreateEquipesTable extends Migration {
 	}
 
 	public function down()
-	{  Schema::table('equipes', function(Blueprint $table){
-          $table->dropForeign('equipe_organisateur_id_foreign');
-                 });
+	{  	Schema::table('equipes', function(Blueprint $table){
+		$table->dropSoftDeletes();
+			 });;
 		Schema::drop('equipes');
 	}
 }

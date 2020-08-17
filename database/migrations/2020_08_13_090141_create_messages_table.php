@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSondagesTable extends Migration
+class CreateMessagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateSondagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('sondages', function (Blueprint $table) {
+        Schema::create('messages', function (Blueprint $table) {
             $table->id();
-            $table->date('date');
+            $table->text('texte');
+            $table->foreignId('sender_id')->references('id')->on('users');
+            $table->foreignId('receiver_id')->references('id')->on('users');
             $table->timestamps();
-            $table->foreignId('evenement_id')->references('id') ->on('evenements');
             $table->softDeletes();
         });
     }
@@ -29,10 +30,10 @@ class CreateSondagesTable extends Migration
      */
     public function down()
     {
-        Schema::table('sondages', function (Blueprint $table) {
-            $table->dropSoftDeletes();
-        });
-    
-        Schema::dropIfExists('sondages');
+        Schema::table('messages', function(Blueprint $table){
+			$table->dropSoftDeletes();
+                 });
+        
+        Schema::dropIfExists('messages');
     }
 }

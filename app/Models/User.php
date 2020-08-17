@@ -79,4 +79,22 @@ class User extends Authenticatable
         return $this->hasOne('Particulier');
     }
 
+    public function vendre()
+    {
+        return $this->hasMany('App\Model\Ticket');
+    }
+
+    public function acheter()
+    {
+        return $this->hasMany('App\Model\Ticket');
+    }
+    public function envoyer()
+    {
+        return $this->hasMany('App\Model\Message');
+    }
+    public function recevoir()
+    {
+        return $this->hasMany('App\Model\Message');
+    }
+
 }

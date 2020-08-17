@@ -25,9 +25,7 @@ class CreateDemandeSponsoringsTable extends Migration {
 	public function down()
 	{
 		          
-        Schema::table('demande_sponsorings', function(Blueprint $table){
-                    $table->dropForeign('demande_sponsoring_evenement _id_foreign');
-						 });
+      
 		Schema::table('demande_sponsorings', function(Blueprint $table){
 			$table->dropSoftDeletes();
                  });

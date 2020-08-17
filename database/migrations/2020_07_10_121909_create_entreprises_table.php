@@ -36,10 +36,7 @@ class CreateEntreprisesTable extends Migration
         Schema::table('entreprises', function (Blueprint $table) {
             $table->dropSoftDeletes();
         });
-        Schema::table('entreprises', function(Blueprint $table){
-            $table->dropForeign('entreprise_user_id_foreign');
-                 });
-                 
+       
         Schema::dropIfExists('entreprises');
     }
 }

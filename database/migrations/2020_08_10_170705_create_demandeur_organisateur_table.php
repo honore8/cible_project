@@ -32,6 +32,7 @@ class CreateDemandeurOrganisateurTable extends Migration
         Schema::table('demandeur_organisateur', function(Blueprint $table){
 			$table->dropSoftDeletes();
                  });
+        
         Schema::dropIfExists('demandeur_organisateur');
     }
 }

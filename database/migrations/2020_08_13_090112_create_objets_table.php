@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEvenementPrestataireTable extends Migration
+class CreateObjetsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateEvenementPrestataireTable extends Migration
      */
     public function up()
     {
-        Schema::create('evenement_prestataire', function (Blueprint $table) {
+        Schema::create('objets', function (Blueprint $table) {
             $table->id();
+            $table->text('description');
+            $table->enum('type', ['perdu', 'trouve']);
+            $table->text('informations__declarant');
+            $table->foreignId('declarant_id')->references('id')->on('users');
             $table->foreignId('evenement_id')->references('id')->on('evenements');
-            $table->foreignId('prestataire_id')->references('id')->on('prestataires');
-            $table->integer('note');
-            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -30,10 +31,11 @@ class CreateEvenementPrestataireTable extends Migration
      */
     public function down()
     {
-        Schema::table('evenement_prestataire', function(Blueprint $table){
+        Schema::table('objets', function(Blueprint $table){
 			$table->dropSoftDeletes();
                  });
         
-        Schema::dropIfExists('evenement_prestataire');
+
+        Schema::dropIfExists('objets');
     }
 }

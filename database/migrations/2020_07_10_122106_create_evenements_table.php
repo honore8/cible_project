@@ -19,15 +19,19 @@ class CreateEvenementsTable extends Migration
 			$table->text('acteurs_principaux');
 			$table->enum('type_event', array('gratuit', 'payant'));
 			$table->longText('description');
-			$table->enum('statut', array('reporté', 'annulé'));
-			$table->string('url_doc');
+			$table->enum('statut', array('reporté', 'annulé'))->nullable();
+			$table->string('url_doc')->nullable();
 			$table->string('url_image');
-			$table->longText('importance');
+            $table->longText('importance');
+            $table->longText('categorie_event');
 			$table->text('invites_speciaux');
-			$table->boolean('colation')->nullable();
-			$table->string('pays');
+            $table->boolean('colation')->nullable();
+            $table->string('pays');
 			$table->string('ville');
-			$table->string('adresse');
+            $table->string('adresse');
+            $table->boolean('signaler')->default(false);
+            $table->boolean('public')->default(false);
+            $table->binary('localisation');
 			$table->timestamps();
 			$table->softDeletes();
 			$table->foreignId('organisateur_id')->references('id')->on('organisateurs');
@@ -46,9 +50,7 @@ class CreateEvenementsTable extends Migration
         Schema::table('evenements', function (Blueprint $table) {
             $table->dropSoftDeletes();
         });
-        Schema::table('evenements', function(Blueprint $table){
-            $table->dropForeign('evenement_organisateur_id_foreign');
-                 });
+     
                  
         Schema::dropIfExists('evenements');
     }
