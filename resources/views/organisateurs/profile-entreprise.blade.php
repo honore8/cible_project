@@ -1,3 +1,6 @@
+@php
+    $Var = "Profil professionnel organisateur";
+@endphp
 @extends('organisateurs.model-organisateurs-account')
 @section('content-2')
 <h3 class="text-center mt-4">Completer votre profil</h3>

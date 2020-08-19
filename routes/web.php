@@ -1,5 +1,6 @@
 <?php
 
+use App\Evenement;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -94,14 +95,23 @@ Route::view('jobs-annonce','jobs.annonce');
 Route::view('menu','organisateurs.model-organisateurs-account');
 Route::view('organisateurs-individu','organisateurs.profile-individu');
 Route::view('organisateurs-entreprise','organisateurs.profile-entreprise');
+Route::view('profile','organisateurs.profile-organisateurs');
 Route::view('liste','organisateurs.liste');
 Route::view('sponsoring','organisateurs.sponsoring');
 Route::view('organisateurs-annonce','organisateurs.annonces');
-Route::view('evenement-organisateur','organisateurs.evenement-organisateur');
+Route::view('evenement-organisateurs','organisateurs.evenement-organisateurs');
 Route::view('prix-organisateur','organisateurs.liste-paiement');
-
-
+Route::view('agence-vente','organisateurs.vendre-agence');
+// Route::view('page-evenement','organisateurs.page-evenement');
 Route::get('/creer-evenement', 'AcceuilController@evenement')->name('creer-evenement');
+Route::get('/page-evenement', 'AcceuilController@page')->name('page-evenement');
+
+
+
+
+
+
+
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();

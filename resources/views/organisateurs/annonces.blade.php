@@ -1,6 +1,6 @@
 @extends('organisateurs.model-organisateurs-account')
 @section('content-2')           
-              <div class=" container col-10 register">
+              <div class=" container col-10 register" style="margin-left: 220px">
                       <div class="row">
                               <div class="col-12">
                                 <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
@@ -108,7 +108,7 @@
                                                    </div>
                                               </div>
                                               
-                                              <div class="tab-pane fade show text-align form-new" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                              <div class="tab-pane fade show text-align form-new" id="profile" role="tabpanel" aria-labelledby="profile-tab" style="margin-top: -13%">
                                                       <h3   class="register-heading text-lg-center"></h3>
                                                       <div class="row register-form">
                                                               <div class="col-12">

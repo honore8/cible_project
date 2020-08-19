@@ -2,7 +2,7 @@
 @section('content-2')
 <div class="container">
     <br><br>
-   <div class="row">
+   <div class="row" style="margin-top: 7%;margin-left:150px">
     <div class="col mb-4">
         <div class="card custom-card">
             <div class="card-header  text-center  "><h2 style="color:  #020e49 ">Agences évènentielles </h2> </div>

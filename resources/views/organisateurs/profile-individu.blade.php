@@ -1,8 +1,10 @@
+@php
+    $Var = "Profil particulier organisateur";
+@endphp
 @extends('organisateurs.model-organisateurs-account')
 @section('content-2')
 <h3 class="text-center mt-4">Completer votre profil</h3>
-     <div class="formulaire d-flex justify-content-center">
-       
+     <div class="formulaire d-flex justify-content-center">      
       <form method="post" action="">  
         @csrf
 <div class="row mt-5 container">

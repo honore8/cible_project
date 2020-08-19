@@ -1,7 +1,4 @@
-{{-- 
-@php
-$Var = "Profil organisateurs";
-@endphp --}}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,18 +6,18 @@ $Var = "Profil organisateurs";
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link rel="icon" type="image/png" href="{{url('images\favicon1.png')}}">
+<link rel="icon" type="image/png" href="<?php echo e(url('images\favicon1.png')); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>CIBLE | {{ $Var ?? ''}}</title> 
+<title>CIBLE | <?php echo e($Var ?? ''); ?></title> 
 <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 <link href="css/sb-admin-2.min.css" rel="stylesheet">
 <link href="vendor\datatables\dataTables.bootstrap4.min.css" rel="stylesheet">  
-<link rel="stylesheet" href="{{asset('select\select2.min.css')}}">
-<link rel="stylesheet" href="{{asset('bootstrap-4.5.0-dist/css/bootstrap.min.css')}}">
-<link rel="stylesheet" href="{{asset('css\style.css')}}">
-<link rel="stylesheet" href="{{asset('css\chosen.css')}}"> 
+<link rel="stylesheet" href="<?php echo e(asset('select\select2.min.css')); ?>">
+<link rel="stylesheet" href="<?php echo e(asset('bootstrap-4.5.0-dist/css/bootstrap.min.css')); ?>">
+<link rel="stylesheet" href="<?php echo e(asset('css\style.css')); ?>">
+<link rel="stylesheet" href="<?php echo e(asset('css\chosen.css')); ?>"> 
 </head>
 <body id="page-top">
 <div id="wrapper">
@@ -34,14 +31,14 @@ $Var = "Profil organisateurs";
   </a>
   <hr class="sidebar-divider my-0">
   <li class="nav-item">
-    <a class="nav-link" href="{{Url('/')}}">
+    <a class="nav-link" href="<?php echo e(Url('/')); ?>">
       <i class="fas fa-fw fa-tachometer-alt"></i>
       <span>Acceuil</span></a>
   </li>
   <!-- Divider -->
   <hr class="sidebar-divider">
   <li class="nav-item active">
-    <a class="nav-link" href="{{Url('creer-evenement')}}">
+    <a class="nav-link" href="<?php echo e(Url('creer-evenement')); ?>">
       <i class="fas fa-fw fa-tachometer-alt"></i>
       <span>Créer un évènement</span></a>
   </li>
@@ -56,39 +53,39 @@ $Var = "Profil organisateurs";
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
         <h6 class="collapse-header">Interface évènements:</h6>
-        <a class="collapse-item" href="{{Url('evenement-organisateurs')}}">Participer</a>
-        <a class="collapse-item" href="{{url('liste')}}">Liste des évènements</a>
+        <a class="collapse-item" href="<?php echo e(Url('evenement-organisateurs')); ?>">Participer</a>
+        <a class="collapse-item" href="<?php echo e(url('liste')); ?>">Liste des évènements</a>
       </div>
     </div>
   </li>
   <hr class="sidebar-divider">
   <li class="nav-item">
-    <a class="nav-link" href="{{url('organisateurs-annonce')}}">
+    <a class="nav-link" href="<?php echo e(url('organisateurs-annonce')); ?>">
       <i class="fas fa-fw fa-chart-area"></i>
       <span>Annonces</span></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="{{url('commentaire')}}" >
+    <a class="nav-link" href="<?php echo e(url('commentaire')); ?>" >
       <i class="fas fa-fw fa-chart-area"></i>
       <span>Ajouter un commentaire</span></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="{{url('prix-organisateur')}}">
+    <a class="nav-link" href="<?php echo e(url('prix-organisateur')); ?>">
       <i class="fas fa-fw fa-table"></i>
       <span>Historiques des paiements</span></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="{{url('sponsoring')}}">
+    <a class="nav-link" href="<?php echo e(url('sponsoring')); ?>">
       <i class="fas fa-fw fa-table"></i>
       <span>Sponsoring</span></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="{{url('agence-vente')}}">
+    <a class="nav-link" href="<?php echo e(url('agence-vente')); ?>">
       <i class="fas fa-fw fa-table"></i>
       <span>Vendre une agence</span></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="{{url('http://aprocrowd.aprojet.org')}}" target="blank"> 
+    <a class="nav-link" href="<?php echo e(url('http://aprocrowd.aprojet.org')); ?>" target="blank"> 
       <i class="fas fa-fw fa-table"></i>
       <span>Levez de fonds</span></a>
   </li>
@@ -173,17 +170,17 @@ $Var = "Profil organisateurs";
     <!-- Nav Item - User Information -->
     <li class="nav-item dropdown no-arrow">
       <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        {{-- <span class="mr-2 d-none d-lg-inline text-gray-600 small">Rosemonde</span> --}}
-        {{-- <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60"> --}}
+        
+        
         <span class="mr-2 d-none d-lg-inline text-gray-600 small"><i class="fa fa-user" aria-hidden="true">   AWESSO Diane</i></span>
       </a>
       <!-- Dropdown - User Information -->
       <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-        <a class="dropdown-item" href="{{url('organisateurs-individu')}}">
+        <a class="dropdown-item" href="<?php echo e(url('organisateurs-individu')); ?>">
           <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
           Profile
         </a>
-        <a class="dropdown-item" href="{{url('profile')}}">
+        <a class="dropdown-item" href="<?php echo e(url('profile')); ?>">
           <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
           Profile Organisateurs
         </a>
@@ -205,7 +202,7 @@ $Var = "Profil organisateurs";
 <!-- End of Topbar -->
 <!-- End of Topbar -->
 <div class="container-fluid">
-  @yield('content-2')
+  <?php echo $__env->yieldContent('content-2'); ?>
 </div>
 <!-- Begin Page Content -->
 
@@ -262,12 +259,12 @@ $Var = "Profil organisateurs";
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
   <script src="vendor/chart.js/Chart.min.js"></script>
-  <script src="{{asset('jquery\jquery.js')}}" integrity=""></script>
-  <script src="{{asset('jquery\chosen.jquery.js')}}" integrity=""></script>
+  <script src="<?php echo e(asset('jquery\jquery.js')); ?>" integrity=""></script>
+  <script src="<?php echo e(asset('jquery\chosen.jquery.js')); ?>" integrity=""></script>
   <script src="js/demo/chart-pie-demo.js"></script>
-  <script src="{{asset('docsupport/prism.js')}}" type="text/javascript" charset="utf-8"></script>
-  <script src=" {{asset('docsupport/init.js')}}" type="text/javascript" charset="utf-8"></script>
-  <script src=" {{asset('select\select2.min.js')}}" type="text/javascript" charset="utf-8"></script> 
+  <script src="<?php echo e(asset('docsupport/prism.js')); ?>" type="text/javascript" charset="utf-8"></script>
+  <script src=" <?php echo e(asset('docsupport/init.js')); ?>" type="text/javascript" charset="utf-8"></script>
+  <script src=" <?php echo e(asset('select\select2.min.js')); ?>" type="text/javascript" charset="utf-8"></script> 
   <script src="vendor/datatables/jquery.dataTables.min.js"></script>
   <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
   <script src="js/demo/datatables-demo.js"></script>
@@ -286,3 +283,4 @@ $Var = "Profil organisateurs";
   });
 </script>
 </html>
+<?php /**PATH C:\laragon\www\Cible\cible_project1\resources\views/organisateurs/model-organisateurs-account.blade.php ENDPATH**/ ?>

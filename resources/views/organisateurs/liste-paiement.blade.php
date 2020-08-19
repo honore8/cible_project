@@ -2,14 +2,14 @@
 @section('content-2')
 
         <!-- Topbar -->
-        <div class="container-fluid">
+        <div class="container-fluid" style="margin-left: 220px">
 
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-gray-800">Tableau de bord</h1>
           <p class="mb-4"></a>.</p>
 
           <!-- DataTales Example -->
-          <div class="card shadow mb-4">
+          <div class="card shadow mb-4" style="width: 1293px">
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary">Liste des paiements</h6>
             </div>

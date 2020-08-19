@@ -38,6 +38,14 @@ protected $commentaires, $lieux;
     return view('organisateurs.evenement', ['pays'=>$pays]);
 
     }
+    public function page ()
+    {
+
+        $pays = Country::all();
+       
+    return view('organisateurs.page-evenement', ['pays'=>$pays]);
+
+    }
     
     public function connexion ()
     {

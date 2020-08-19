@@ -32,17 +32,16 @@
                
                     <input  id="password" type="password" placeholder="Mot de passe "class=" form-control form-control-user @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
-@error('password')
-    <span class="invalid-feedback" role="alert">
-        <strong>{{ $message }}</strong>
-    </span>
-@enderror
+                  @error('password')
+                      <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                      </span>
+                  @enderror
                   </div>
                   <div class="col-sm-6">
                     <input  class="form-control form-control-user" id="password-confirm" type="password" placeholder="Confirmez " name="password_confirmation" required autocomplete="new-password">
                   </div>
                 </div>
-                <label for="">Votre mot de passe doit contenir au moins 6 caractères.</label>
                 <div class="form-group">
                   <div class="custom-control custom-checkbox small">
                     <input type="checkbox" class="custom-control-input" id="customCheck">

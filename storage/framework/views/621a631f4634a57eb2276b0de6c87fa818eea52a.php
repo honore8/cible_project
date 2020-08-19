@@ -1,10 +1,11 @@
-@php
-    $Var = "Evènement organisateurs";
-@endphp
-@extends('organisateurs.model-organisateurs-account')
-@section('content-2') 
+<?php
+    $Var = "Evènement";
+?>
+
+<?php $__env->startSection('content'); ?>
 <br>
-<div class="row justify-content-end ">
+<div class="row justify-content-end " style="z-index: 9999;
+position: fixed;">
 <nav aria-label="Page navigation example" class="col-4">
   <ul class="pagination ">
     <li class="page-item">
@@ -39,7 +40,7 @@
     <div class="col mb-4">
       <div class="card card-cascade narrower">
         <div class="view view-cascade overlay">
-          <img src="{{asset('images\imagecolor.jpg')}}" class="card-img-top"
+          <img src="<?php echo e(asset('images\imagecolor.jpg')); ?>" class="card-img-top"
             alt="narrower">
           <a>
             <div class="mask rgba-white-slight"></div>
@@ -55,8 +56,8 @@
             <div class="form-group row ">
                 <div class="col-sm-12 d-flex">
                     <div class="mx-auto"> 
-                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Investir</a>
-                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
+                      <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" data-toggle="modal" data-target="#evenementModal" class="">Réserver</a> </button>
+                      <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
                     </div>                  
                 </div>                     
               </div>
@@ -66,7 +67,7 @@
     <div class="col mb-4">
         <div class="card card-cascade narrower">
           <div class="view view-cascade overlay">
-            <img src="{{asset('images\imagecolor.jpg')}}" class="card-img-top"
+            <img src="<?php echo e(asset('images\imagecolor.jpg')); ?>" class="card-img-top"
               alt="narrower">
             <a>
               <div class="mask rgba-white-slight"></div>
@@ -82,8 +83,8 @@
               <div class="form-group row ">
                   <div class="col-sm-12 d-flex">
                       <div class="mx-auto"> 
-                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Réserver</a>
-                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
+                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
+                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
                       </div>                  
                   </div>                     
                 </div>
@@ -93,7 +94,7 @@
       <div class="col mb-4">
         <div class="card card-cascade narrower">
           <div class="view view-cascade overlay">
-            <img src="{{asset('images\imagecolor.jpg')}}" class="card-img-top"
+            <img src="<?php echo e(asset('images\imagecolor.jpg')); ?>" class="card-img-top"
               alt="narrower">
             <a>
               <div class="mask rgba-white-slight"></div>
@@ -109,8 +110,8 @@
               <div class="form-group row ">
                   <div class="col-sm-12 d-flex">
                       <div class="mx-auto"> 
-                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Réserver</a>
-                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
+                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
+                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
                       </div>                  
                   </div>                     
                 </div>
@@ -148,7 +149,7 @@
     <div class="col mb-4">
       <div class="card card-cascade narrower">
         <div class="view view-cascade overlay">
-          <img src="{{asset('images\imagecolor.jpg')}}" class="card-img-top"
+          <img src="<?php echo e(asset('images\imagecolor.jpg')); ?>" class="card-img-top"
             alt="narrower">
           <a>
             <div class="mask rgba-white-slight"></div>
@@ -164,8 +165,8 @@
             <div class="form-group row ">
                 <div class="col-sm-12 d-flex">
                     <div class="mx-auto"> 
-                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Réserver</a>
-                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal" style="border-color: #020e49; color:#020e49">Voir plus</a>
+                      <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
+                      <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
                     </div>                  
                 </div>                     
               </div>
@@ -175,7 +176,7 @@
     <div class="col mb-4">
         <div class="card card-cascade narrower">
           <div class="view view-cascade overlay">
-            <img src="{{asset('images\imagecolor.jpg')}}" class="card-img-top"
+            <img src="<?php echo e(asset('images\imagecolor.jpg')); ?>" class="card-img-top"
               alt="narrower">
             <a>
               <div class="mask rgba-white-slight"></div>
@@ -191,8 +192,8 @@
               <div class="form-group row ">
                   <div class="col-sm-12 d-flex">
                       <div class="mx-auto"> 
-                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Réserver</a>
-                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
+                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
+                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
                       </div>                  
                   </div>                     
                 </div>
@@ -202,7 +203,7 @@
       <div class="col mb-4">
         <div class="card card-cascade narrower">
           <div class="view view-cascade overlay">
-            <img src="{{asset('images\imagecolor.jpg')}}" class="card-img-top"
+            <img src="<?php echo e(asset('images\imagecolor.jpg')); ?>" class="card-img-top"
               alt="narrower">
             <a>
               <div class="mask rgba-white-slight"></div>
@@ -218,8 +219,8 @@
               <div class="form-group row ">
                   <div class="col-sm-12 d-flex">
                       <div class="mx-auto"> 
-                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Réserver</a>
-                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
+                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
+                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
                       </div>                  
                   </div>                     
                 </div>
@@ -257,7 +258,7 @@
     <div class="col mb-4">
       <div class="card card-cascade narrower">
         <div class="view view-cascade overlay">
-          <img src="{{asset('images\imagecolor.jpg')}}" class="card-img-top"
+          <img src="<?php echo e(asset('images\imagecolor.jpg')); ?>" class="card-img-top"
             alt="narrower">
           <a>
             <div class="mask rgba-white-slight"></div>
@@ -273,8 +274,8 @@
             <div class="form-group row ">
                 <div class="col-sm-12 d-flex">
                     <div class="mx-auto"> 
-                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Réserver</a>
-                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
+                      <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
+                      <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
                     </div>                  
                 </div>                     
               </div>
@@ -284,7 +285,7 @@
     <div class="col mb-4">
         <div class="card card-cascade narrower">
           <div class="view view-cascade overlay">
-            <img src="{{asset('images\imagecolor.jpg')}}" class="card-img-top"
+            <img src="<?php echo e(asset('images\imagecolor.jpg')); ?>" class="card-img-top"
               alt="narrower">
             <a>
               <div class="mask rgba-white-slight"></div>
@@ -300,8 +301,8 @@
               <div class="form-group row ">
                   <div class="col-sm-12 d-flex">
                       <div class="mx-auto"> 
-                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Réserver</a>
-                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
+                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
+                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
                       </div>                  
                   </div>                     
                 </div>
@@ -311,7 +312,7 @@
       <div class="col mb-4">
         <div class="card card-cascade narrower">
           <div class="view view-cascade overlay">
-            <img src="{{asset('images\imagecolor.jpg')}}" class="card-img-top"
+            <img src="<?php echo e(asset('images\imagecolor.jpg')); ?>" class="card-img-top"
               alt="narrower">
             <a>
               <div class="mask rgba-white-slight"></div>
@@ -327,8 +328,8 @@
               <div class="form-group row ">
                   <div class="col-sm-12 d-flex">
                       <div class="mx-auto"> 
-                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Réserver</a>
-                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
+                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
+                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
                       </div>                  
                   </div>                     
                 </div>
@@ -366,7 +367,7 @@
     <div class="col mb-4">
       <div class="card card-cascade narrower">
         <div class="view view-cascade overlay">
-          <img src="{{asset('images\imagecolor.jpg')}}" class="card-img-top"
+          <img src="<?php echo e(asset('images\imagecolor.jpg')); ?>" class="card-img-top"
             alt="narrower">
           <a>
             <div class="mask rgba-white-slight"></div>
@@ -382,8 +383,8 @@
             <div class="form-group row ">
                 <div class="col-sm-12 d-flex">
                     <div class="mx-auto"> 
-                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Réserver</a>
-                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
+                      <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
+                      <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
                     </div>                  
                 </div>                     
               </div>
@@ -393,7 +394,7 @@
     <div class="col mb-4">
         <div class="card card-cascade narrower">
           <div class="view view-cascade overlay">
-            <img src="{{asset('images\imagecolor.jpg')}}" class="card-img-top"
+            <img src="<?php echo e(asset('images\imagecolor.jpg')); ?>" class="card-img-top"
               alt="narrower">
             <a>
               <div class="mask rgba-white-slight"></div>
@@ -409,8 +410,8 @@
               <div class="form-group row ">
                   <div class="col-sm-12 d-flex">
                       <div class="mx-auto"> 
-                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Réserver</a>
-                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
+                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
+                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
                       </div>                  
                   </div>                     
                 </div>
@@ -420,7 +421,7 @@
       <div class="col mb-4">
         <div class="card card-cascade narrower">
           <div class="view view-cascade overlay">
-            <img src="{{asset('images\imagecolor.jpg')}}" class="card-img-top"
+            <img src="<?php echo e(asset('images\imagecolor.jpg')); ?>" class="card-img-top"
               alt="narrower">
             <a>
               <div class="mask rgba-white-slight"></div>
@@ -436,8 +437,8 @@
               <div class="form-group row ">
                   <div class="col-sm-12 d-flex">
                       <div class="mx-auto"> 
-                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Réserver</a>
-                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
+                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
+                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
                       </div>                  
                   </div>                     
                 </div>
@@ -475,7 +476,7 @@
     <div class="col mb-4">
       <div class="card card-cascade narrower">
         <div class="view view-cascade overlay">
-          <img src="{{asset('images\imagecolor.jpg')}}" class="card-img-top"
+          <img src="<?php echo e(asset('images\imagecolor.jpg')); ?>" class="card-img-top"
             alt="narrower">
           <a>
             <div class="mask rgba-white-slight"></div>
@@ -491,8 +492,8 @@
             <div class="form-group row ">
                 <div class="col-sm-12 d-flex">
                     <div class="mx-auto"> 
-                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Réserver</a>
-                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
+                      <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
+                      <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
                     </div>                  
                 </div>                     
               </div>
@@ -502,7 +503,7 @@
     <div class="col mb-4">
         <div class="card card-cascade narrower">
           <div class="view view-cascade overlay">
-            <img src="{{asset('images\imagecolor.jpg')}}" class="card-img-top"
+            <img src="<?php echo e(asset('images\imagecolor.jpg')); ?>" class="card-img-top"
               alt="narrower">
             <a>
               <div class="mask rgba-white-slight"></div>
@@ -518,8 +519,8 @@
               <div class="form-group row ">
                   <div class="col-sm-12 d-flex">
                       <div class="mx-auto"> 
-                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Réserver</a>
-                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
+                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
+                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
                       </div>                  
                   </div>                     
                 </div>
@@ -529,7 +530,7 @@
       <div class="col mb-4">
         <div class="card card-cascade narrower">
           <div class="view view-cascade overlay">
-            <img src="{{asset('images\imagecolor.jpg')}}" class="card-img-top"
+            <img src="<?php echo e(asset('images\imagecolor.jpg')); ?>" class="card-img-top"
               alt="narrower">
             <a>
               <div class="mask rgba-white-slight"></div>
@@ -545,8 +546,8 @@
               <div class="form-group row ">
                   <div class="col-sm-12 d-flex">
                       <div class="mx-auto"> 
-                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Réserver</a>
-                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
+                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
+                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
                       </div>                  
                   </div>                     
                 </div>
@@ -584,7 +585,7 @@
     <div class="col mb-4">
       <div class="card card-cascade narrower">
         <div class="view view-cascade overlay">
-          <img src="{{asset('images\imagecolor.jpg')}}" class="card-img-top"
+          <img src="<?php echo e(asset('images\imagecolor.jpg')); ?>" class="card-img-top"
             alt="narrower">
           <a>
             <div class="mask rgba-white-slight"></div>
@@ -600,8 +601,8 @@
             <div class="form-group row ">
                 <div class="col-sm-12 d-flex">
                     <div class="mx-auto"> 
-                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Réserver</a>
-                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
+                      <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
+                      <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
                     </div>                  
                 </div>                     
               </div>
@@ -611,7 +612,7 @@
     <div class="col mb-4">
         <div class="card card-cascade narrower">
           <div class="view view-cascade overlay">
-            <img src="{{asset('images\imagecolor.jpg')}}" class="card-img-top"
+            <img src="<?php echo e(asset('images\imagecolor.jpg')); ?>" class="card-img-top"
               alt="narrower">
             <a>
               <div class="mask rgba-white-slight"></div>
@@ -627,8 +628,8 @@
               <div class="form-group row ">
                   <div class="col-sm-12 d-flex">
                       <div class="mx-auto"> 
-                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Réserver</a>
-                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
+                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
+                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
                       </div>                  
                   </div>                     
                 </div>
@@ -638,7 +639,7 @@
       <div class="col mb-4">
         <div class="card card-cascade narrower">
           <div class="view view-cascade overlay">
-            <img src="{{asset('images\imagecolor.jpg')}}" class="card-img-top"
+            <img src="<?php echo e(asset('images\imagecolor.jpg')); ?>" class="card-img-top"
               alt="narrower">
             <a>
               <div class="mask rgba-white-slight"></div>
@@ -654,8 +655,8 @@
               <div class="form-group row ">
                   <div class="col-sm-12 d-flex">
                       <div class="mx-auto"> 
-                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Réserver</a>
-                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
+                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
+                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
                       </div>                  
                   </div>                     
                 </div>
@@ -693,7 +694,7 @@
     <div class="col mb-4">
       <div class="card card-cascade narrower">
         <div class="view view-cascade overlay">
-          <img src="{{asset('images\imagecolor.jpg')}}" class="card-img-top"
+          <img src="<?php echo e(asset('images\imagecolor.jpg')); ?>" class="card-img-top"
             alt="narrower">
           <a>
             <div class="mask rgba-white-slight"></div>
@@ -709,8 +710,8 @@
             <div class="form-group row ">
                 <div class="col-sm-12 d-flex">
                     <div class="mx-auto"> 
-                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Réserver</a>
-                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
+                      <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
+                      <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
                     </div>                  
                 </div>                     
               </div>
@@ -720,7 +721,7 @@
     <div class="col mb-4">
         <div class="card card-cascade narrower">
           <div class="view view-cascade overlay">
-            <img src="{{asset('images\imagecolor.jpg')}}" class="card-img-top"
+            <img src="<?php echo e(asset('images\imagecolor.jpg')); ?>" class="card-img-top"
               alt="narrower">
             <a>
               <div class="mask rgba-white-slight"></div>
@@ -736,8 +737,8 @@
               <div class="form-group row ">
                   <div class="col-sm-12 d-flex">
                       <div class="mx-auto"> 
-                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Réserver</a>
-                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
+                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
+                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
                       </div>                  
                   </div>                     
                 </div>
@@ -747,7 +748,7 @@
       <div class="col mb-4">
         <div class="card card-cascade narrower">
           <div class="view view-cascade overlay">
-            <img src="{{asset('images\imagecolor.jpg')}}" class="card-img-top"
+            <img src="<?php echo e(asset('images\imagecolor.jpg')); ?>" class="card-img-top"
               alt="narrower">
             <a>
               <div class="mask rgba-white-slight"></div>
@@ -763,10 +764,10 @@
               <div class="form-group row ">
                   <div class="col-sm-12 d-flex">
                       <div class="mx-auto"> 
-                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Réserver</a>
-                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
+                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
+                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
+                      </div>                  
                   </div>                     
-                </div>                     
                 </div>
           </div>
         </div>
@@ -802,7 +803,7 @@
     <div class="col mb-4">
       <div class="card card-cascade narrower">
         <div class="view view-cascade overlay">
-          <img src="{{asset('images\imagecolor.jpg')}}" class="card-img-top"
+          <img src="<?php echo e(asset('images\imagecolor.jpg')); ?>" class="card-img-top"
             alt="narrower">
           <a>
             <div class="mask rgba-white-slight"></div>
@@ -818,8 +819,8 @@
             <div class="form-group row ">
                 <div class="col-sm-12 d-flex">
                     <div class="mx-auto"> 
-                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Réserver</a>
-                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
+                      <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
+                      <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
                     </div>                  
                 </div>                     
               </div>
@@ -829,7 +830,7 @@
     <div class="col mb-4">
         <div class="card card-cascade narrower">
           <div class="view view-cascade overlay">
-            <img src="{{asset('images\imagecolor.jpg')}}" class="card-img-top"
+            <img src="<?php echo e(asset('images\imagecolor.jpg')); ?>" class="card-img-top"
               alt="narrower">
             <a>
               <div class="mask rgba-white-slight"></div>
@@ -845,8 +846,8 @@
               <div class="form-group row ">
                   <div class="col-sm-12 d-flex">
                       <div class="mx-auto"> 
-                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Réserver</a>
-                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal" style="border-color: #020e49; color:#020e49">Voir plus</a>
+                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
+                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
                       </div>                  
                   </div>                     
                 </div>
@@ -856,7 +857,7 @@
       <div class="col mb-4">
         <div class="card card-cascade narrower">
           <div class="view view-cascade overlay">
-            <img src="{{asset('images\imagecolor.jpg')}}" class="card-img-top"
+            <img src="<?php echo e(asset('images\imagecolor.jpg')); ?>" class="card-img-top"
               alt="narrower">
             <a>
               <div class="mask rgba-white-slight"></div>
@@ -872,8 +873,8 @@
               <div class="form-group row ">
                   <div class="col-sm-12 d-flex">
                       <div class="mx-auto"> 
-                        <a class="btn btn-primary" href="" style="background-color: #020e49 ; border-color: #020e49">Réserver</a>
-                        <a class="btn btn-secondary bg-white" data-toggle="modal" data-target="#infoModal"  style="border-color: #020e49; color:#020e49">Voir plus</a>
+                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Réserver</a> </button>
+                        <button type="submit" class="btn btn-primary" style="background-color: #020e49 ; border-color: #020e49"><a href="" class="test">Détails</a> </button>
                       </div>                  
                   </div>                     
                 </div>
@@ -893,36 +894,30 @@
         </ul>
       </nav>
    </div>
-     {{-- Modal plus dinfo --}}
-     <div class="modal " id="infoModal" tabindex="-1" role="dialog">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header" style="background-color: #020e49">
-            <h5 class="modal-title text-white text-center">Les informations sur l'évènement!</h5>
-          </div> 
-          <div class="modal-body">
-            <form action="">
-              <div class="col-lg-12">
-                  <div class="p-5">
-                    <div class="text-center">
-                    <form class="user">
-                          <p >This is a longer card with supporting text below as a natural lead-in to
-                          additional content. This content is a little bit longer.This is a longer card with supporting text below as a natural lead-in to
-                          additional content. This content is a little bit longer.This is a longer card with supporting text below as a natural lead-in to
-                          additional content. This content is a little bit longer.This is a longer card with supporting text below as a natural lead-in to
-                          additional content. This content is a little bit longer.</p> 
-                        <button type="button" class="btn btn-secondary bg-white" data-dismiss="modal" style="border-color: #020e49; color:#020e49">Fermer</button>
-                    </form>
-                    </div>
-              </div>
+</div>
+ 
+      <div class="modal fade" id="evenementModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header"style="background-color: #020e49">
+              <h5 class="modal-title text-white text-center" id="exampleModalLabel">Choisir</h5>
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
             </div>
-          </form>
-          </div>
+            <div class="modal-body">
+              <p><i class="fas fa-check propos"></i> Sélectionnez <b>"S'inscrire"</b> ci-dessous si vous voulez avoir un compte sur notre plateforme.
+                Vous serez informé à temps pour les nouveaux évènements à venir.</p> 
+              <p><i class="fas fa-check propos"></i> Sélectionnez <b> "Décliner"</b> ci-dessous si vous voulez faire directement votre paiement sans vous inscrire.</p> 
+            </div>
+            <div class="modal-footer">            
+              <a class="btn btn-primary" href="<?php echo e(Url('inscription')); ?>" style="background-color: #020e49 ; border-color: #020e49">S'incrire</a>
+              <a class="btn btn-secondary bg-white" href="<?php echo e(Url('payer')); ?>"  style="border-color: #020e49; color:#020e49">Décliner</a> 
               
-            
+            </div>
           </div>
         </div>
-      </div>
-</div>
+      </div> 
+<?php $__env->stopSection(); ?>
 
-@endsection
+<?php echo $__env->make('layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\Cible\cible_project1\resources\views/evenement/reservation.blade.php ENDPATH**/ ?>

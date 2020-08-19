@@ -30,8 +30,8 @@
             <a href="{{Url('/')}}" class="" role="button" aria-pressed="true">Acceuil</a>
             <a href="{{Url('evenementsponsors')}}" class="" role="button" aria-pressed="true">Tous les évènements</a>
             <a href="{{Url('evenementsponsorisé')}}" class="" role="button" aria-pressed="true">Evènements sponsorisés</a>
-            <a href="{{Url('sponsors-perte')}}" class="" role="button" aria-pressed="true">Déclaration d'objet perdu</a>
-            <a href="{{Url('sponsors-trouve')}}" class="" role="button" aria-pressed="true">Déclaration d'objet trouvé</a>
+            {{-- <a href="{{Url('sponsors-perte')}}" class="" role="button" aria-pressed="true">Déclaration d'objet perdu</a> --}}
+            {{-- <a href="{{Url('sponsors-trouve')}}" class="" role="button" aria-pressed="true">Déclaration d'objet trouvé</a> --}}
           
          
           </div>

@@ -133,13 +133,6 @@ nav
     font-size: 17px;
 }
 
-
-
-
-
-
-
-
 .image {
     max-width: 67%; margin-top: 25px !important
 }
@@ -344,7 +337,7 @@ nav
       }
       .register{
               background: cornflowerblue;
-              margin-top: 3%;
+              margin-top: 7%;
               padding: 3%;
               border-radius: 2.5rem;
       }
@@ -367,3 +360,4 @@ input[type=text], select, textarea {
   margin-bottom: 16px;
   resize: vertical;
 }
+
