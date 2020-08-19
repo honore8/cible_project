@@ -15,14 +15,25 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+          
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-        });
-    }
-
+            $table->softDeletes();
+            $table->text('critere_pays')->nullable();
+            $table->enum('type_event', array('gratuit', 'payant'))->nullable();
+            $table->text('categorie_event')->nullable();
+            $table->string('ville')->nullable();
+            $table->string('pays')->nullable();
+            $table->text('adresse')->nullable();
+            $table->string('telephone')->nullable();
+         
+            });
+  
+    
+        }
     /**
      * Reverse the migrations.
      *
@@ -30,6 +41,10 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
         Schema::dropIfExists('users');
+     
     }
 }

@@ -14,18 +14,18 @@
               <div class="text-center">
                 <h1 class="h4 text-gray-900 mb-4">Statut!</h1>
               </div>
-              <form class="user">
+              <form class="user" method="post" action="{{route('saveProfil'}}}">
                 <div class="form-group">
-                  <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Mot de passe"> 
-                  <select name="exampleInputType" id="exampleInputType" class="form-control" style="border-radius: 20px" >
+                  <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Choisissez votre statut"> 
+                  <select name="staut" class="form-control" style="border-radius: 20px" >
                     <option selected > Choisir...</option>
-                    <option value="Primaire">Individu</option>
-                    <option value="Collège">Entreprise</option>
+                    <option value="Individu">Individu</option>
+                    <option value="Entreprise">Entreprise</option>
                   </select>
                 </div> 
-                <a href="" class="btn btn-primary btn-user btn-block" style="background-color: #020e49 ; border-color: #020e49">
-                  Envoyez
-                </a>
+                <button type="submit" class="btn btn-primary btn-user btn-block" style="background-color: #020e49 ; border-color: #020e49">
+                  Valider
+                </button>
               </form>
             </div>
           </div>

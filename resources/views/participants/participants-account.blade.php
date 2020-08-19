@@ -48,7 +48,7 @@
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="{{url('connexion')}}">Login</a>
+            <a class="collapse-item" href="{{route('connexion')}}">Login</a>
             <a class="collapse-item" href="{{url('inscription')}}">Register</a>
             <a class="collapse-item" href="{{url('Renouveller')}}">Forgot Password</a>
             <div class="collapse-divider"></div>

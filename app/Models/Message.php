@@ -3,9 +3,23 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Message extends Model
 {
-    protected $table= 'message';
-    protected $filled = ['texte'];
+    use SoftDeletes;
+
+
+    protected $fillable= ['texte'];
+
+    public function sender()
+    {
+        return $this->belongsTo('App\Models\User', 'sender_id');
+    }
+
+    public function receiver()
+    {
+        return $thia->belongsTo('App\Models\User', 'receiver_id');
+    }
+    
 }

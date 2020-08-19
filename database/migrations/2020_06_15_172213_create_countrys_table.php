@@ -12,6 +12,7 @@ class CreateCountrysTable extends Migration {
 			$table->string('countrycode', 3)->primary();
 			$table->string('countryname', 200);
 			$table->string('code', 2)->nullable()->default(NULL);
+			$table->softDeletes();
 		});
 	}
 

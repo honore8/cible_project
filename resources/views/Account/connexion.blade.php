@@ -18,7 +18,9 @@
                       <div class="text-center">
                         <h1 class="h4 text-gray-900 mb-4">Connectez-vous!</h1>
                       </div>
+                      
                       <form class="user"method="POST" action="{{ route('login') }}">
+
                         @csrf
                         <div class="form-group">
                           <input type="email"  placeholder='Email' type="email" class="form-control form-control-user @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -58,10 +60,10 @@
                         <a class="small" href="{{ route('password.request') }}">
                           Mot de passe oublié?</a>
                       </div>
-                      <div class="text-center">
+                      <!--<div class="text-center">
                         <a class="small" href="{{url('inscription')}}">
                           Créer un compte!</a>
-                      </div>
+                      </div>-->
                     </div>
                   </div>
                 </div>

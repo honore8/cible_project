@@ -14,8 +14,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Auth::routes();
+Route::group(['middleware' => 'web'], function () {
 
+Auth::routes();
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/','AcceuilController@create');
 // Route::get('/agences', [ 'uses' => 'AgenceController@index']);
 
@@ -53,7 +55,6 @@ Route::view('commentaire','commentaire');
 
 // connexion
 Route::view('inscription','layouts.Inscription');
-Route::view('connexion','Account.connexion');
 Route::view('Renouvellement','Account.ModifierPassword');
 Route::view('Renouveller','Account.ForgetPassword');
 
@@ -111,7 +112,49 @@ Route::get('/page-evenement', 'AcceuilController@page')->name('page-evenement');
 
 
 
+// jobs
+Route::view('menujobs','jobs.jobs-account');
+Route::view('jobs-profileindividu','jobs.profile-individu');
+Route::view('jobs-perte','jobs.DeclarationPerte');
+Route::view('jobs-trouve','jobs.Déclarer-objet-trouvé');
+Route::view('evenement-jobs','jobs.evenement-jobs');
+Route::view('jobs-annonce','jobs.annonce');
 
+// organisateurs
+
+Route::group(['prefix' => 'organisateur',  'middleware' => ['role:organisateur']], function()
+{
+    Route::view('menu','organisateurs.model-organisateurs-account')->name('menu');
+    Route::view('organisateurs-individu','organisateurs.profile-individu');
+    Route::view('organisateurs-entreprise','organisateurs.profile-entreprise');
+    Route::view('liste','organisateurs.liste');
+    Route::view('sponsoring','organisateurs.sponsoring');
+    Route::view('organisateurs-annonce','organisateurs.annonces');
+    Route::view('evenement-organisateur','organisateurs.evenement-organisateur');
+    Route::view('prix-organisateur','organisateurs.liste-paiement');
+
+});
+
+Route::get('/creer-evenement', 'AcceuilController@evenement')->name('creer-evenement');
+Auth::routes();
+Route::group(['prefix' => 'profil',  'middleware' => 'auth'], function()
+{
+    Route::get('home', 'ProfilController@index')->name('home');
+    Route::post('enregistrer', 'ProfilController@store')->name('store');
+    Route::post('enregistrer/entreprise','ProfilController@storeEntrepise')->name('saveEntreprise');
+    Route::post('enregistrer/personne','ProfilController@storePersonne')->name('savePersonne');
+    });
+});
+
+Route::get('organisateur', 'RoleController@organisateur')->name('organisateur');
+Route::get('sponsor', 'RoleController@sponsor')->name('sponsor');
+Route::get('prestataire', 'RoleController@jober')->name('jober');
+Route::get('jober', 'RoleController@prestataire')->name('prestataire');
+Route::get('participant', 'RoleController@participant')->name('participant');
+Route::get('investisseur', 'RoleController@investisseur')->name('investisseur');
+
+Route::get('role', 'ProfilController@assignrole')->name('role');
+Route::get('/creer-evenement', 'AcceuilController@evenement')->name('creer-evenement');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
