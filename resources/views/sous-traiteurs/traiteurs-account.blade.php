@@ -19,6 +19,12 @@
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
   <link href="vendor\datatables\dataTables.bootstrap4.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{asset('bootstrap-4.5.0-dist/css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{asset('css\style.css')}}">  
+ <link rel="stylesheet" href="{{asset('css\chosen.css')}}">
+  <link rel="stylesheet" href="{{asset('css\prism.css')}}"> 
+   <link rel="stylesheet" href="{{asset('select\select2.min.css')}}">  
 </head>
 <body id="page-top">
   <div id="wrapper">
@@ -33,8 +39,8 @@
             <a href="{{Url('/')}}" class="" role="button" aria-pressed="true">Acceuil</a>
             <a href="{{Url('traitant-annonce')}}" class="" role="button" aria-pressed="true">Annonces</a>
             <a href="{{Url('evenement-traiteurs')}}" class="" role="button" aria-pressed="true">Tous les évènements</a>
-            <a href="{{Url('traitant-perte')}}" class="" role="button" aria-pressed="true">Déclaration d'objet perdu</a>
-            <a href="{{Url('traitant-trouve')}}" class="" role="button" aria-pressed="true">Déclaration d'objet trouvé</a>
+            {{-- <a href="{{Url('traitant-perte')}}" class="" role="button" aria-pressed="true">Déclaration d'objet perdu</a>
+            <a href="{{Url('traitant-trouve')}}" class="" role="button" aria-pressed="true">Déclaration d'objet trouvé</a> --}}
           
          
           </div>
@@ -162,9 +168,13 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="{{url('traitant-profileindividu')}}">
+                <a class="dropdown-item" href="{{url('profile-traiteurs')}}">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
+                </a>
+                <a class="dropdown-item" href="{{url('demande-traiteurs')}}">
+                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                  demande sous-traiteurs
                 </a>
                 <a class="dropdown-item" href="#">
                   <i class="fa fa-calendar fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -226,34 +236,20 @@
     </div>
   </div>
 
-  <!-- Bootstrap core JavaScript-->
-  {{-- <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
-  <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-  <script src="{{asset('vendor/jquery-easing/jquery.easing.min.js')}}"></script>
-  <script src="{{asset('js/sb-admin-2.min.js')}}"></script>
-  <script src="{{asset('vendor\chart.js\Chart.min.js')}}"></script>
-  <script src="{{asset('js\demo\chart-area-demo.js')}}"></script>
-  <script src="{{asset('js\demo\chart-pie-demo.js')}}"></script>
-  <script src="{{asset('vendor/datatables/jquery.dataTables.min.js')}}"></script>
-  <script src="{{asset('vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
-  <script src="{{asset('js\demo\datatables-demo.js')}}"></script>
-  <script src="{{asset('jquery\jquery.js')}}" integrity=""></script>
-  <script src="{{asset('bootstrap-4.5.0-dist\js\bootstrap.min.js')}}" integrity=""></script> --}}
-
-
-
-
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
   <script src="js/sb-admin-2.min.js"></script>
-  {{-- <script src="vendor\chart.js\Chart.min.js"></script>
-  <script src="js\demo\chart-area-demo.js"></script>
-  <script src="js\demo\chart-pie-demo.js"></script> --}}
   <script src="vendor/datatables/jquery.dataTables.min.js"></script>
   <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
   <script src="js\demo\datatables-demo.js"></script>
-  <script src="{{asset('bootstrap-4.5.0-dist\js\bootstrap.min.js')}}" integrity=""></script> --}}
+
+
+  <script src="{{asset('jquery\chosen.jquery.js')}}" integrity=""></script>
+  <script src="{{asset('bootstrap-4.5.0-dist\js\bootstrap.min.js')}}" integrity=""></script>
+  <script src="{{asset('docsupport/prism.js')}}" type="text/javascript" charset="utf-8"></script>
+  <script src=" {{asset('docsupport/init.js')}}" type="text/javascript" charset="utf-8"></script>
+  <script src=" {{asset('select\select2.min.js')}}" type="text/javascript" charset="utf-8"></script>
 
 </body>
 

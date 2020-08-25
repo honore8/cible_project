@@ -27,14 +27,7 @@ Route::view('Declaration','layouts.DeclarationPerte');
 Route::view('Reserver','layouts.ReservationTicket');
 Route::view('Sondage','layouts.Sondage');
 
-Route::view('menusparticipants','participants.participants-account');
-Route::view('perteparticipants','participants.DeclarationPerte');
-Route::view('reservationparticipants','evenement.reservation');
 
-Route::view('reservationparticipant','participants.reservation');
-
-
-Route::view('profile5','participants.profile');
 
 
 Route::post('/nouscontacter',['as'=>'contact','uses'=>'ContactController@send']);
@@ -58,14 +51,21 @@ Route::view('inscription','layouts.Inscription');
 Route::view('Renouvellement','Account.ModifierPassword');
 Route::view('Renouveller','Account.ForgetPassword');
 
+// participants
+Route::view('menusparticipants','participants.participants-account');
+Route::view('perteparticipants','participants.DeclarationPerte');
+Route::view('reservationparticipants','evenement.reservation');
+Route::view('reservationparticipant','participants.reservation');
+Route::view('profile-participants','participants.profile-participants');
+
 // sponsors
 Route::view('evenementsponsors','sponsors.evenement-sponsors');
 Route::view('evenementsponsorisé','sponsors.evenement-sponsorisé');
 Route::view('menusponsors','sponsors.sponsors-account');
-Route::view('sponsors-profileindividu','sponsors.profile-individu');
-Route::view('sponsors-profileentreprise','sponsors.profile-entreprise');
-Route::view('sponsors-perte','sponsors.DeclarationPerte');
-Route::view('sponsors-trouve','sponsors.Déclarer-objet-trouvé');
+Route::view('profile-sponsors','sponsors.profile-sponsors');
+Route::view('demande-sponsors','sponsors.demande-sponsors');
+// Route::view('sponsors-perte','sponsors.DeclarationPerte');
+// Route::view('sponsors-trouve','sponsors.Déclarer-objet-trouvé');
 
 // investisseurs
 Route::view('menusinvestisseurs','investisseurs.investisseurs-account');
@@ -78,25 +78,27 @@ Route::view('investisseurs-trouve','investisseurs.Déclarer-objet-trouvé');
 
 // sous-traiteurs
 Route::view('menutraiteurs','sous-traiteurs.traiteurs-account');
-Route::view('traitant-profileindividu','sous-traiteurs.profile-individu');
-Route::view('traitant-perte','sous-traiteurs.DeclarationPerte');
-Route::view('traitant-trouve','sous-traiteurs.Déclarer-objet-trouvé');
+// Route::view('traitant-profileindividu','sous-traiteurs.profile-individu');
+Route::view('profile-traiteurs','sous-traiteurs.profile-traiteurs');
+// Route::view('traitant-perte','sous-traiteurs.DeclarationPerte');
+// Route::view('traitant-trouve','sous-traiteurs.Déclarer-objet-trouvé');
 Route::view('evenement-traiteurs','sous-traiteurs.evenement-traiteurs');
 Route::view('traitant-annonce','sous-traiteurs.annonce');
+Route::view('demande-traiteurs','sous-traiteurs.demande-traiteurs');
+
 
 // jobs
 Route::view('menujobs','jobs.jobs-account');
-Route::view('jobs-profileindividu','jobs.profile-individu');
-Route::view('jobs-perte','jobs.DeclarationPerte');
-Route::view('jobs-trouve','jobs.Déclarer-objet-trouvé');
+Route::view('profile-jobs','jobs.profile-jobs');
+Route::view('demande-extra','jobs.demande-extra');
+// Route::view('jobs-perte','jobs.DeclarationPerte');
+// Route::view('jobs-trouve','jobs.Déclarer-objet-trouvé');
 Route::view('evenement-jobs','jobs.evenement-jobs');
 Route::view('jobs-annonce','jobs.annonce');
 
 // organisateurs
 Route::view('menu','organisateurs.model-organisateurs-account');
-Route::view('organisateurs-individu','organisateurs.profile-individu');
-Route::view('organisateurs-entreprise','organisateurs.profile-entreprise');
-Route::view('profile','organisateurs.profile-organisateurs');
+Route::view('profile-organisateurs','organisateurs.profile-organisateurs');
 Route::view('liste','organisateurs.liste');
 Route::view('sponsoring','organisateurs.sponsoring');
 Route::view('organisateurs-annonce','organisateurs.annonces');
@@ -106,10 +108,6 @@ Route::view('agence-vente','organisateurs.vendre-agence');
 // Route::view('page-evenement','organisateurs.page-evenement');
 Route::get('/creer-evenement', 'AcceuilController@evenement')->name('creer-evenement');
 Route::get('/page-evenement', 'AcceuilController@page')->name('page-evenement');
-
-
-
-
 
 
 // jobs

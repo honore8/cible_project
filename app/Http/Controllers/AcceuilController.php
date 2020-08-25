@@ -24,7 +24,7 @@ protected $commentaires, $lieux;
     public function create ()
     {
         $lieux= $this->lieu->all();
-        $commentaires= $this->commentaire->all();
+        $commentaires=Commentaire::all();
         $pays = Country::all();
 
     return view('welcome', ['lieux'=>$lieux, 'commentaire'=>$commentaires, 'pays'=>$pays]);

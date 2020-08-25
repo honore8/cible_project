@@ -1,5 +1,5 @@
 @php
-$Var = "Profil";
+$Var = "Profil Organisateurs";
 @endphp
 @extends('organisateurs.model-organisateurs-account')
 @section('content-2')
@@ -17,6 +17,7 @@ $Var = "Profil";
     margin-top: 145px;
     padding-top: 30px;
     margin-left: 16%;
+    margin-bottom: 7%;
   }
 </style>
     <div class="container col-10  card ">
@@ -154,18 +155,14 @@ $Var = "Profil";
                     </div>
                 </div>
                 <div class="form-group row">
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                         <label for="">Adresse</label>
                         <input type="tel" class="form-control " value="" required autocomplete="" name="adresse"
                             style="border-radius: 20px;">
 
                     </div>
-                    <div class="col-sm-4">
-                        <label for="">Devise</label>
-                        <input type="email" class="form-control" value="" required autocomplete="email_demandeur"
-                            name="adresse" style="border-radius: 20px;">
-                    </div>
-                    <div id="specialite" class="col-sm-4">
+                  
+                    <div id="specialite" class="col-sm-6">
                         <label for="">Spécialité</label><br>
                         <select value="" required autocomplete="" name="" id="ville"
                             style="width: 100%; padding: 6px;border: 1px solid #ccc;border-radius: 20px;">
@@ -436,11 +433,7 @@ $Var = "Profil";
             <div id="materiel" class="col-sm-6 ">
                 <label for="">Votre matériel</label>
                 <textarea name="" id="" cols="30" rows="10" style="border-radius: 20px" placeholder="exemple: Louche,Assiètte,Fourchette,etc...."></textarea>
-            </div>
-            <div id="client" class="col-sm-6 " style="display:none;">
-                <label for="">Comment travaillez-vous avec vos clients?</label>
-               <textarea name="" id="" cols="30" rows="10" style="border-radius: 20px"></textarea>
-            </div>
+            </div>           
         </div>
         <div class="form-group row">
             <div class="col-sm-12" style=" text-align: center">
