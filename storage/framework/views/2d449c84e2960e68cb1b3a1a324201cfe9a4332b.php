@@ -1,6 +1,6 @@
-@php
-    $Var = "Profil traiteurs";
-@endphp
+<?php
+    $Var = "Profil jobeurs";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,23 +8,17 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="icon" type="image/png" href="{{url('images\favicon1.png')}}">
+  <link rel="icon" type="image/png" href="<?php echo e(url('images\favicon1.png')); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>CIBLE | {{ $Var ?? ''}}</title> 
+  <title>CIBLE | <?php echo e($Var ?? ''); ?></title> 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
   <link href="vendor\datatables\dataTables.bootstrap4.min.css" rel="stylesheet">
-
-  <link rel="stylesheet" href="{{asset('bootstrap-4.5.0-dist/css/bootstrap.min.css')}}">
-  <link rel="stylesheet" href="{{asset('css\style.css')}}">  
- <link rel="stylesheet" href="{{asset('css\chosen.css')}}">
-  <link rel="stylesheet" href="{{asset('css\prism.css')}}"> 
-   <link rel="stylesheet" href="{{asset('select\select2.min.css')}}">  
 </head>
 <body id="page-top">
   <div id="wrapper">
@@ -36,11 +30,11 @@
             <i class="fa fa-bars"></i>
           </button>
           <div class="d-flex justify-content-around w-100">
-            <a href="{{Url('/')}}" class="" role="button" aria-pressed="true">Acceuil</a>
-            <a href="{{Url('traitant-annonce')}}" class="" role="button" aria-pressed="true">Annonces</a>
-            <a href="{{Url('evenement-traiteurs')}}" class="" role="button" aria-pressed="true">Tous les évènements</a>
-            {{-- <a href="{{Url('traitant-perte')}}" class="" role="button" aria-pressed="true">Déclaration d'objet perdu</a>
-            <a href="{{Url('traitant-trouve')}}" class="" role="button" aria-pressed="true">Déclaration d'objet trouvé</a> --}}
+            <a href="<?php echo e(Url('/')); ?>" class="" role="button" aria-pressed="true">Acceuil</a>
+            <a href="<?php echo e(Url('jobs-annonce')); ?>" class="" role="button" aria-pressed="true">Annonces</a>
+            <a href="<?php echo e(Url('evenement-jobs')); ?>" class="" role="button" aria-pressed="true">Tous les évènements</a>
+            <a href="<?php echo e(Url('jobs-perte')); ?>" class="" role="button" aria-pressed="true">Déclaration d'objet perdu</a>
+            <a href="<?php echo e(Url('jobs-trouve')); ?>" class="" role="button" aria-pressed="true">Déclaration d'objet trouvé</a>
           
          
           </div>
@@ -168,13 +162,13 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="{{url('profile-traiteurs')}}">
+                <a class="dropdown-item" href="<?php echo e(url('profile-jobs')); ?>" >
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
-                <a class="dropdown-item" href="{{url('demande-traiteurs')}}">
+                <a class="dropdown-item" href="<?php echo e(url('demande-extra')); ?>" >
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  demande sous-traiteurs
+                  Demande jobeurs
                 </a>
                 <a class="dropdown-item" href="#">
                   <i class="fa fa-calendar fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -195,7 +189,7 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-          @yield('content-5')
+          <?php echo $__env->yieldContent('content-3'); ?>
         </div>
       </div>
       <!-- End of Main Content -->
@@ -236,21 +230,21 @@
     </div>
   </div>
 
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="js/sb-admin-2.min.js"></script>
-  <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-  <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-  <script src="js\demo\datatables-demo.js"></script>
-
-
-  <script src="{{asset('jquery\chosen.jquery.js')}}" integrity=""></script>
-  <script src="{{asset('bootstrap-4.5.0-dist\js\bootstrap.min.js')}}" integrity=""></script>
-  <script src="{{asset('docsupport/prism.js')}}" type="text/javascript" charset="utf-8"></script>
-  <script src=" {{asset('docsupport/init.js')}}" type="text/javascript" charset="utf-8"></script>
-  <script src=" {{asset('select\select2.min.js')}}" type="text/javascript" charset="utf-8"></script>
+  <!-- Bootstrap core JavaScript-->
+  
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="js/sb-admin-2.min.js"></script>
+    <script src="vendor\chart.js\Chart.min.js"></script>
+    <script src="js\demo\chart-area-demo.js"></script>
+    <script src="js\demo\chart-pie-demo.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="js\demo\datatables-demo.js"></script>
 
 </body>
 
 </html>
+<?php /**PATH C:\laragon\www\Cible\cible_project1\resources\views/jobs/jobs-account.blade.php ENDPATH**/ ?>

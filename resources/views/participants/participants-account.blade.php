@@ -40,22 +40,6 @@
           <span>Acceuil</span></a>
       </li>
       <hr class="sidebar-divider">
-      <!-- Nav Item - Pages Collapse Menu -->
-      {{-- <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Paramétrages</span>
-        </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="{{route('connexion')}}">Login</a>
-            <a class="collapse-item" href="{{url('inscription')}}">Register</a>
-            <a class="collapse-item" href="{{url('Renouveller')}}">Forgot Password</a>
-            <div class="collapse-divider"></div>
-        
-          </div>
-        </div>
-      </li> --}}
       <li class="nav-item">
         <a class="nav-link" href="{{url('reservationparticipant')}}">
           <i class="fa fa-users"></i>
@@ -235,7 +219,7 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="{{url('profile5')}}">
+                <a class="dropdown-item" href="{{url('profile-participants')}}">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>

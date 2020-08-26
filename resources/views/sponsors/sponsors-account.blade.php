@@ -1,5 +1,5 @@
 @php
-    $Var = "Profil sponsors";
+    $Var = "";
 @endphp
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +16,12 @@
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
   <link href="vendor\datatables\dataTables.bootstrap4.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{asset('bootstrap-4.5.0-dist/css/bootstrap.min.css')}}">
+ <link rel="stylesheet" href="{{asset('css\style.css')}}">  
+<link rel="stylesheet" href="{{asset('css\chosen.css')}}">
+ <link rel="stylesheet" href="{{asset('css\prism.css')}}"> 
+  <link rel="stylesheet" href="{{asset('select\select2.min.css')}}">  
 </head>
 <body id="page-top">
   <div id="wrapper">
@@ -159,9 +165,13 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="{{url('sponsors-profileindividu')}}">
+                <a class="dropdown-item" href="{{url('profile-sponsors')}}">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
+                  Profile Sponsors
+                </a>
+                <a class="dropdown-item" href="{{url('demande-sponsors')}}">
+                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Demande sponsoring
                 </a>
                 <a class="dropdown-item" href="#">
                   <i class="fa fa-calendar fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -234,6 +244,13 @@
   <script src="vendor/datatables/jquery.dataTables.min.js"></script>
   <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
   <script src="js\demo\datatables-demo.js"></script>
+
+
+  <script src="{{asset('jquery\chosen.jquery.js')}}" integrity=""></script>
+  <script src="{{asset('bootstrap-4.5.0-dist\js\bootstrap.min.js')}}" integrity=""></script>
+  <script src="{{asset('docsupport/prism.js')}}" type="text/javascript" charset="utf-8"></script>
+  <script src=" {{asset('docsupport/init.js')}}" type="text/javascript" charset="utf-8"></script>
+  <script src=" {{asset('select\select2.min.js')}}" type="text/javascript" charset="utf-8"></script>
 
 </body>
 
