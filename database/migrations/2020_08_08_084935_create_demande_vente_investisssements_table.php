@@ -17,6 +17,7 @@ class CreateDemandeVenteInvestisssementsTable extends Migration {
 			$table->string('statut_entreprise');
 			$table->integer('rememberToken');
 			$table->string('capital_entreprise');
+			$table->enum('acheter_investir', ['acheter', 'investir']);
 			$table->foreignId('organisateur_id')->references('id')->on('organisateurs');
 		});
 	}

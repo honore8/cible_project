@@ -14,7 +14,7 @@ class Organisateur extends Model
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
-    protected $fillable = array('pourquoi_vous');
+    protected $guarded= array('user_id','id');
 
     public function evenements()
     {

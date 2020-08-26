@@ -1,8 +1,8 @@
-@php
+<?php
 $Var = "Profil";
-@endphp
-@extends('organisateurs.model-organisateurs-account')
-@section('content-2')
+?>
+
+<?php $__env->startSection('content-2'); ?>
 <style>
     .card-img-top {
     position: absolute;
@@ -25,8 +25,12 @@ $Var = "Profil";
             <h5 style="font-size: 200%;margin-top:4%"><b>Completer votre profil</b></h5>
         </div>
         <div class="card-body">
-            <form method="POST" action="{{route('store')}}" name="Profil" enctype='multipart/form-data'>
-                @csrf
+            <form id="addblock-form" action="" method="POST" style="display: none;">
+                <?php echo csrf_field(); ?>
+                <input type="hidden" name="addBloc" id="addBloc">
+            </form>
+            <form method="POST" action="" name="Profil" enctype='multipart/form-data'>
+                <?php echo csrf_field(); ?>
                 <div class="form-group row ">
                     <div class="col-sm-6 " style="margin-top: 2.5em">
                         <input type="radio" name="type_compte" value="Particulier" onclick="afficherparticulier()" checked>
@@ -60,12 +64,12 @@ $Var = "Profil";
                     </div>
                     <div id="nom-resp" class="col-sm-4 " style="display:none;">
                         <label for="">Nom du responsable</label>
-                        <input type="text" value="" required autocomplete="nom_demandeur" class="form-control" name="nom"
+                        <input type="text" value="" required autocomplete="nom_demandeur" class="form-control" name=""
                             id="">
                     </div>
                     <div id="prenom-resp" class="col-sm-4 " style="display:none;">
                         <label for="">Prenom du responsable</label>
-                        <input type="text" value="" required autocomplete="nom_demandeur" class="form-control" name="prenom"
+                        <input type="text" value="" required autocomplete="nom_demandeur" class="form-control" name=""
                             id="">
                     </div>
                     <div id="annee" class="col-sm-4" style="display:none;">
@@ -172,7 +176,7 @@ $Var = "Profil";
                     </div>
                 </div>
 
-{{-- premier cadre --}}
+
                 <div id="new">
                     <fieldset
                         style="border: black solid 0.5px;margin-bottom: 15px; padding: 20px;margin: 0 auto 15px auto; ">
@@ -215,7 +219,7 @@ $Var = "Profil";
                 </div>
                 </fieldset>
                 
-{{-- deuxieme cadre --}}
+
                 
                 <div id="new1">
                    
@@ -304,7 +308,7 @@ $Var = "Profil";
                 </div>
                 </fieldset>
 
-{{-- troisieme cadre --}}
+
 
 
                 <div id="new2">
@@ -447,7 +451,7 @@ $Var = "Profil";
         </form>
     </div>
     </div>
-@endsection
+<?php $__env->stopSection(); ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <script>
@@ -792,3 +796,5 @@ $Var = "Profil";
 
 </script>
 
+
+<?php echo $__env->make('organisateurs.model-organisateurs-account', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\user\Documents\GitHub\cible_project\resources\views/organisateurs/profile-organisateurs.blade.php ENDPATH**/ ?>

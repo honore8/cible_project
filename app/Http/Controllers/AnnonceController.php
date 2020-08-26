@@ -20,20 +20,66 @@ class AnnonceController extends Controller
     }
     public function store(Request $request, $type,  AnnonceRepositoryInterface $annonce)
     {
-        if($type==null)
+        $validator = Validator::make($request->all(), [
+            'taches' => 'required',
+              'cout'=>'requiered|numeric',
+            'date_limite'=>'required',
+            'url_charges'=>'required',
+            'nbpersonnes' =>'required|numeric',
+            'contact'=>'required',
+            'type'=>'required',
+            'dates'=>'required',
+            'exigeances'=>'required',
+      
+        ], [
+                 'required'=>'Vous devez remplir ce champ',
+                'numeric'=>'Vous ne pouvez saisir que des nombres'
+    
+        ]);
+    
+        if ($validator->fails()) {
+            return back()
+                        ->withErrors($validator);
+        }
+        else{
+            if($request->url_charges)
+            { $name = time().'.'.$request->url_charges->extension(); 
+                $request->url_charges->move(public_path('prestataire'), $name);
+             }
         
-        $type=$request->get('type');
-        $annonce->store($request(all(),$type));
-        return back()->with('success','Votre annonce a bien été enregistré');
+         $request->dates=implodes("|",$request->dates);
+           Annonce::create($request->all());
+            return view();
+        }
+     
+    
         
     }
-    public function allAnnonces($id)
+    public function allAnnonces($tyoe)
     {
         
-        $id= auth()->user()->id;
-        $annonces= $this->annonce->alL();
+       $annonces= Annnonce::where('visible', 'public')
+       ->where()
         return view('', ['annonces'=>$annonces]);
     }
+
+    public function myAnnonces($id)
+    {
+      
+    }
+    public function accepter($id)
+    {
+      
+    }
+    public function rejeter($id)
+    {
+      
+    }
+    public function supprimer($id)
+    {
+     
+    }
+
     public function update($id)
     {
       

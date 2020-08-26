@@ -41,7 +41,7 @@ Route::post('/nouscontacter',['as'=>'contact','uses'=>'ContactController@send'])
     Route::post('/addcomment',['as'=>'commenter',
     'uses'=>'CommentaireController@store'])->middleware('auth');
 Route::get('/connexion',['as'=>'connexion',
-'uses'=>'AcceuilController@connexion']);
+'uses'=>'AcceuilController@connexion']);//->middleware('guest');
 // agence evenementielle
 Route::view('agence','agence.compte-agence');
 Route::view('info','agence.info');

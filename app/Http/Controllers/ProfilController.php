@@ -22,24 +22,31 @@ public function assignRole(Request $request)
     return redirect('/profil/home');
 }
 
-
     public function index()
     {
-        
-        if(!(Particulier::has('user')and (Entreprise::has('user'))))
+        $id= auth()->user();
+        if(Particulier::where('user_id', '=', $id)and (Entreprise::where('user_id', '=', $id)))
         {
+            
         if (auth()->user()->hasrole('participant'))
          return view('profile-individu');
         else if (auth()->user()->hasrole('jobs'))
         return('profile-individu');
         else if (auth()->user()->hasrole('sous-traiteurs'))
         return view('profile-entreprise');
-        else
-        return view('statut');
+        else if ( auth()->user()->hasRole('organisateur'))
+        return view('organisateurs.profile-organisateurs');
+        /*else if ( auth()->user()->hasRole('sponsor'))
+        return redirect('sponsor.menu');
+        else if ( auth()->user()->hasRole('sous-traiteurs'))
+            return redirect('sous-traiteurs.menu');
+            else if ( auth()->user()->hasRole('investisseur'))
+            return redirect('investisseur.menu');*/
+
         }
         else {
             if ( auth()->user()->hasRole('organisateur'))
-            return redirect('organisateur.menu');
+            return redirect('menu');
             else if ( auth()->user()->hasRole('sponsor'))
             return redirect('sponsor.menu');
             else if ( auth()->user()->hasRole('participant'))
