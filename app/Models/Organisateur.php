@@ -28,7 +28,7 @@ class Organisateur extends Model
 
     public function equipes()
     {
-        return $this->hasMany('Equipe');
+        return $this->hasMany('App\Models\Equipe');
     }
 
     public function demandeurs()

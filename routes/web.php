@@ -139,8 +139,9 @@ Route::group(['prefix' => 'profil',  'middleware' => 'auth'], function()
 {
     Route::get('home', 'ProfilController@index')->name('home');
     Route::post('enregistrer', 'ProfilController@store')->name('store');
-    Route::post('enregistrer/entreprise','ProfilController@storeEntrepise')->name('saveEntreprise');
-    Route::post('enregistrer/personne','ProfilController@storePersonne')->name('savePersonne');
+    Route::get('enregistrer/entreprise','ProfilController@storeEntrepise')->name('saveEntreprise');
+    Route::get('enregistrer/personne','ProfilController@storePersonne')->name('savePersonne');
+Route::get('user','ProfilController@Rdirect')->name('saveOrganisateur');
     });
 });
 

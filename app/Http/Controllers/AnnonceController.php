@@ -58,8 +58,8 @@ class AnnonceController extends Controller
     public function allAnnonces($tyoe)
     {
         
-       $annonces= Annnonce::where('visible', 'public')
-       ->where()
+       $annonces= Annnonce::where('visible', 'public');
+      /// ->where()
         return view('', ['annonces'=>$annonces]);
     }
 

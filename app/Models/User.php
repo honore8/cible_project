@@ -8,6 +8,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
+use App\Models\Particulier;
 
 class User extends Authenticatable
 {
@@ -56,7 +57,7 @@ class User extends Authenticatable
 
     public function organisateur()
     {
-        return $this->hasOne('Organisateur');
+        return $this->hasOne('App\Models\Organisateur');
     }
 
     public function Sponsor()
@@ -76,7 +77,7 @@ class User extends Authenticatable
 
     public function particulier()
     {
-        return $this->hasOne('Particulier');
+        return $this->hasOne('App\Models\Particulier');
     }
 
     public function vendre()

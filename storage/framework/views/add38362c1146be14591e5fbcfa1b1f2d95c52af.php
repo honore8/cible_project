@@ -1,5 +1,5 @@
 <?php
-$Var = "Profil";
+$Var = "Profil Organisateurs";
 ?>
 
 <?php $__env->startSection('content-2'); ?>
@@ -17,6 +17,7 @@ $Var = "Profil";
     margin-top: 145px;
     padding-top: 30px;
     margin-left: 16%;
+    margin-bottom: 7%;
   }
 </style>
     <div class="container col-10  card ">
@@ -25,56 +26,59 @@ $Var = "Profil";
             <h5 style="font-size: 200%;margin-top:4%"><b>Completer votre profil</b></h5>
         </div>
         <div class="card-body">
-            <form id="addblock-form" action="" method="POST" style="display: none;">
-                <?php echo csrf_field(); ?>
-                <input type="hidden" name="addBloc" id="addBloc">
-            </form>
-            <form method="POST" action="" name="Profil" enctype='multipart/form-data'>
+  
+
+            <form method="POST" action="<?php echo e(route('store')); ?>" name="Profil" enctype='multipart/form-data'>
                 <?php echo csrf_field(); ?>
                 <div class="form-group row ">
+                <?php if($errors->any()): ?>
+    <?php echo implode('', $errors->all('<div>:message</div>')); ?>
+
+<?php endif; ?>
+
                     <div class="col-sm-6 " style="margin-top: 2.5em">
-                        <input type="radio" name="type_compte" value="Particulier" onclick="afficherparticulier()" checked>
+                        <input type="radio" name="individu"  onclick="afficherparticulier()" checked>
                         <label for="particulier">Particulier</label>
-                        <input type="radio" name="type_compte" value="Entreprise" onclick="afficherprofessionel()"> <label
+                        <input type="radio" name="entreprise" onclick="afficherprofessionel()"> <label
                             for="professionel">Professionel</label>
                     </div>
                     <div id="nom" class="col-sm-6 ">
-                        <label for="">Votre Nom</label>
-                        <input type="text" value="" required autocomplete="nom_demandeur" class="form-control" name=""
+                        <label >Votre Nom</label>
+                        <input type="text" value=""  autocomplete="nom_demandeur" class="form-control" name="nom"
                             id="">
                     </div>
                     <div id="raison" class="col-sm-6 " style="display:none;">
                         <label for="">Raison sociale</label>
-                        <input type="text" value="" required autocomplete="nom_demandeur" class="form-control" name=""
+                        <input type="text" value=""  autocomplete="nom_demandeur" class="form-control" name="raison"
                             id="">
                     </div>
                 </div>
                 <div class="form-group row">
                     <div id="prenom" class="col-sm-6">
                         <label for="prenom">Votre Prenom</label>
-                        <input type="text" class="form-control " value="" required autocomplete="" name="prenom"
+                        <input type="text" class="form-control " value=""  autocomplete="" name="prenom"
                             style="border-radius: 20px;">
 
                     </div>
                     <div id="date" class="col-sm-6">
                         <label for="">Date de naissance</label>
-                        <input type="date" class="form-control " value="naissance" required autocomplete="" name="naissance"
+                        <input type="date" class="form-control "  autocomplete="" name="date_nais"
                             style="border-radius: 20px;">
 
                     </div>
                     <div id="nom-resp" class="col-sm-4 " style="display:none;">
                         <label for="">Nom du responsable</label>
-                        <input type="text" value="" required autocomplete="nom_demandeur" class="form-control" name=""
+                        <input type="text" value="" autocomplete="nom_demandeur" class="form-control" name="nomR"
                             id="">
                     </div>
                     <div id="prenom-resp" class="col-sm-4 " style="display:none;">
                         <label for="">Prenom du responsable</label>
-                        <input type="text" value="" required autocomplete="nom_demandeur" class="form-control" name=""
+                        <input type="text" value="" autocomplete="nom_demandeur" class="form-control" name="prenomR"
                             id="">
                     </div>
                     <div id="annee" class="col-sm-4" style="display:none;">
                         <label for="">Année de création</label>
-                        <input type="date" class="form-control " value="annee" required autocomplete="" name="annee"
+                        <input type="date" class="form-control " value="annee" autocomplete="" name="annee"
                             style="border-radius: 20px;">
 
                     </div>
@@ -83,25 +87,25 @@ $Var = "Profil";
                 <div class="form-group row">
                     <div id="genre" class="col-sm-6">
                         <label for="">Genre</label><br>
-                        <select value="" required autocomplete="" name="pays" id="pays"
+                        <select value=""  name="genre" id="pays"
                             style="width: 100%; padding: 6px;border: 1px solid #ccc;border-radius: 20px;">
 
                             <option value="">Choisir...</option>
-                            <option value="">Masculin</option>
-                            <option value="">Feminin</option>
+                            <option value='G'>Masculin</option>
+                            <option value='F'>Feminin</option>
 
                         </select>
                     </div>
                     <div id="situation" class="col-sm-6">
                         <label for="">Situation matrimoniale</label><br>
-                        <select value="" required autocomplete="" name="" id="pays"
+                        <select  autocomplete="" name="situation_mat" id="pays"
                             style="width: 100%; padding: 6px;border: 1px solid #ccc;border-radius: 20px;">
 
                             <option value="">Choisir...</option>
-                            <option value="">Célibataire</option>
-                            <option value="">Mariée</option>
-                            <option value="">Veuve</option>
-                            <option value="">Divorcée</option>
+                            <option >Célibataire</option>
+                            <option >Mariée</option>
+                            <option >Veuve</option>
+                            <option >Divorcée</option>
 
                         </select>
                     </div>
@@ -109,8 +113,8 @@ $Var = "Profil";
                 <div class="form-group row">
                     <div id="carte" class="col-sm-6 ">
                         <label for="">Joindre votre carte d'identité en pdf </label>
-                        <input type="file" value="" autocomplete="plan" name="plan" id=""
-                            style="width: 100%; padding: 3px;">
+                        <input type="file"  name="piece" 
+                            style="width: 100%; padding: 3px;"/>
                     </div>
                     <div id="bancaire" class="col-sm-6">
                         <label for="">Joindre vos coordonnées bancaire en pdf </label>
@@ -121,19 +125,19 @@ $Var = "Profil";
                 <div class="form-group row">
                     <div class="col-sm-6">
                         <label for="">Téléphone</label>
-                        <input type="tel" class="form-control " value="" required autocomplete="" name="telephone"
+                        <input type="tel" class="form-control " value="" autocomplete="" name="telephone"
                             style="border-radius: 20px;">
                     </div>
                     <div class="col-sm-6">
                         <label for="">Email</label>
-                        <input type="email" class="form-control" value="" required autocomplete="" name="email"
+                        <input type="email" class="form-control" value="<?php echo e(auth()->user()->email); ?>"  autocomplete="" name="email"
                             style="border-radius: 20px;">
                     </div>
                 </div>
                 <div class="form-group row">
                     <div id="pays" class="col-sm-6">
                         <label for="">Pays</label><br>
-                        <select value="" required autocomplete="" name="pays" id="pays"
+                        <select value=""  autocomplete="" name="pays" id="pays"
                             style="width: 100%; padding: 6px;border: 1px solid #ccc;border-radius: 20px;">
 
                             <option value="">Choisir...</option>
@@ -144,7 +148,7 @@ $Var = "Profil";
                     </div>
                     <div id="ville" class="col-sm-6">
                         <label for="">Ville</label><br>
-                        <select value="" required autocomplete="" name="" id="ville"
+                        <select value=""  autocomplete="" name="" id="ville"
                             style="width: 100%; padding: 6px;border: 1px solid #ccc;border-radius: 20px;">
 
                             <option value="">Choisir...</option>
@@ -154,24 +158,20 @@ $Var = "Profil";
                     </div>
                 </div>
                 <div class="form-group row">
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                         <label for="">Adresse</label>
-                        <input type="tel" class="form-control " value="" required autocomplete="" name="adresse"
+                        <input type="tel" class="form-control " value="" autocomplete="" name="adresse"
                             style="border-radius: 20px;">
 
                     </div>
-                    <div class="col-sm-4">
-                        <label for="">Devise</label>
-                        <input type="email" class="form-control" value="" required autocomplete="email_demandeur"
-                            name="adresse" style="border-radius: 20px;">
-                    </div>
-                    <div id="specialite" class="col-sm-4">
+                  
+                    <div id="specialite" class="col-sm-6">
                         <label for="">Spécialité</label><br>
-                        <select value="" required autocomplete="" name="" id="ville"
+                        <select  autocomplete="" name="profession" 
                             style="width: 100%; padding: 6px;border: 1px solid #ccc;border-radius: 20px;">
                             <option value="">Choisir...</option>
-                            <option value="">Agronome</option>
-                            <option value="">Ingenieurie</option>
+                            <option >Agronome</option>
+                            <option >Ingenieurie</option>
                         </select>
                     </div>
                 </div>
@@ -221,7 +221,7 @@ $Var = "Profil";
                 
 
                 
-                <div id="new1">
+                <div id="new1">z
                    
                     <fieldset
                         style="border: black solid 0.5px;margin-bottom: 15px; padding: 20px;margin: 0 auto 15px auto; ">
@@ -343,20 +343,20 @@ $Var = "Profil";
                                         </thead>
                                         <tbody>
                                             <tr id='addr0' data-id="0" class="hidden">
-                                                <td data-name="nom">
-                                                    <input type="text" name='nom[]'
+                                                <td data-name="nom_equipe">
+                                                    <input type="text" name='nom_equipe[]'
                                                         placeholder='Nom du collaborateur' class="form-control" />
                                                 </td>
-                                                <td data-name="prenom">
-                                                    <input type="text" name='prenom[]' placeholder='Prenom du collaborateur'
+                                                <td data-name="prenom_equipe">
+                                                    <input type="text" name='prenom_equipe[]' placeholder='Prenom du collaborateur'
                                                         class="form-control" />
                                                 </td>
                                                 <td data-name="titre">
                                                     <input type="text" name='titre[]' placeholder='Titre du collaborateur'
                                                         class="form-control" />
                                                 </td>
-                                                <td data-name="annee">
-                                                    <input type="text" name='annee[]' placeholder='Année dexpérience'
+                                                <td data-name="experience">
+                                                    <input type="text" name='experience[]' placeholder='Année dexpérience'
                                                         class="form-control"/>
                                                 </td>                                          
                                                 <td data-name="del">
@@ -425,22 +425,18 @@ $Var = "Profil";
         <div class="form-group row ">
             <div id="nom" class="col-sm-6 ">
                 <label for="">Condition de paiement</label>
-                <textarea name="" id="" cols="30" rows="10" style="border-radius: 20px" placeholder=""></textarea>
+                <textarea name="conditions_paiement" id="" cols="30" rows="10" style="border-radius: 20px" placeholder=""></textarea>
             </div>
             <div id="raison" class="col-sm-6 " >
                 <label for="">Pourquoi vous confiez un évènement?</label>
-               <textarea name="" id="" cols="30" rows="10" style="border-radius: 20px" placeholder="Dites-nous en 3lignes maximum"></textarea>
+               <textarea name="pourquoi_vous" id="" cols="30" rows="10" style="border-radius: 20px" placeholder="Dites-nous en 3lignes maximum"></textarea>
             </div>
         </div>
         <div class="form-group row ">
             <div id="materiel" class="col-sm-6 ">
-                <label for="">Votre matériel</label>
-                <textarea name="" id="" cols="30" rows="10" style="border-radius: 20px" placeholder="exemple: Louche,Assiètte,Fourchette,etc...."></textarea>
-            </div>
-            <div id="client" class="col-sm-6 " style="display:none;">
-                <label for="">Comment travaillez-vous avec vos clients?</label>
-               <textarea name="" id="" cols="30" rows="10" style="border-radius: 20px"></textarea>
-            </div>
+                <label for="">Votre méthodes de travail </label>
+                <textarea name="methode_de_travail" id="" cols="30" rows="10" style="border-radius: 20px" ></textarea>
+            </div>           
         </div>
         <div class="form-group row">
             <div class="col-sm-12" style=" text-align: center">
