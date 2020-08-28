@@ -111,14 +111,14 @@ $Var = "Profil Organisateurs";
                 </div>
                 <div class="form-group row">
                     <div id="carte" class="col-sm-6 ">
-                        <label for="">Joindre votre carte d'identité en pdf </label>
+                        <label for="">Joindre votre carte d'identité en pdf <b style="color: red">*</b></label>
                         <input type="file"  name="piece" 
                             style="width: 100%; padding: 3px;"/>
                     </div>
-                    <div id="bancaire" class="col-sm-6">
-                        <label for="">Joindre vos coordonnées bancaire en pdf </label>
-                        <input type="date" name="date_soumission" id=""
-                            style="width: 100%; padding: 3px;border: 1px solid #ccc;border-radius: 20px;">
+                    <div id="logo" class="col-sm-6 ">
+                        <label for="">Joindre votre logo <b style="color: red">*</b></label>
+                        <input type="file" value="" autocomplete="plan" name="url_image" id=""
+                            style="width: 100%; padding: 3px;">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -147,9 +147,8 @@ $Var = "Profil Organisateurs";
                     </div>
                     <div id="ville" class="col-sm-6">
                         <label for="">Ville</label><br>
-                        <select value=""  autocomplete="" name="" id="ville"
-                            style="width: 100%; padding: 6px;border: 1px solid #ccc;border-radius: 20px;">
-
+                        <input type="tel" class="form-control " value="" autocomplete="" name="ville"
+                            style="border-radius: 20px;">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -170,18 +169,7 @@ $Var = "Profil Organisateurs";
                         </select>
                     </div>
                 </div>
-                <div class="form-group row">
-                    <div id="carte" class="col-sm-6 ">
-                        <label for="">Joindre votre carte d'identité en pdf <b style="color: red">*</b></label>
-                        <input type="file" value="" autocomplete="plan" name="plan" id=""
-                            style="width: 100%; padding: 3px;">
-                    </div>
-                    <div id="logo" class="col-sm-6 ">
-                        <label for="">Joindre votre logo <b style="color: red">*</b></label>
-                        <input type="file" value="" autocomplete="plan" name="plan" id=""
-                            style="width: 100%; padding: 3px;">
-                    </div>
-                </div>
+                
 
 {{-- premier cadre --}}
 <div id="new">
@@ -205,23 +193,23 @@ $Var = "Profil Organisateurs";
                         <tbody>
                             <tr id='addr0' data-id="0" class="hidden">
                                 <td data-name="Facebook">
-                                    <input type="text" name='Facebook[]' placeholder='Facebook'
+                                    <input type="text" name='sociaux[]' placeholder='Facebook'
                                         class="form-control" />
                                 </td>
                                 <td data-name="Instagram">
-                                    <input type="text" name='Instagram[]' placeholder='Instagram'
+                                    <input type="text" name='reseaux_sociaux[]' placeholder='Instagram'
                                         class="form-control" />
                                 </td>
                                 <td data-name="YouTube">
-                                    <input type="text" name='YouTube[]' placeholder='YouTube'
+                                    <input type="text" name='reseaux_sociaux[]' placeholder='YouTube'
                                         class="form-control" />
                                 </td>
                                 <td data-name="Linkedin">
-                                    <input type="text" name='Linkedin[]' placeholder='Linkedin'
+                                    <input type="text" name='reseaux_sociaux[]' placeholder='Linkedin'
                                         class="form-control" />
                                 </td>
                                 <td data-name="Telegram">
-                                    <input type="text" name='Telegram[]' placeholder='Telegram'
+                                    <input type="text" name='reseaux_sociaux[]' placeholder='Telegram'
                                         class="form-control" />
                                 </td>
                                 <td data-name="del">
@@ -286,18 +274,18 @@ $Var = "Profil Organisateurs";
                                             <tr id='addr0' data-id="0" class="hidden">
                                                 <td data-name="satisfaction">
                                                     <input type="text" name='satisfaction[]'
-                                                        placeholder='% de satisfaction du client' required class="form-control" />
+                                                        placeholder='% de satisfaction du client' class="form-control" />
                                                 </td>
                                                 <td data-name="evt">
                                                     <input type="text" name='evt[]' placeholder='Nom de lévènement'
                                                         class="form-control" />
                                                 </td>
                                                 <td data-name="missions">
-                                                    <input type="text" name='mission[]' required placeholder='missions'
+                                                    <input type="text" name='mission[]'  placeholder='missions'
                                                         class="form-control" />
                                                 </td>
                                                 <td data-name="annee">
-                                                    <input type="date" name='annee[]' required placeholder='La date de lexpérience'
+                                                    <input type="date" name='annee[]' placeholder='La date de lexpérience'
                                                         class="form-control" style="border-color: cornflowerblue; border-radius: 20px"/>
                                                 </td>
                                                 <td data-name="referencs">
@@ -305,11 +293,11 @@ $Var = "Profil Organisateurs";
                                                         class="form-control" />
                                                 </td>
                                                 <td data-name="commentaire">
-                                                    <input type="text" name='commentaire[]' required placeholder='Dites-nous en quelques lignes'
+                                                    <input type="text" name='commentaire[]' placeholder='Dites-nous en quelques lignes'
                                                         class="form-control" />
                                                 </td>
                                                 <td data-name="image">
-                                                    <input type="file" name='image[]'  required placeholder=''
+                                                    <input type="file" name='image[]'  placeholder=''
                                                         class="form-control" />
                                                 </td>
 
@@ -373,7 +361,7 @@ $Var = "Profil Organisateurs";
                                                         class="form-control" />
                                                 </td>
                                                 <td data-name="titre">
-                                                    <input type="text" name='titre[]' placeholder='Titre du collaborateur' required
+                                                    <input type="text" name='titre[]' placeholder='Titre du collaborateur' 
                                                         class="form-control" />
                                                 </td>
                                                 <td data-name="experience">
@@ -419,7 +407,7 @@ $Var = "Profil Organisateurs";
                                         <tbody>
                                             <tr id='addr0' data-id="0" class="hidden">
                                                 <td data-name="valeur">
-                                                    <input type="text" name='valeur[]' placeholder='' required
+                                                    <input type="text" name='valeur[]' placeholder='Quels sont vos valeurs' 
                                                         class="form-control" />
                                                 </td>
                                                 <td data-name="del">
@@ -464,12 +452,12 @@ $Var = "Profil Organisateurs";
                                             <input type="text" name='nomB[]' placeholder='Nom de la banque' 
                                                 class="form-control" />
                                         </td>
-                                        <td data-name="nom">
-                                            <input type="text" name='nom[]' placeholder='Nom du titulaire' 
+                                        <td data-name="nomT">
+                                            <input type="text" name='nomT[]' placeholder='Nom du titulaire' 
                                                 class="form-control" />
                                         </td>
-                                        <td data-name="prenom">
-                                            <input type="text" name='prenom[]' placeholder='Prenom du titulaire' 
+                                        <td data-name="prenomT">
+                                            <input type="text" name='prenomT[]' placeholder='Prenom du titulaire' 
                                                 class="form-control" />
                                         </td>
                                         <td data-name="numeroI">
@@ -509,6 +497,11 @@ $Var = "Profil Organisateurs";
             <div id="materiel" class="col-sm-6 ">
                 <label for="">Votre méthodes de travail </label>
                 <textarea name="methode_de_travail" id="" cols="30" rows="10" style="border-radius: 20px" ></textarea>
+            </div>           
+     
+            <div id="materiel" class="col-sm-6 ">
+                <label for="">Votre materiel </label>
+                <textarea name="materiel" id="" cols="30" rows="10" style="border-radius: 20px" ></textarea>
             </div>           
         </div>
         <div class="form-group row">

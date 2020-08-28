@@ -152,11 +152,11 @@
                                         
                                       </div>
                               </ul>
-                              @guest
-                              <div class="col-lg-2 offset-lg-3 d-none d-md-block">                         
+                            
+                              <!--<div class="col-lg-2 offset-lg-3 d-none d-md-block">                         
                                       <button class="btn btn-sm _btn_blue" ><a class="test btn_blue" href="{{route('connexion')}}">Connexion</a></button>
-                              </div>
-                              @endguest
+                              </div>-->
+                        
                       {{-- petit ecran --}}
                       
 

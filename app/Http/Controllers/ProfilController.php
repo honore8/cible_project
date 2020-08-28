@@ -31,28 +31,11 @@ abort(404);
 
     public function index()
     {
+      
         $id= auth()->user();
-        if(!(Particulier::where('user_id', '=', $id) || (Entreprise::where('user_id', '=', $id))))
-        {
-            
-        if (auth()->user()->hasrole('participant'))
-         return view('profile-individu');
-        else if (auth()->user()->hasrole('jobs'))
-        return('profile-individu');
-        else if (auth()->user()->hasrole('sous-traiteurs'))
-        return view('profile-entreprise');
-        else if ( auth()->user()->hasRole('organisateur'))
-        return view('organisateurs.profile-organisateurs');
-        else if ( auth()->user()->hasRole('sponsor'))
-        return redirect('sponsor.menu');
-        else if ( auth()->user()->hasRole('sous-traiteurs'))
-            return redirect('sous-traiteurs.menu');
-            else if ( auth()->user()->hasRole('investisseur'))
-            return redirect('investisseur.menu');
-dd('there');
-        }
-        else {
-            dd('here');
+        if((Particulier::where('user_id', '=', $id)) or (Entreprise::where('user_id', '=', $id)))
+        {          
+        
             if ( auth()->user()->hasRole('organisateur'))
             return redirect('menu');
             else if ( auth()->user()->hasRole('sponsor'))
@@ -66,6 +49,24 @@ dd('there');
             else if ( auth()->user()->hasRole('investisseur'))
             return redirect('investisseur.menu');
        
+        }
+        else {
+            if (auth()->user()->hasrole('participant'))
+         return view('profile-individu');
+        else if (auth()->user()->hasrole('jobs'))
+        return('profile-individu');
+        else if (auth()->user()->hasrole('sous-traiteurs'))
+        return view('profile-entreprise');
+        else if ( auth()->user()->hasRole('organisateur'))
+        return view('organisateurs.profile-organisateurs');
+        else if ( auth()->user()->hasRole('sponsor'))
+        return redirect('sponsor.menu');
+        else if ( auth()->user()->hasRole('sous-traiteurs'))
+            return redirect('sous-traiteurs.menu');
+            else if ( auth()->user()->hasRole('investisseur'))
+            return redirect('investisseur.menu');
+       
+           
            
         
         }
@@ -129,7 +130,7 @@ dd('there');
            
         ], [
             'required'=>'Vous devez remplir :attribute',
-            'string'=>'Vous ne pouvez saisir que des lettres',
+            'string'=>'Vous ne pouvez saisir que des lettres :attribute',
         
         ]);
         
@@ -154,12 +155,17 @@ dd('there');
          public function redirect(Request $request){
 
             if ( auth()->user()->hasRole('organisateur'))
-            {
-                if($request->sociaux)
-              $request->reseaux_sociaux=implode('|', $request->sociaux);
-             $request->url_image="img";
-             dd($request->all());
-                auth()->user()->organisateur()->create($request->all());
+          {
+              $organisateur= new Organisateur();
+                
+              $organisateur->reseaux_sociaux=implode('|', $request->reseaux_sociaux);
+              $organisateur->methode_de_travail=$request->methode_de_travail;
+              $organisateur->url_image=$request->url_image;
+              $organisateur->pourquoi_vous=$request->pourquoi_vous;
+              $organisateur->materiel=$request->materiel;
+              $organisateur->user_id=auth()->user()->id;
+              $organisateur->save();
+              
                    $i=0;
            
                 for($i=0; $i<count($request->nom_equipe);$i++)
@@ -167,7 +173,7 @@ dd('there');
                     $equipe['nom']=$request->nom_equipe[$i];
                     $equipe['prenom']=$request->prenom_equipe[$i];
                     $equipe['titre']=$request->titre[$i];
-                    $equipe['annee_experience']=$request->experience[$i];
+                    $equipe['annee_experience']=$request->annee[$i];
                 
                     Organisateur::where('user_id', auth()->user()->id)->first()->equipes()->create($equipe);
          
@@ -192,8 +198,8 @@ dd('there');
 
           
                 return redirect('liste');
+            
             }
-        
             else if ( auth()->user()->hasRole('sponsor'))
             {
 

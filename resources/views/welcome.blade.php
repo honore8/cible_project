@@ -308,11 +308,11 @@
                               @for ($i = 0; $i < $comment->note; $i++)
                               <span class="fa fa-sm fa-star" style="color: #f08832;"></span>
                               @endfor
-                              
+                             <span>            User</span>
                               </h5>
                               <div class="row mb-3">
-                                  <span class="col text-left custom-card-date"></span>
-                                  <span class="col text-right custom-card-date"></span>
+                                  <span class="col text-left custom-card-date">28/08/2020</span>
+                                  <span class="col text-right custom-card-date">Togo</span>
                               </div>
                               <p class="card-text">{{$comment->texte}}</p>
                           </div>
