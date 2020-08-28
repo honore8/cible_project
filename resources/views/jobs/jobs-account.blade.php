@@ -19,6 +19,12 @@
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
   <link href="vendor\datatables\dataTables.bootstrap4.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{asset('bootstrap-4.5.0-dist/css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{asset('css\style.css')}}">  
+ <link rel="stylesheet" href="{{asset('css\chosen.css')}}">
+  <link rel="stylesheet" href="{{asset('css\prism.css')}}"> 
+   <link rel="stylesheet" href="{{asset('select\select2.min.css')}}">  
 </head>
 <body id="page-top">
   <div id="wrapper">
@@ -33,8 +39,8 @@
             <a href="{{Url('/')}}" class="" role="button" aria-pressed="true">Acceuil</a>
             <a href="{{Url('jobs-annonce')}}" class="" role="button" aria-pressed="true">Annonces</a>
             <a href="{{Url('evenement-jobs')}}" class="" role="button" aria-pressed="true">Tous les évènements</a>
-            <a href="{{Url('jobs-perte')}}" class="" role="button" aria-pressed="true">Déclaration d'objet perdu</a>
-            <a href="{{Url('jobs-trouve')}}" class="" role="button" aria-pressed="true">Déclaration d'objet trouvé</a>
+            {{-- <a href="{{Url('jobs-perte')}}" class="" role="button" aria-pressed="true">Déclaration d'objet perdu</a>
+            <a href="{{Url('jobs-trouve')}}" class="" role="button" aria-pressed="true">Déclaration d'objet trouvé</a> --}}
           
          
           </div>
@@ -229,20 +235,7 @@
     </div>
   </div>
 
-  <!-- Bootstrap core JavaScript-->
-  {{-- <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="js/sb-admin-2.min.js"></script>
-  <script src="vendor\chart.js\Chart.min.js"></script>
-  <script src="js\demo\chart-area-demo.js"></script>
-  <script src="js\demo\chart-pie-demo.js"></script>
-  <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-  <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-  <script src="js\demo\datatables-demo.js"></script>
-  <script src="{{asset('jquery\jquery.js')}}" integrity=""></script>
-  <script src="{{asset('bootstrap-4.5.0-dist\js\bootstrap.min.js')}}" integrity=""></script> --}}
-    <!-- Bootstrap core JavaScript-->
+
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
@@ -253,6 +246,14 @@
     <script src="vendor/datatables/jquery.dataTables.min.js"></script>
     <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
     <script src="js\demo\datatables-demo.js"></script>
+
+
+    
+  <script src="{{asset('jquery\chosen.jquery.js')}}" integrity=""></script>
+  <script src="{{asset('bootstrap-4.5.0-dist\js\bootstrap.min.js')}}" integrity=""></script>
+  <script src="{{asset('docsupport/prism.js')}}" type="text/javascript" charset="utf-8"></script>
+  <script src=" {{asset('docsupport/init.js')}}" type="text/javascript" charset="utf-8"></script>
+  <script src=" {{asset('select\select2.min.js')}}" type="text/javascript" charset="utf-8"></script>
 
 </body>
 

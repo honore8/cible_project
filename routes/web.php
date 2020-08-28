@@ -69,12 +69,14 @@ Route::view('demande-sponsors','sponsors.demande-sponsors');
 
 // investisseurs
 Route::view('menusinvestisseurs','investisseurs.investisseurs-account');
+Route::view('profile-investisseurs','investisseurs.profile-investisseurs');
 Route::view('evenementinvestisseurs','investisseurs.evenement-investisseur');
-Route::view('investisseurs-profileindividu','investisseurs.profile-individu');
-Route::view('investisseurs-profileentreprise','investisseurs.profile-entreprise');
+Route::view('demande-investissement','investisseurs.demande-investissement');
+// Route::view('investisseurs-profileindividu','investisseurs.profile-individu');
+// Route::view('investisseurs-profileentreprise','investisseurs.profile-entreprise');
 Route::view('achatagence','investisseurs.acheter-agence');
-Route::view('investisseurs-perte','investisseurs.DeclarationPerte');
-Route::view('investisseurs-trouve','investisseurs.Déclarer-objet-trouvé');
+// Route::view('investisseurs-perte','investisseurs.DeclarationPerte');
+// Route::view('investisseurs-trouve','investisseurs.Déclarer-objet-trouvé');
 
 // sous-traiteurs
 Route::view('menutraiteurs','sous-traiteurs.traiteurs-account');
@@ -108,15 +110,6 @@ Route::view('agence-vente','organisateurs.vendre-agence');
 // Route::view('page-evenement','organisateurs.page-evenement');
 Route::get('/creer-evenement', 'AcceuilController@evenement')->name('creer-evenement');
 Route::get('/page-evenement', 'AcceuilController@page')->name('page-evenement');
-
-
-// jobs
-Route::view('menujobs','jobs.jobs-account');
-Route::view('jobs-profileindividu','jobs.profile-individu');
-Route::view('jobs-perte','jobs.DeclarationPerte');
-Route::view('jobs-trouve','jobs.Déclarer-objet-trouvé');
-Route::view('evenement-jobs','jobs.evenement-jobs');
-Route::view('jobs-annonce','jobs.annonce');
 
 // organisateurs
 

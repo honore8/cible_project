@@ -1,8 +1,8 @@
-@php
+<?php
 $Var = "Profil Organisateurs";
-@endphp
-@extends('organisateurs.model-organisateurs-account')
-@section('content-2')
+?>
+
+<?php $__env->startSection('content-2'); ?>
 <style>
     .card-img-top {
     position: absolute;
@@ -26,58 +26,53 @@ $Var = "Profil Organisateurs";
             <h5 style="font-size: 200%;margin-top:4%"><b>Completer votre profil</b></h5>
         </div>
         <div class="card-body">
-  
-
-            <form method="POST" action="{{route('store')}}" name="Profil" enctype='multipart/form-data'>
-                @csrf
+            
+        <form method="POST" action="" name="Profil" enctype='multipart/form-data'>
+                <?php echo csrf_field(); ?>
                 <div class="form-group row ">
-                @if($errors->any())
-    {!! implode('', $errors->all('<div>:message</div>')) !!}
-@endif
-
                     <div class="col-sm-6 " style="margin-top: 2.5em">
-                        <input type="radio" name="statut" value="individu"  onclick="afficherparticulier()" checked>
+                        <input type="radio" name="type_compte" value="Particulier" onclick="afficherparticulier()" checked>
                         <label for="particulier">Particulier</label>
-                        <input type="radio" name="statut" value="entreprise" onclick="afficherprofessionel()"> <label
+                        <input type="radio" name="type_compte" value="Entreprise" onclick="afficherprofessionel()"> <label
                             for="professionel">Professionel</label>
                     </div>
                     <div id="nom" class="col-sm-6 ">
-                        <label >Votre Nom</label>
-                        <input type="text" value=""  autocomplete="nom_demandeur" class="form-control" name="nom"
+                        <label for="">Votre Nom <b style="color: red">*</b></label>
+                        <input type="text" value="" required autocomplete="nom_demandeur" class="form-control" name=""
                             id="">
                     </div>
                     <div id="raison" class="col-sm-6 " style="display:none;">
-                        <label for="">Raison sociale</label>
-                        <input type="text" value=""  autocomplete="nom_demandeur" class="form-control" name="raison"
+                        <label for="">Raison sociale <b style="color: red">*</b></label>
+                        <input type="text" value="" required autocomplete="nom_demandeur" class="form-control" name=""
                             id="">
                     </div>
                 </div>
                 <div class="form-group row">
                     <div id="prenom" class="col-sm-6">
-                        <label for="prenom">Votre Prenom</label>
-                        <input type="text" class="form-control " value=""  autocomplete="" name="prenom"
+                        <label for="prenom">Votre Prenom <b style="color: red">*</b></label>
+                        <input type="text" class="form-control " value="" required autocomplete="" name="prenom"
                             style="border-radius: 20px;">
 
                     </div>
                     <div id="date" class="col-sm-6">
-                        <label for="">Date de naissance</label>
-                        <input type="date" class="form-control "  autocomplete="" name="date_nais"
+                        <label for="">Date de naissance <b style="color: red">*</b></label>
+                        <input type="date" class="form-control " value="naissance" required autocomplete="" name="naissance"
                             style="border-radius: 20px;">
 
                     </div>
                     <div id="nom-resp" class="col-sm-4 " style="display:none;">
-                        <label for="">Nom du responsable</label>
-                        <input type="text" value="" autocomplete="nom_demandeur" class="form-control" name="nomR"
+                        <label for="">Nom du responsable <b style="color: red">*</b></label>
+                        <input type="text" value="" required autocomplete="nom_demandeur" class="form-control" name=""
                             id="">
                     </div>
                     <div id="prenom-resp" class="col-sm-4 " style="display:none;">
-                        <label for="">Prenom du responsable</label>
-                        <input type="text" value="" autocomplete="nom_demandeur" class="form-control" name="prenomR"
+                        <label for="">Prenom du responsable <b style="color: red">*</b></label>
+                        <input type="text" value="" required autocomplete="nom_demandeur" class="form-control" name=""
                             id="">
                     </div>
                     <div id="annee" class="col-sm-4" style="display:none;">
-                        <label for="">Année de création</label>
-                        <input type="date" class="form-control " value="annee" autocomplete="" name="annee"
+                        <label for="">Année de création <b style="color: red">*</b></label>
+                        <input type="date" class="form-control " value="annee" required autocomplete="" name="annee"
                             style="border-radius: 20px;">
 
                     </div>
@@ -85,58 +80,47 @@ $Var = "Profil Organisateurs";
 
                 <div class="form-group row">
                     <div id="genre" class="col-sm-6">
-                        <label for="">Genre</label><br>
-                        <select value=""  name="genre" id="pays"
+                        <label for="">Genre <b style="color: red">*</b></label><br>
+                        <select value="" required autocomplete="" name="pays" id="pays"
                             style="width: 100%; padding: 6px;border: 1px solid #ccc;border-radius: 20px;">
 
                             <option value="">Choisir...</option>
-                            <option value='G'>Masculin</option>
-                            <option value='F'>Feminin</option>
+                            <option value="">Masculin</option>
+                            <option value="">Feminin</option>
 
                         </select>
                     </div>
                     <div id="situation" class="col-sm-6">
-                        <label for="">Situation matrimoniale</label><br>
-                        <select  autocomplete="" name="situation_mat" id="pays"
+                        <label for="">Situation matrimoniale <b style="color: red">*</b></label><br>
+                        <select value="" required autocomplete="" name="" id="pays"
                             style="width: 100%; padding: 6px;border: 1px solid #ccc;border-radius: 20px;">
 
                             <option value="">Choisir...</option>
-                            <option >Célibataire</option>
-                            <option >Mariée</option>
-                            <option >Veuve</option>
-                            <option >Divorcée</option>
+                            <option value="">Célibataire</option>
+                            <option value="">Mariée</option>
+                            <option value="">Veuve</option>
+                            <option value="">Divorcée</option>
 
                         </select>
                     </div>
                 </div>
-                <div class="form-group row">
-                    <div id="carte" class="col-sm-6 ">
-                        <label for="">Joindre votre carte d'identité en pdf </label>
-                        <input type="file"  name="piece" 
-                            style="width: 100%; padding: 3px;"/>
-                    </div>
-                    <div id="bancaire" class="col-sm-6">
-                        <label for="">Joindre vos coordonnées bancaire en pdf </label>
-                        <input type="date" name="date_soumission" id=""
-                            style="width: 100%; padding: 3px;border: 1px solid #ccc;border-radius: 20px;">
-                    </div>
-                </div>
+       
                 <div class="form-group row">
                     <div class="col-sm-6">
-                        <label for="">Téléphone</label>
-                        <input type="tel" class="form-control " value="" autocomplete="" name="telephone"
+                        <label for="">Téléphone <b style="color: red">*</b></label>
+                        <input type="tel" class="form-control " value="" required autocomplete="" name="telephone"
                             style="border-radius: 20px;">
                     </div>
                     <div class="col-sm-6">
-                        <label for="">Email</label>
-                        <input type="email" class="form-control" value="{{auth()->user()->email}}"  autocomplete="" name="email"
+                        <label for="">Email <b style="color: red">*</b></label>
+                        <input type="email" class="form-control" value="" required autocomplete="" name="email"
                             style="border-radius: 20px;">
                     </div>
                 </div>
                 <div class="form-group row">
                     <div id="pays" class="col-sm-6">
-                        <label for="">Pays</label><br>
-                        <select value=""  autocomplete="" name="pays" id="pays"
+                        <label for="">Pays <b style="color: red">*</b></label><br>
+                        <select value="" required autocomplete="" name="pays" id="pays"
                             style="width: 100%; padding: 6px;border: 1px solid #ccc;border-radius: 20px;">
 
                             <option value="">Choisir...</option>
@@ -145,28 +129,28 @@ $Var = "Profil Organisateurs";
 
                         </select>
                     </div>
-                    <div id="ville" class="col-sm-6">
-                        <label for="">Ville</label><br>
-                        <select value=""  autocomplete="" name="" id="ville"
-                            style="width: 100%; padding: 6px;border: 1px solid #ccc;border-radius: 20px;">
+                    <div class="col-sm-6">
+                        <label for="">Ville <b style="color: red">*</b></label>
+                        <input type="text" class="form-control " value="" required autocomplete="" name="ville"
+                            style="border-radius: 20px;">
 
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-sm-6">
-                        <label for="">Adresse</label>
-                        <input type="tel" class="form-control " value="" autocomplete="" name="adresse"
+                        <label for="">Adresse <b style="color: red">*</b></label>
+                        <input type="tel" class="form-control " value="" required autocomplete="" name="adresse"
                             style="border-radius: 20px;">
 
                     </div>
                   
                     <div id="specialite" class="col-sm-6">
-                        <label for="">Spécialité</label><br>
-                        <select  autocomplete="" name="profession" 
+                        <label for="">Spécialité <b style="color: red">*</b></label><br>
+                        <select value="" required autocomplete="" name="" id="ville"
                             style="width: 100%; padding: 6px;border: 1px solid #ccc;border-radius: 20px;">
                             <option value="">Choisir...</option>
-                            <option >Agronome</option>
-                            <option >Ingenieurie</option>
+                            <option value="">Agronome</option>
+                            <option value="">Ingenieurie</option>
                         </select>
                     </div>
                 </div>
@@ -183,7 +167,7 @@ $Var = "Profil Organisateurs";
                     </div>
                 </div>
 
-{{-- premier cadre --}}
+
 <div id="new">
     <fieldset
         style="border: black solid 0.5px;margin-bottom: 15px; padding: 20px;margin: 0 auto 15px auto; ">
@@ -240,9 +224,9 @@ $Var = "Profil Organisateurs";
 </div>
                 
                 
-{{-- deuxieme cadre --}}
+
                 
-                <div id="new1">z
+                <div id="new1">
                    
                     <fieldset
                         style="border: black solid 0.5px;margin-bottom: 15px; padding: 20px;margin: 0 auto 15px auto; ">
@@ -288,8 +272,8 @@ $Var = "Profil Organisateurs";
                                                     <input type="text" name='satisfaction[]'
                                                         placeholder='% de satisfaction du client' required class="form-control" />
                                                 </td>
-                                                <td data-name="evt">
-                                                    <input type="text" name='evt[]' placeholder='Nom de lévènement'
+                                                <td data-name="évènement">
+                                                    <input type="text" name='évènement[]' required placeholder='Nom de lévènement'
                                                         class="form-control" />
                                                 </td>
                                                 <td data-name="missions">
@@ -300,8 +284,8 @@ $Var = "Profil Organisateurs";
                                                     <input type="date" name='annee[]' required placeholder='La date de lexpérience'
                                                         class="form-control" style="border-color: cornflowerblue; border-radius: 20px"/>
                                                 </td>
-                                                <td data-name="referencs">
-                                                    <input type="text" name='references[]' placeholder='Le/Les références'
+                                                <td data-name="référents">
+                                                    <input type="text" name='référents[]' required placeholder='Le/Les référents'
                                                         class="form-control" />
                                                 </td>
                                                 <td data-name="commentaire">
@@ -329,7 +313,7 @@ $Var = "Profil Organisateurs";
                 </div>
                
 
-{{-- troisieme cadre --}}
+
 
 
                 <div id="new2">
@@ -364,20 +348,20 @@ $Var = "Profil Organisateurs";
                                         </thead>
                                         <tbody>
                                             <tr id='addr0' data-id="0" class="hidden">
-                                                <td data-name="nom_equipe">
-                                                    <input type="text" name='nom_equipe[]'
-                                                        placeholder='Nom du collaborateur' class="form-control" />
+                                                <td data-name="nom">
+                                                    <input type="text" name='nom[]'
+                                                        placeholder='Nom du collaborateur' required class="form-control" />
                                                 </td>
-                                                <td data-name="prenom_equipe">
-                                                    <input type="text" name='prenom_equipe[]' placeholder='Prenom du collaborateur'
+                                                <td data-name="prenom">
+                                                    <input type="text" name='prenom[]' placeholder='Prenom du collaborateur' required
                                                         class="form-control" />
                                                 </td>
                                                 <td data-name="titre">
                                                     <input type="text" name='titre[]' placeholder='Titre du collaborateur' required
                                                         class="form-control" />
                                                 </td>
-                                                <td data-name="experience">
-                                                    <input type="text" name='experience[]' placeholder='Année dexpérience'
+                                                <td data-name="annee">
+                                                    <input type="text" name='annee[]' placeholder='Année dexpérience' required
                                                         class="form-control"/>
                                                 </td>                                          
                                                 <td data-name="del">
@@ -395,7 +379,7 @@ $Var = "Profil Organisateurs";
                     </fieldset>
                 </div>
 
-                {{-- quatrieme cadre --}}
+                
                 <div id="new3">
                     <fieldset
                         style="border: black solid 0.5px;margin-bottom: 15px; padding: 20px;margin: 0 auto 15px auto; ">
@@ -437,7 +421,7 @@ $Var = "Profil Organisateurs";
                     </fieldset>
                 </div>
                 
-        {{-- cinquieme cadre --}}
+        
         <div id="newb">
             <fieldset
                 style="border: black solid 0.5px;margin-bottom: 15px; padding: 20px;margin: 0 auto 15px auto; ">
@@ -497,18 +481,18 @@ $Var = "Profil Organisateurs";
 
         <div class="form-group row ">
             <div id="nom" class="col-sm-6 ">
-                <label for="">Condition de paiement</label>
-                <textarea name="conditions_paiement" id="" cols="30" rows="10" style="border-radius: 20px" placeholder=""></textarea>
+                <label for="">Condition de paiement <b style="color: red">*</b></label>
+                <textarea name="" id="" cols="5" rows="5" style="border-radius: 20px" placeholder="" required></textarea>
             </div>
             <div id="raison" class="col-sm-6 " >
-                <label for="">Pourquoi vous confiez un évènement?</label>
-               <textarea name="pourquoi_vous" id="" cols="30" rows="10" style="border-radius: 20px" placeholder="Dites-nous en 3lignes maximum"></textarea>
+                <label for="">Pourquoi vous confiez un évènement? <b style="color: red">*</b></label>
+               <textarea name="" id="" cols="5" rows="5" style="border-radius: 20px" placeholder="Dites-nous en 3lignes maximum" required></textarea>
             </div>
         </div>
         <div class="form-group row ">
             <div id="materiel" class="col-sm-6 ">
-                <label for="">Votre méthodes de travail </label>
-                <textarea name="methode_de_travail" id="" cols="30" rows="10" style="border-radius: 20px" ></textarea>
+                <label for="">Votre matériel <b style="color: red">*</b></label>
+                <textarea name="" id="" cols="5" rows="5" style="border-radius: 20px" placeholder="exemple: Louche,Assiètte,Fourchette,etc...." required></textarea>
             </div>           
         </div>
         <div class="form-group row">
@@ -520,7 +504,7 @@ $Var = "Profil Organisateurs";
      </form>
     </div>
     </div>
-@endsection
+<?php $__env->stopSection(); ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <script>
@@ -910,7 +894,11 @@ $Var = "Profil Organisateurs";
         }).disableSelection();
 
         $(".table-sortable thead").disableSelection();
+
+
+
         $("#add_row_banque").trigger("click");
     });
 
 </script>
+<?php echo $__env->make('organisateurs.model-organisateurs-account', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\Cible\cible_project1\resources\views/organisateurs/profile-organisateurs.blade.php ENDPATH**/ ?>
