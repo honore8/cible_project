@@ -36,9 +36,9 @@ $Var = "Profil Organisateurs";
 @endif
 
                     <div class="col-sm-6 " style="margin-top: 2.5em">
-                        <input type="radio" name="individu"  onclick="afficherparticulier()" checked>
+                        <input type="radio" value="individu"  onclick="afficherparticulier()" checked name="statut">
                         <label for="particulier">Particulier</label>
-                        <input type="radio" name="entreprise" onclick="afficherprofessionel()"> <label
+                        <input type="radio" value="entreprise" onclick="afficherprofessionel()" name="statut"> <label
                             for="professionel">Professionel</label>
                     </div>
                     <div id="nom" class="col-sm-6 ">
@@ -115,10 +115,10 @@ $Var = "Profil Organisateurs";
                         <input type="file"  name="piece" 
                             style="width: 100%; padding: 3px;"/>
                     </div>
-                    <div id="bancaire" class="col-sm-6">
-                        <label for="">Joindre vos coordonnées bancaire en pdf </label>
-                        <input type="date" name="date_soumission" id=""
-                            style="width: 100%; padding: 3px;border: 1px solid #ccc;border-radius: 20px;">
+                    <div id="logo" class="col-sm-6 ">
+                        <label for="">Joindre votre logo <b style="color: red">*</b></label>
+                        <input type="file" value="" autocomplete="plan" name="plan" id=""
+                            style="width: 100%; padding: 3px;">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -147,9 +147,8 @@ $Var = "Profil Organisateurs";
                     </div>
                     <div id="ville" class="col-sm-6">
                         <label for="">Ville</label><br>
-                        <select value=""  autocomplete="" name="" id="ville"
-                            style="width: 100%; padding: 6px;border: 1px solid #ccc;border-radius: 20px;">
-
+                        <input type="text" class="form-control " value="ville" autocomplete="" name="ville"
+                            style="border-radius: 20px;">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -170,18 +169,7 @@ $Var = "Profil Organisateurs";
                         </select>
                     </div>
                 </div>
-                <div class="form-group row">
-                    <div id="carte" class="col-sm-6 ">
-                        <label for="">Joindre votre carte d'identité en pdf <b style="color: red">*</b></label>
-                        <input type="file" value="" autocomplete="plan" name="plan" id=""
-                            style="width: 100%; padding: 3px;">
-                    </div>
-                    <div id="logo" class="col-sm-6 ">
-                        <label for="">Joindre votre logo <b style="color: red">*</b></label>
-                        <input type="file" value="" autocomplete="plan" name="plan" id=""
-                            style="width: 100%; padding: 3px;">
-                    </div>
-                </div>
+       
 
 {{-- premier cadre --}}
 <div id="new">
@@ -224,17 +212,13 @@ $Var = "Profil Organisateurs";
                                     <input type="text" name='Telegram[]' placeholder='Telegram'
                                         class="form-control" />
                                 </td>
-                                <td data-name="del">
-                                    <button name="del0"
-                                        class='btn btn-danger glyphicon glyphicon-remove row-remove'><span
-                                            aria-hidden="true">×</span></button>
-                                </td>
+                           
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            <a style="color: white" id="add_row" class="btn btn-primary float-right">Ajouter réseaux</a>
+         
         </div>
     </fieldset>
 </div>
@@ -242,7 +226,7 @@ $Var = "Profil Organisateurs";
                 
 {{-- deuxieme cadre --}}
                 
-                <div id="new1">z
+                <div id="new1">
                    
                     <fieldset
                         style="border: black solid 0.5px;margin-bottom: 15px; padding: 20px;margin: 0 auto 15px auto; ">
@@ -286,30 +270,30 @@ $Var = "Profil Organisateurs";
                                             <tr id='addr0' data-id="0" class="hidden">
                                                 <td data-name="satisfaction">
                                                     <input type="text" name='satisfaction[]'
-                                                        placeholder='% de satisfaction du client' required class="form-control" />
+                                                        placeholder='% de satisfaction du client'  class="form-control" />
                                                 </td>
                                                 <td data-name="évènement">
-                                                    <input type="text" name='évènement[]' required placeholder='Nom de lévènement'
+                                                    <input type="text" name='évènement[]'  placeholder='Nom de lévènement'
                                                         class="form-control" />
                                                 </td>
                                                 <td data-name="missions">
-                                                    <input type="text" name='mission[]' required placeholder='missions'
+                                                    <input type="text" name='mission[]'  placeholder='missions'
                                                         class="form-control" />
                                                 </td>
                                                 <td data-name="annee">
-                                                    <input type="date" name='annee[]' required placeholder='La date de lexpérience'
+                                                    <input type="date" name='annee[]'  placeholder='La date de lexpérience'
                                                         class="form-control" style="border-color: cornflowerblue; border-radius: 20px"/>
                                                 </td>
                                                 <td data-name="référents">
-                                                    <input type="text" name='référents[]' required placeholder='Le/Les référents'
+                                                    <input type="text" name='référents[]'  placeholder='Le/Les référents'
                                                         class="form-control" />
                                                 </td>
                                                 <td data-name="commentaire">
-                                                    <input type="text" name='commentaire[]' required placeholder='Dites-nous en quelques lignes'
+                                                    <input type="text" name='commentaire[]'  placeholder='Dites-nous en quelques lignes'
                                                         class="form-control" />
                                                 </td>
                                                 <td data-name="image">
-                                                    <input type="file" name='image[]'  required placeholder=''
+                                                    <input type="file" name='image[]'   placeholder=''
                                                         class="form-control" />
                                                 </td>
 
@@ -373,7 +357,7 @@ $Var = "Profil Organisateurs";
                                                         class="form-control" />
                                                 </td>
                                                 <td data-name="titre">
-                                                    <input type="text" name='titre[]' placeholder='Titre du collaborateur' required
+                                                    <input type="text" name='titre[]' placeholder='Titre du collaborateur' 
                                                         class="form-control" />
                                                 </td>
                                                 <td data-name="experience">
@@ -419,7 +403,7 @@ $Var = "Profil Organisateurs";
                                         <tbody>
                                             <tr id='addr0' data-id="0" class="hidden">
                                                 <td data-name="valeur">
-                                                    <input type="text" name='valeur[]' placeholder='' required
+                                                    <input type="text" name='valeur[]' placeholder='' 
                                                         class="form-control" />
                                                 </td>
                                                 <td data-name="del">
@@ -464,7 +448,7 @@ $Var = "Profil Organisateurs";
                                             <input type="text" name='nomB[]' placeholder='Nom de la banque' 
                                                 class="form-control" />
                                         </td>
-                                        <td data-name="nom">
+                                        <td data-name="nomT">
                                             <input type="text" name='nom[]' placeholder='Nom du titulaire' 
                                                 class="form-control" />
                                         </td>
@@ -498,19 +482,24 @@ $Var = "Profil Organisateurs";
         <div class="form-group row ">
             <div id="nom" class="col-sm-6 ">
                 <label for="">Condition de paiement</label>
-                <textarea name="conditions_paiement" id="" cols="30" rows="10" style="border-radius: 20px" placeholder=""></textarea>
+                <textarea name="conditions_paiement" id="" cols="5" rows="5" style="border-radius: 20px" placeholder=""></textarea>
             </div>
             <div id="raison" class="col-sm-6 " >
                 <label for="">Pourquoi vous confiez un évènement?</label>
-               <textarea name="pourquoi_vous" id="" cols="30" rows="10" style="border-radius: 20px" placeholder="Dites-nous en 3lignes maximum"></textarea>
+               <textarea name="pourquoi_vous" id="" cols="5" rows="5" style="border-radius: 20px" placeholder="Dites-nous en 3lignes maximum"></textarea>
             </div>
         </div>
         <div class="form-group row ">
             <div id="materiel" class="col-sm-6 ">
-                <label for="">Votre méthodes de travail </label>
-                <textarea name="methode_de_travail" id="" cols="30" rows="10" style="border-radius: 20px" ></textarea>
+                <label for="">Votre materiel </label>
+                <textarea name="materiel" id="" cols="5" rows="5" style="border-radius: 20px" ></textarea>
+            </div>   
+            <div id="methode" class="col-sm-6 ">
+                <label for="">Comment travaillez vous avec vos client?? </label>
+                <textarea name="methode_de_travail" id="" cols="5" rows="5" style="border-radius: 20px" ></textarea>
             </div>           
         </div>
+ 
         <div class="form-group row">
             <div class="col-sm-12" style=" text-align: center">
                 <button type="submit" class="btn btn-primary bouton">Envoyer</button>
@@ -536,7 +525,6 @@ $Var = "Profil Organisateurs";
         document.getElementById('annee').style.display = "none";
         document.getElementById('new1').style.display = "block";
         document.getElementById('new2').style.display = "block";
-        document.getElementById('materiel').style.display = "block";
         document.getElementById('client').style.display = "none";
     }
 
@@ -552,84 +540,8 @@ $Var = "Profil Organisateurs";
         document.getElementById('annee').style.display = "block";
         document.getElementById('new1').style.display = "none";
         document.getElementById('new2').style.display = "none";       
-        document.getElementById('materiel').style.display = "none";
         document.getElementById('client').style.display = "block";
     }
-
-</script>
-
-
-<script>
-    $(document).ready(function() {
-        $("#add_row").on("click", function() {
-            // Dynamic Rows Code
-
-            // Get max row id and set new id
-            var newid = 0;
-            $.each($("#tab_logic tr"), function() {
-                if (parseInt($(this).data("id")) > newid) {
-                    newid = parseInt($(this).data("id"));
-                }
-            });
-            newid++;
-
-            var tr = $("<tr></tr>", {
-                id: "addr" + newid,
-                "data-id": newid
-            });
-
-            // loop through each td and create new elements with name of newid
-            $.each($("#tab_logic tbody tr:nth(0) td"), function() {
-                var td;
-                var cur_td = $(this);
-
-                var children = cur_td.children();
-
-                // add new td and element if it has a nane
-                if ($(this).data("name") !== undefined) {
-                    td = $("<td></td>", {
-                        "data-name": $(cur_td).data("name")
-                    });
-
-                    var c = $(cur_td).find($(children[0]).prop('tagName')).clone().val("");
-                    c.attr("name", $(cur_td).data("name") + newid);
-                    c.appendTo($(td));
-                    td.appendTo($(tr));
-                } else {
-                    td = $("<td></td>", {
-                        'text': $('#tab_logic tr').length
-                    }).appendTo($(tr));
-                }
-            });
-
-            $(tr).appendTo($('#tab_logic'));
-
-            $(tr).find("td button.row-remove").on("click", function() {
-                $(this).closest("tr").remove();
-            });
-        });
-        // Sortable Code
-        var fixHelperModified = function(e, tr) {
-            var $originals = tr.children();
-            var $helper = tr.clone();
-
-            $helper.children().each(function(index) {
-                $(this).width($originals.eq(index).width())
-            });
-
-            return $helper;
-        };
-
-        $(".table-sortable tbody").sortable({
-            helper: fixHelperModified
-        }).disableSelection();
-
-        $(".table-sortable thead").disableSelection();
-
-
-
-        $("#add_row").trigger("click");
-    });
 
 </script>
 <script>
@@ -908,7 +820,6 @@ $Var = "Profil Organisateurs";
         $(".table-sortable tbody").sortable({
             helper: fixHelperModified
         }).disableSelection();
-
         $(".table-sortable thead").disableSelection();
         $("#add_row_banque").trigger("click");
     });
