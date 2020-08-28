@@ -3,15 +3,15 @@
 <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="icon" type="image/png" href="{{url('images\favicon1.png')}}">
+      <link rel="icon" type="image/png" href="<?php echo e(url('images\favicon1.png')); ?>">
       <link href="fontawesome-free-5.13.0-web/css/all.min.css" rel="stylesheet">
       <link href="css/sb-admin-2.min.css" rel="stylesheet">
       <!--load all styles -->     
-      <link rel="stylesheet" href="{{asset('bootstrap-4.5.0-dist/css/bootstrap.min.css')}}">
-      <link rel="stylesheet" href="{{asset('css\style.css')}}">
-      <link rel="stylesheet" href="{{asset('css\chosen.css')}}">
-      <link rel="stylesheet" href="{{asset('select\select2.min.css')}}">  
-      <title>CIBLE | {{ $Var ?? ''}}</title> 
+      <link rel="stylesheet" href="<?php echo e(asset('bootstrap-4.5.0-dist/css/bootstrap.min.css')); ?>">
+      <link rel="stylesheet" href="<?php echo e(asset('css\style.css')); ?>">
+      <link rel="stylesheet" href="<?php echo e(asset('css\chosen.css')); ?>">
+      <link rel="stylesheet" href="<?php echo e(asset('select\select2.min.css')); ?>">  
+      <title>CIBLE | <?php echo e($Var ?? ''); ?></title> 
 </head>
 <body>
       <header >
@@ -30,18 +30,18 @@
                   
                         <div class="col-md-4 offset-md-2 col-lg-3 offset-lg-4 boutons" >
                             <div>
-                                <button class="btn _btn_blue btn-sm top-button-color"><a href="{{Url('proposdenous')}}" class="test btn_blue"> A propos de</a></button>
+                                <button class="btn _btn_blue btn-sm top-button-color"><a href="<?php echo e(Url('proposdenous')); ?>" class="test btn_blue"> A propos de</a></button>
                                 <button class="btn _btn_blue btn-sm top-button-color btn_blue" data-toggle="modal" data-target="#exampleModal"> Nous Ecrire</button>
-                                @auth
-                                <a href="{{url('/logout')}}"  class="font-weight-bold" style="border: solid 2px black; padding-bottom: 5px;border-radius: 5px;padding-top: 1%"> <span class="fa fa-user"></span>Se déconnecter</a>
-                                @endauth
+                                <?php if(auth()->guard()->check()): ?>
+                                <a href="<?php echo e(url('/logout')); ?>"  class="font-weight-bold" style="border: solid 2px black; padding-bottom: 5px;border-radius: 5px;padding-top: 1%"> <span class="fa fa-user"></span>Se déconnecter</a>
+                                <?php endif; ?>
                               </div>                           
                         </div>
                         </div>
                     </div>
                 </div>
             </nav>
-              {{-- Modal Ecrire --}}
+              
               <div class="modal " id="exampleModal" tabindex="-1" role="dialog">
                   <div class="modal-dialog modal-md">
                       <div class="modal-content">
@@ -54,8 +54,8 @@
                           </div> 
                           <div class="modal-body">
                     
-                              <form action="{{route('contact')}}" method="POST">
-                              @csrf
+                              <form action="<?php echo e(route('contact')); ?>" method="POST">
+                              <?php echo csrf_field(); ?>
                                   <div class="col-lg-12">
                                           <div class="p-5">
                                               <div class="text-center">
@@ -104,7 +104,7 @@
               <div class="container-fluid" >
                       <div class="row mb-2">
                               <div class="col-6 col-md-3 col-lg-2" style="margin-top: 3em">
-                                      <a href="/"><img class="mx-auto my-auto float-right image" src="{{asset('images\cible.png')}}"
+                                      <a href="/"><img class="mx-auto my-auto float-right image" src="<?php echo e(asset('images\cible.png')); ?>"
                                               alt="logo1"></a>
                               </div>
                               <div class="col-6 col-md-9 col-lg-10 pl-0 pr-0 " style="background-image: url(images/BANNIERE_NEW.png);
@@ -128,22 +128,20 @@
                       </button>
                       <div class="collapse navbar-collapse row" id="navbarNav">
                               <ul class="navbar-nav col-sm-12 col-lg-4 offset-lg-3 reseau-sociaux">
-                                      {{-- <li class="nav-item active barre" >
-                                              <button class="nav-link" data-toggle="modal" data-target="#exampleModal">Nous ecrire <span class="sr-only">(current)</span></button>
-                                          </li> --}}
+                                      
                                           
                                       <li class="nav-item active">
-                                              <a class="nav-link .navbar-light .navbar-nav .nav-link" href="{{Url('/')}}" ><b>Acceuil</b> <span class="sr-only">(current)</span></a>
+                                              <a class="nav-link .navbar-light .navbar-nav .nav-link" href="<?php echo e(Url('/')); ?>" ><b>Acceuil</b> <span class="sr-only">(current)</span></a>
                                       </li>
                                       <li class="nav-item">
-                                              <a class="nav-link .navbar-light .navbar-nav .nav-link" href="{{Url('fonctionnement')}}"><b>Fonctionnement</b></a>
+                                              <a class="nav-link .navbar-light .navbar-nav .nav-link" href="<?php echo e(Url('fonctionnement')); ?>"><b>Fonctionnement</b></a>
                                       </li>
                                       <li class="nav-item">
-                                              <a class="nav-link .navbar-light .navbar-nav .nav-link" href="{{Url('tarification')}}"><b>Tarification</b></a>
+                                              <a class="nav-link .navbar-light .navbar-nav .nav-link" href="<?php echo e(Url('tarification')); ?>"><b>Tarification</b></a>
                                       </li>
                                     
                                       <li class="nav-item barre" >
-                                          <a class="nav-link" href="{{Url('proposdenous')}}"><b>A propos</b> </a>
+                                          <a class="nav-link" href="<?php echo e(Url('proposdenous')); ?>"><b>A propos</b> </a>
                                       </li>
                                       <div class="col-lg-12 offset-lg-3 d-block d-md-none">
 
@@ -152,25 +150,25 @@
                                         
                                       </div>
                               </ul>
-                            
-                              <!--<div class="col-lg-2 offset-lg-3 d-none d-md-block">                         
-                                      <button class="btn btn-sm _btn_blue" ><a class="test btn_blue" href="{{route('connexion')}}">Connexion</a></button>
-                              </div>-->
-                        
-                      {{-- petit ecran --}}
+                              <?php if(auth()->guard()->guest()): ?>
+                              <div class="col-lg-2 offset-lg-3 d-none d-md-block">                         
+                                      <button class="btn btn-sm _btn_blue" ><a class="test btn_blue" href="<?php echo e(route('connexion')); ?>">Connexion</a></button>
+                              </div>
+                              <?php endif; ?>
+                      
                       
 
               </nav>
               <!-- fin navbar -->
       </header>
-      @yield('content')
+      <?php echo $__env->yieldContent('content'); ?>
       <!-- debut footer -->
       <footer>
               <div class="container-fluid fluid d-none d-lg-block">
                       <div class="row text-white text-center p-2" style="background-color: #020e49;">
                               <div class="col ">Nous contacter </div>
                               <div class="col">Types d'evenements</div>
-                              {{-- <div class="col"> Types d'évènement</div> --}}
+                              
                               <div class="col"> Lieu d'utilisation</div>
                       </div>
                       <div class="row text-white p-2 " style="background-color: #03177a;">
@@ -255,55 +253,27 @@
                                         <div>
                                             <label for="">défilé de mode</label>
                                         </div>
-                                        {{-- <div>
-                                            <label for="">Réalité virtuelle</label>
-                                        </div>                            --}}
+                                        
                                     </div>
                                   
                               </div>
-                              {{-- <div class="col-1 d-flex">
-                                      <div class="vertical-bar mx-auto"></div>
-                              </div> --}}
-                              {{-- <div class="row">
-                                <div class="form-group col-6">
-                                    <div>
-                                        <label for="">Vip</label>
-                                    </div>
-                                    <div>
-                                        <label for="">Privilège</label>
-                                    </div>
-                                    <div>
-                                        <label for="">Adulte</label>
-                                    </div>                           
-                                </div>
-                                <div class="form-group col-6">
-                                    <div>
-                                        <label for="">Couple</label>
-                                    </div>
-                                    <div>
-                                        <label for="">Enfant</label>
-                                    </div>
-                                    <div>
-                                        <label for="">Groupe</label>
-                                    </div>                           
-                                </div>
-                            
-                        </div> --}}
+                              
+                              
                         <div class="col-1 d-flex">
                                 <div class="vertical-bar mx-auto"></div>
                         </div>
                               <div class="col">
-                              @if (is_array($lieux ?? '') || is_object($lieux ?? ''))
-                                @foreach ($lieux ?? '' as $drapeau)
+                              <?php if(is_array($lieux ?? '') || is_object($lieux ?? '')): ?>
+                                <?php $__currentLoopData = $lieux ?? ''; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $drapeau): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                       <img src="images\drapeau-de-france-icone.png" alt="" width="40px">
-                               @endforeach 
-                               @endif 
+                               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> 
+                               <?php endif; ?> 
                                       
                               </div>
                       </div>
               </div>
 
-              {{-- petit ecran --}}
+              
 
               <div class="container-fluid fluid d-block d-lg-none">
                       <div class="row text-white text-center p-2" style="background-color: #020e49;">
@@ -391,9 +361,7 @@
                                 <div class="txt">
                                     <label for="">défilé de mode</label>
                                 </div>
-                                {{-- <div class="txt">
-                                    <label for="">Réalité virtuelle</label>
-                                </div>                           --}}
+                                
                             </div>
                     
                       </div>
@@ -413,26 +381,19 @@
           </div>     
       </footer>
 
-      {{-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js&quot;
-              integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-      </script> --}}
+      
       <script src="vendor/jquery/jquery.min.js"></script>
       <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
       <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
       <script src="js/sb-admin-2.min.js"></script>
-      <script src="{{asset('jquery\jquery.js')}}" integrity=""></script>
-      <script src="{{asset('jquery\chosen.jquery.js')}}" integrity=""></script>
-      <script src="{{asset('bootstrap-4.5.0-dist\js\bootstrap.min.js')}}" integrity=""></script>
-      <script src="{{asset('docsupport/prism.js')}}" type="text/javascript" charset="utf-8"></script>
-      <script src=" {{asset('docsupport/init.js')}}" type="text/javascript" charset="utf-8"></script>
-      <script src=" {{asset('select\select2.min.js')}}" type="text/javascript" charset="utf-8"></script>
-      {{-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js&quot;
-              integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-      </script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js&quot;
-              integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
-      </script> --}}
-      @yield('script')
+      <script src="<?php echo e(asset('jquery\jquery.js')); ?>" integrity=""></script>
+      <script src="<?php echo e(asset('jquery\chosen.jquery.js')); ?>" integrity=""></script>
+      <script src="<?php echo e(asset('bootstrap-4.5.0-dist\js\bootstrap.min.js')); ?>" integrity=""></script>
+      <script src="<?php echo e(asset('docsupport/prism.js')); ?>" type="text/javascript" charset="utf-8"></script>
+      <script src=" <?php echo e(asset('docsupport/init.js')); ?>" type="text/javascript" charset="utf-8"></script>
+      <script src=" <?php echo e(asset('select\select2.min.js')); ?>" type="text/javascript" charset="utf-8"></script>
+      
+      <?php echo $__env->yieldContent('script'); ?>
       <script>
               $(document).ready(function(){
                       
@@ -461,3 +422,4 @@ $('.select2-container').children().css('border-radius','20px')
 });
   </script>
 </html>
+<?php /**PATH C:\laragon\www\Cible\cible_project1\resources\views/layout.blade.php ENDPATH**/ ?>
