@@ -21,14 +21,18 @@ public function __construct()
 }
 
 public function assignRole(Request $request)
- {auth()->user()->assignRole($request->session()->get('profil'));
+
+ {
+     if(auth()->user()->assignRole($request->session()->get('profil')))
     return redirect('/profil/home');
+    else 
+abort(404);
 }
 
     public function index()
     {
         $id= auth()->user();
-        if(Particulier::where('user_id', '=', $id)and (Entreprise::where('user_id', '=', $id)))
+        if(!(Particulier::where('user_id', '=', $id) || (Entreprise::where('user_id', '=', $id))))
         {
             
         if (auth()->user()->hasrole('participant'))
@@ -39,15 +43,16 @@ public function assignRole(Request $request)
         return view('profile-entreprise');
         else if ( auth()->user()->hasRole('organisateur'))
         return view('organisateurs.profile-organisateurs');
-        /*else if ( auth()->user()->hasRole('sponsor'))
+        else if ( auth()->user()->hasRole('sponsor'))
         return redirect('sponsor.menu');
         else if ( auth()->user()->hasRole('sous-traiteurs'))
             return redirect('sous-traiteurs.menu');
             else if ( auth()->user()->hasRole('investisseur'))
-            return redirect('investisseur.menu');*/
-
+            return redirect('investisseur.menu');
+dd('there');
         }
         else {
+            dd('here');
             if ( auth()->user()->hasRole('organisateur'))
             return redirect('menu');
             else if ( auth()->user()->hasRole('sponsor'))
@@ -69,14 +74,16 @@ public function assignRole(Request $request)
 
     public function store(Request $request)
     {
-        if($request->individu)
+        
+        if($request->statut=="individu")
         {
-            
+        
              return  $this->storePersonne($request);
         }
-        else if($request->entreprise)
-      return redirect('profil/enregistrer/entreprise');
+        else if($request->statut="entreprise")
+        return  $this->storeEntreprise($request);
     }
+    
 
    
     public function storeEntreprise(Request $request)
@@ -118,9 +125,7 @@ public function assignRole(Request $request)
             'genre'=>'required',
             'telephone'=>'required',
             'adresse'=>'required',
-            'pourquoi_vous'=>'required',
-            'methode_de_travail'=>'required',
-            'conditions_paiement'=>'required'
+            
            
         ], [
             'required'=>'Vous devez remplir :attribute',
@@ -150,7 +155,10 @@ public function assignRole(Request $request)
 
             if ( auth()->user()->hasRole('organisateur'))
             {
-               
+                if($request->sociaux)
+              $request->reseaux_sociaux=implode('|', $request->sociaux);
+             $request->url_image="img";
+             dd($request->all());
                 auth()->user()->organisateur()->create($request->all());
                    $i=0;
            
@@ -160,14 +168,17 @@ public function assignRole(Request $request)
                     $equipe['prenom']=$request->prenom_equipe[$i];
                     $equipe['titre']=$request->titre[$i];
                     $equipe['annee_experience']=$request->experience[$i];
-             
+                
                     Organisateur::where('user_id', auth()->user()->id)->first()->equipes()->create($equipe);
+         
+            
                 }
                    
-                for($i; $i<count($request->event);$i++)
+                for($i; $i<count($request->satisfaction);$i++)
                 {
-                    $exp= Experience::create($request->taux_client[$i],$request->taches[$i], $request->references[$i],$request->commentaire[$i], $request->url_img[$i]);
-                    if($request->url_img{$i})
+                    dd($request);
+                    $exp= Experience::create($request->satisfaction[$i],$request->mission[$i], $request->references[$i],$request->commentaire[$i], $request->image[$i]);
+                    if($request->image{$i})
                     {
                              
                           $name = time().'.'.$request->file->extension(); 
@@ -180,7 +191,7 @@ public function assignRole(Request $request)
 
 
           
-                return redirect('profil/organisateur');
+                return redirect('liste');
             }
         
             else if ( auth()->user()->hasRole('sponsor'))
@@ -219,7 +230,7 @@ public function assignRole(Request $request)
                           $request->file->move(public_path('images'),     $name);
       
                     }
-                    $organisateur->equipes()->save($exp);
+                    $job->experience->save($exp);
                 }
 
              
@@ -263,7 +274,7 @@ public function assignRole(Request $request)
 
     public  function complete_user(Request $request)
     {
-      $user = User::find(auth());
+      $user = auth()->user();
       $user->critere_pays= implode('|', $request->critere_pays);
       $user->categorie_event= implode('|', $request->categorie_event);
       $user->type_event=$request->type;

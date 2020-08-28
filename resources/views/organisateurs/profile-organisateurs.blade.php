@@ -36,9 +36,9 @@ $Var = "Profil Organisateurs";
 @endif
 
                     <div class="col-sm-6 " style="margin-top: 2.5em">
-                        <input type="radio" name="individu"  onclick="afficherparticulier()" checked>
+                        <input type="radio" name="statut" value="individu"  onclick="afficherparticulier()" checked>
                         <label for="particulier">Particulier</label>
-                        <input type="radio" name="entreprise" onclick="afficherprofessionel()"> <label
+                        <input type="radio" name="statut" value="entreprise" onclick="afficherprofessionel()"> <label
                             for="professionel">Professionel</label>
                     </div>
                     <div id="nom" class="col-sm-6 ">
@@ -198,8 +198,8 @@ $Var = "Profil Organisateurs";
                                         </thead>
                                         <tbody>
                                             <tr id='addr0' data-id="0" class="hidden">
-                                                <td data-name="lien">
-                                                    <input type="text" name='lien[]' placeholder='Lien'
+                                                <td data-name="sociaux">
+                                                    <input type="text" name='sociaux[]' placeholder='Lien'
                                                         class="form-control" />
                                                 </td>
                                                 <td data-name="del">
@@ -266,8 +266,8 @@ $Var = "Profil Organisateurs";
                                                     <input type="text" name='satisfaction[]'
                                                         placeholder='% de satisfaction du client' class="form-control" />
                                                 </td>
-                                                <td data-name="évènement">
-                                                    <input type="text" name='évènement[]' placeholder='Nom de lévènement'
+                                                <td data-name="evt">
+                                                    <input type="text" name='evt[]' placeholder='Nom de lévènement'
                                                         class="form-control" />
                                                 </td>
                                                 <td data-name="missions">
@@ -278,8 +278,8 @@ $Var = "Profil Organisateurs";
                                                     <input type="date" name='annee[]' placeholder='La date de lexpérience'
                                                         class="form-control" style="border-color: cornflowerblue; border-radius: 20px"/>
                                                 </td>
-                                                <td data-name="référents">
-                                                    <input type="text" name='référents[]' placeholder='Le/Les référents'
+                                                <td data-name="referencs">
+                                                    <input type="text" name='references[]' placeholder='Le/Les références'
                                                         class="form-control" />
                                                 </td>
                                                 <td data-name="commentaire">
