@@ -1,5 +1,5 @@
 <?php
-    $Var = "Profil traiteurs";
+    $Var = "Profil investisseurs";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,10 +21,10 @@
   <link href="vendor\datatables\dataTables.bootstrap4.min.css" rel="stylesheet">
 
   <link rel="stylesheet" href="<?php echo e(asset('bootstrap-4.5.0-dist/css/bootstrap.min.css')); ?>">
-  <link rel="stylesheet" href="<?php echo e(asset('css\style.css')); ?>">  
- <link rel="stylesheet" href="<?php echo e(asset('css\chosen.css')); ?>">
-  <link rel="stylesheet" href="<?php echo e(asset('css\prism.css')); ?>"> 
-   <link rel="stylesheet" href="<?php echo e(asset('select\select2.min.css')); ?>">  
+ <link rel="stylesheet" href="<?php echo e(asset('css\style.css')); ?>">  
+<link rel="stylesheet" href="<?php echo e(asset('css\chosen.css')); ?>">
+ <link rel="stylesheet" href="<?php echo e(asset('css\prism.css')); ?>"> 
+  <link rel="stylesheet" href="<?php echo e(asset('select\select2.min.css')); ?>"> 
 </head>
 <body id="page-top">
   <div id="wrapper">
@@ -37,8 +37,8 @@
           </button>
           <div class="d-flex justify-content-around w-100">
             <a href="<?php echo e(Url('/')); ?>" class="" role="button" aria-pressed="true">Acceuil</a>
-            <a href="<?php echo e(Url('traitant-annonce')); ?>" class="" role="button" aria-pressed="true">Annonces</a>
-            <a href="<?php echo e(Url('evenement-traiteurs')); ?>" class="" role="button" aria-pressed="true">Tous les évènements</a>
+            <a href="<?php echo e(Url('evenementinvestisseurs')); ?>" class="" role="button" aria-pressed="true">Tous les évènements</a>
+            <a href="<?php echo e(Url('achatagence')); ?>" class="" role="button" aria-pressed="true">Acheter une agence</a>
             
           
          
@@ -167,13 +167,13 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="<?php echo e(url('profile-traiteurs')); ?>">
+                <a class="dropdown-item" href="<?php echo e(url('profile-investisseurs')); ?>">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
-                <a class="dropdown-item" href="<?php echo e(url('demande-traiteurs')); ?>">
+                <a class="dropdown-item" href="<?php echo e(url('demande-investissement')); ?>">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  demande sous-traiteurs
+                  Demande investssement/vente
                 </a>
                 <a class="dropdown-item" href="#">
                   <i class="fa fa-calendar fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -194,7 +194,7 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-          <?php echo $__env->yieldContent('content-5'); ?>
+          <?php echo $__env->yieldContent('content-4'); ?>
         </div>
       </div>
       <!-- End of Main Content -->
@@ -235,14 +235,17 @@
     </div>
   </div>
 
+  <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
   <script src="js/sb-admin-2.min.js"></script>
+  <script src="vendor\chart.js\Chart.min.js"></script>
+  <script src="js\demo\chart-area-demo.js"></script>
+  <script src="js\demo\chart-pie-demo.js"></script>
   <script src="vendor/datatables/jquery.dataTables.min.js"></script>
   <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
   <script src="js\demo\datatables-demo.js"></script>
-
 
   <script src="<?php echo e(asset('jquery\chosen.jquery.js')); ?>" integrity=""></script>
   <script src="<?php echo e(asset('bootstrap-4.5.0-dist\js\bootstrap.min.js')); ?>" integrity=""></script>
@@ -253,4 +256,4 @@
 </body>
 
 </html>
-<?php /**PATH C:\laragon\www\Cible\cible_project1\resources\views/sous-traiteurs/traiteurs-account.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\laragon\www\Cible\cible_project1\resources\views/investisseurs/investisseurs-account.blade.php ENDPATH**/ ?>

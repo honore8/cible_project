@@ -1,8 +1,8 @@
-@php
+<?php
 $Var = "Profil Organisateurs";
-@endphp
-@extends('organisateurs.model-organisateurs-account')
-@section('content-2')
+?>
+
+<?php $__env->startSection('content-2'); ?>
 <style>
     .card-img-top {
     position: absolute;
@@ -26,12 +26,9 @@ $Var = "Profil Organisateurs";
             <h5 style="font-size: 200%;margin-top:4%"><b>Completer votre profil</b></h5>
         </div>
         <div class="card-body">
-            {{-- <form id="addblock-form" action="" method="POST" style="display: none;">
-                @csrf
-                <input type="hidden" name="addBloc" id="addBloc">
-            </form> --}}
+            
         <form method="POST" action="" name="Profil" enctype='multipart/form-data'>
-                @csrf
+                <?php echo csrf_field(); ?>
                 <div class="form-group row ">
                     <div class="col-sm-6 " style="margin-top: 2.5em">
                         <input type="radio" name="type_compte" value="Particulier" onclick="afficherparticulier()" checked>
@@ -170,7 +167,7 @@ $Var = "Profil Organisateurs";
                     </div>
                 </div>
 
-{{-- premier cadre --}}
+
 <div id="new">
     <fieldset
         style="border: black solid 0.5px;margin-bottom: 15px; padding: 20px;margin: 0 auto 15px auto; ">
@@ -227,7 +224,7 @@ $Var = "Profil Organisateurs";
 </div>
                 
                 
-{{-- deuxieme cadre --}}
+
                 
                 <div id="new1">
                    
@@ -316,7 +313,7 @@ $Var = "Profil Organisateurs";
                 </div>
                
 
-{{-- troisieme cadre --}}
+
 
 
                 <div id="new2">
@@ -382,7 +379,7 @@ $Var = "Profil Organisateurs";
                     </fieldset>
                 </div>
 
-                {{-- quatrieme cadre --}}
+                
                 <div id="new3">
                     <fieldset
                         style="border: black solid 0.5px;margin-bottom: 15px; padding: 20px;margin: 0 auto 15px auto; ">
@@ -424,7 +421,7 @@ $Var = "Profil Organisateurs";
                     </fieldset>
                 </div>
                 
-        {{-- cinquieme cadre --}}
+        
         <div id="newb">
             <fieldset
                 style="border: black solid 0.5px;margin-bottom: 15px; padding: 20px;margin: 0 auto 15px auto; ">
@@ -507,7 +504,7 @@ $Var = "Profil Organisateurs";
      </form>
     </div>
     </div>
-@endsection
+<?php $__env->stopSection(); ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <script>
@@ -904,3 +901,4 @@ $Var = "Profil Organisateurs";
     });
 
 </script>
+<?php echo $__env->make('organisateurs.model-organisateurs-account', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\Cible\cible_project1\resources\views/organisateurs/profile-organisateurs.blade.php ENDPATH**/ ?>

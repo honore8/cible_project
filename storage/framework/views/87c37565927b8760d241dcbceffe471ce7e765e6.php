@@ -1,8 +1,8 @@
-@php
+<?php
 $Var = "Evènement";
-@endphp
-@extends('organisateurs.model-organisateurs-account')
-@section('content-2')
+?>
+
+<?php $__env->startSection('content-2'); ?>
     <br>
     <style>
         .card-img-top {
@@ -38,7 +38,7 @@ $Var = "Evènement";
         <div class="card-body">
 
             <form method="POST" action="" name="Profil" enctype='multipart/form-data'>
-                @csrf
+                <?php echo csrf_field(); ?>
 
                 <div class="form-group row ">
                     <div id="titre" class="col-sm-4 ">
@@ -129,7 +129,7 @@ $Var = "Evènement";
                             style="border-radius: 20px;">
                     </div>
                 </div>
-                {{-- cadre --}}
+                
                 <div id="new">
                     <fieldset
                         style="border: black solid 0.5px;margin-bottom: 15px; padding: 20px;margin: 0 auto 15px auto; ">
@@ -186,7 +186,7 @@ $Var = "Evènement";
                         </div>
                     </fieldset>
                 </div>
-                {{-- premier cadre --}}
+                
                 <div id="new3">
                     <fieldset
                         style="border: black solid 0.5px;margin-bottom: 15px; padding: 20px;margin: 0 auto 15px auto; ">
@@ -228,7 +228,7 @@ $Var = "Evènement";
                         </div>
                     </fieldset>
                 </div>
-                {{-- second cadre --}}
+                
                 <div id="newI">
                     <fieldset
                         style="border: black solid 0.5px;margin-bottom: 15px; padding: 20px;margin: 0 auto 15px auto; ">
@@ -371,7 +371,7 @@ $Var = "Evènement";
             </form>
         </div>
     </div>
-@endsection
+<?php $__env->stopSection(); ?>
 <style>
     article,
     aside,
@@ -702,3 +702,5 @@ $Var = "Evènement";
     $('.chosen-select').chosen();
 
 </script>
+
+<?php echo $__env->make('organisateurs.model-organisateurs-account', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\Cible\cible_project1\resources\views/organisateurs/evenement.blade.php ENDPATH**/ ?>
