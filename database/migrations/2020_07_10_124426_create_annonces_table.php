@@ -16,13 +16,14 @@ class CreateAnnoncesTable extends Migration
         Schema::create('annonces', function (Blueprint $table) {
             $table->id();
             $table->string('taches');
-			$table->string('dates');
+			$table->text('dates');
 			$table->float('cout', 12,2);
-			$table->text('contacts');
+			$table->string('contacts');
 			$table->datetime('date_limite');
 			$table->string('url_charges')->nullable();
 			$table->integer('nbpersonnes')->nullable();
-			$table->text('exigeances')->nullable();
+            $table->text('exigeances')->nullable();
+            $table->boolean('visible')->default(true);
 			$table->enum('type', array('prestataire', 'job'));
             $table->timestamps();
             $table->foreignId('prestataire_id')->references('id')->on('prestataires');

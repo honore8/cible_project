@@ -14,7 +14,7 @@ class Organisateur extends Model
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
-    protected $fillable = array('pourquoi_vous');
+    protected $guarded= array('user_id','id');
 
     public function evenements()
     {
@@ -28,7 +28,7 @@ class Organisateur extends Model
 
     public function equipes()
     {
-        return $this->hasMany('Equipe');
+        return $this->hasMany('App\Models\Equipe');
     }
 
     public function demandeurs()

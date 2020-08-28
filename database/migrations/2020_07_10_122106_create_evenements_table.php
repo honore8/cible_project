@@ -17,7 +17,8 @@ class CreateEvenementsTable extends Migration
 			$table->id();
 			$table->string('dates');
 			$table->text('acteurs_principaux');
-			$table->enum('type_event', array('gratuit', 'payant'));
+            $table->enum('type_event', array('gratuit', 'payant'));
+            $table->text('genre_event');
 			$table->longText('description');
 			$table->enum('statut', array('reporté', 'annulé'))->nullable();
 			$table->string('url_doc')->nullable();

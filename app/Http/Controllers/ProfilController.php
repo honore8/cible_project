@@ -7,6 +7,9 @@ use App\Models\Entreprise;
 use App\Models\Particulier;
 use Spatie\Permission\Traits\HasRoles;
 use App\Models\User;
+use App\Models\Organisateur;
+use App\Models\Equipe;
+use Validator;
 use Auth;
 class ProfilController extends Controller{
 
@@ -22,24 +25,31 @@ public function assignRole(Request $request)
     return redirect('/profil/home');
 }
 
-
     public function index()
     {
-        
-        if(!(Particulier::has('user')and (Entreprise::has('user'))))
+        $id= auth()->user();
+        if(Particulier::where('user_id', '=', $id)and (Entreprise::where('user_id', '=', $id)))
         {
+            
         if (auth()->user()->hasrole('participant'))
          return view('profile-individu');
         else if (auth()->user()->hasrole('jobs'))
         return('profile-individu');
         else if (auth()->user()->hasrole('sous-traiteurs'))
         return view('profile-entreprise');
-        else
-        return view('statut');
+        else if ( auth()->user()->hasRole('organisateur'))
+        return view('organisateurs.profile-organisateurs');
+        /*else if ( auth()->user()->hasRole('sponsor'))
+        return redirect('sponsor.menu');
+        else if ( auth()->user()->hasRole('sous-traiteurs'))
+            return redirect('sous-traiteurs.menu');
+            else if ( auth()->user()->hasRole('investisseur'))
+            return redirect('investisseur.menu');*/
+
         }
         else {
             if ( auth()->user()->hasRole('organisateur'))
-            return redirect('organisateur.menu');
+            return redirect('menu');
             else if ( auth()->user()->hasRole('sponsor'))
             return redirect('sponsor.menu');
             else if ( auth()->user()->hasRole('participant'))
@@ -59,10 +69,13 @@ public function assignRole(Request $request)
 
     public function store(Request $request)
     {
-        if($request->get('statut')=="entreprise")
-        return view('profile-entreprise');
-        else if($request->get('statut')=="individu")
-        return view ('profile-individu');
+        if($request->individu)
+        {
+            
+             return  $this->storePersonne($request);
+        }
+        else if($request->entreprise)
+      return redirect('profil/enregistrer/entreprise');
     }
 
    
@@ -82,6 +95,7 @@ public function assignRole(Request $request)
         ]);
 
         if ($validator->fails()) {
+         
             return back()
                         ->withErrors($validator);
         }
@@ -94,26 +108,41 @@ public function assignRole(Request $request)
     }
     public function storePersonne(Request $request)
     {
+       //dd($request);
+  
         $validator = Validator::make($request->all(), [
             'nom'=>'required|string',
             'prenom'=>'required|string',
             'profession'=>'required|string',
             'date_nais'=> 'required',
-            'piece_jointe'=> 'required'
+            'genre'=>'required',
+            'telephone'=>'required',
+            'adresse'=>'required',
+            'pourquoi_vous'=>'required',
+            'methode_de_travail'=>'required',
+            'conditions_paiement'=>'required'
+           
         ], [
-            'required'=>'Vous devez remplir ce champ',
+            'required'=>'Vous devez remplir :attribute',
             'string'=>'Vous ne pouvez saisir que des lettres',
         
         ]);
         
         if ($validator->fails()) {
+          
             return back()
                         ->withErrors($validator);
         }
         else{
-         $personne= Particulier::create($request->all());
-          $personne->associate(auth()->user());
-          return redirect('profil/user');
+            if(!$request->piece)
+            {
+                return back()
+                ->withErrors($validator);
+            }
+         
+     auth()->user()->particulier()->create($request->all());
+      
+          return $this->redirect($request);
         }
     }
 
@@ -121,24 +150,24 @@ public function assignRole(Request $request)
 
             if ( auth()->user()->hasRole('organisateur'))
             {
-                $organisateur= new Organisateur();
-                $organisateur->methode_de_travail=$request->methode_de_travail;
-                $organisateur->valeurs=implode('|',$request->valeurs) ;
-                $organisateur->conditions_paiement=$organisateur->conditions_paiement;
-                $organisateur->pourquoi_vous=$organisateur->pourquoi_vous;
-                $organisateur->materiel-$organisateur->materiel;
-                $organisateur->save(); 
-                   
-                for($i; i<count($request->nom_equipe);$i++)
+               
+                auth()->user()->organisateur()->create($request->all());
+                   $i=0;
+           
+                for($i=0; $i<count($request->nom_equipe);$i++)
                 {
-                    $eq= Equipe::create($request->nom_equipe[i],$request->prenom_equipe[i], $request->titre[i],$request->experience[i]);
-                    $organisateur->equipes()->save($eq);
+                    $equipe['nom']=$request->nom_equipe[$i];
+                    $equipe['prenom']=$request->prenom_equipe[$i];
+                    $equipe['titre']=$request->titre[$i];
+                    $equipe['annee_experience']=$request->experience[$i];
+             
+                    Organisateur::where('user_id', auth()->user()->id)->first()->equipes()->create($equipe);
                 }
                    
-                for($i; i<count($request->event);$i++)
+                for($i; $i<count($request->event);$i++)
                 {
-                    $exp= Experience::create($request->taux_client[i],$request->taches[i], $request->references[i],$request->commentaire[i], $request->url_img[i]);
-                    if($request->url_img{i})
+                    $exp= Experience::create($request->taux_client[$i],$request->taches[$i], $request->references[$i],$request->commentaire[$i], $request->url_img[$i]);
+                    if($request->url_img{$i})
                     {
                              
                           $name = time().'.'.$request->file->extension(); 

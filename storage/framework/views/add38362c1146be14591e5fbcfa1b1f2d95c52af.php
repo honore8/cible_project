@@ -1,8 +1,8 @@
-@php
+<?php
 $Var = "Profil Organisateurs";
-@endphp
-@extends('organisateurs.model-organisateurs-account')
-@section('content-2')
+?>
+
+<?php $__env->startSection('content-2'); ?>
 <style>
     .card-img-top {
     position: absolute;
@@ -28,12 +28,13 @@ $Var = "Profil Organisateurs";
         <div class="card-body">
   
 
-            <form method="POST" action="{{route('store')}}" name="Profil" enctype='multipart/form-data'>
-                @csrf
+            <form method="POST" action="<?php echo e(route('store')); ?>" name="Profil" enctype='multipart/form-data'>
+                <?php echo csrf_field(); ?>
                 <div class="form-group row ">
-                @if($errors->any())
-    {!! implode('', $errors->all('<div>:message</div>')) !!}
-@endif
+                <?php if($errors->any()): ?>
+    <?php echo implode('', $errors->all('<div>:message</div>')); ?>
+
+<?php endif; ?>
 
                     <div class="col-sm-6 " style="margin-top: 2.5em">
                         <input type="radio" name="individu"  onclick="afficherparticulier()" checked>
@@ -129,7 +130,7 @@ $Var = "Profil Organisateurs";
                     </div>
                     <div class="col-sm-6">
                         <label for="">Email</label>
-                        <input type="email" class="form-control" value="{{auth()->user()->email}}"  autocomplete="" name="email"
+                        <input type="email" class="form-control" value="<?php echo e(auth()->user()->email); ?>"  autocomplete="" name="email"
                             style="border-radius: 20px;">
                     </div>
                 </div>
@@ -150,6 +151,10 @@ $Var = "Profil Organisateurs";
                         <select value=""  autocomplete="" name="" id="ville"
                             style="width: 100%; padding: 6px;border: 1px solid #ccc;border-radius: 20px;">
 
+                            <option value="">Choisir...</option>
+                            <option value="">Lome</option>
+                            <option value="">Accra</option>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -170,77 +175,51 @@ $Var = "Profil Organisateurs";
                         </select>
                     </div>
                 </div>
-                <div class="form-group row">
-                    <div id="carte" class="col-sm-6 ">
-                        <label for="">Joindre votre carte d'identité en pdf <b style="color: red">*</b></label>
-                        <input type="file" value="" autocomplete="plan" name="plan" id=""
-                            style="width: 100%; padding: 3px;">
-                    </div>
-                    <div id="logo" class="col-sm-6 ">
-                        <label for="">Joindre votre logo <b style="color: red">*</b></label>
-                        <input type="file" value="" autocomplete="plan" name="plan" id=""
-                            style="width: 100%; padding: 3px;">
-                    </div>
-                </div>
 
-{{-- premier cadre --}}
-<div id="new">
-    <fieldset
-        style="border: black solid 0.5px;margin-bottom: 15px; padding: 20px;margin: 0 auto 15px auto; ">
-        <legend style="width: auto !important; border: 1px solid black;border-radius: 20px;"> </legend>
-        <div id="reseaux">
-            <div class="row clearfix">
-                <div class="col-md-12 table-responsive">
-                    <table class="table table-bordered table-hover table-sortable" id="tab_logic" style="width: 120%">
-                        <thead>
-                            <tr>
-                                <th class="text-center">
-                                    Vos réseaux sociaux <b style="color: red">*</b>
-                                </th>
-                                <th class="text-center"
-                                    style="border-top: 1px solid #ffffff; border-right: 1px solid #ffffff;">
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr id='addr0' data-id="0" class="hidden">
-                                <td data-name="Facebook">
-                                    <input type="text" name='Facebook[]' placeholder='Facebook'
-                                        class="form-control" />
-                                </td>
-                                <td data-name="Instagram">
-                                    <input type="text" name='Instagram[]' placeholder='Instagram'
-                                        class="form-control" />
-                                </td>
-                                <td data-name="YouTube">
-                                    <input type="text" name='YouTube[]' placeholder='YouTube'
-                                        class="form-control" />
-                                </td>
-                                <td data-name="Linkedin">
-                                    <input type="text" name='Linkedin[]' placeholder='Linkedin'
-                                        class="form-control" />
-                                </td>
-                                <td data-name="Telegram">
-                                    <input type="text" name='Telegram[]' placeholder='Telegram'
-                                        class="form-control" />
-                                </td>
-                                <td data-name="del">
-                                    <button name="del0"
-                                        class='btn btn-danger glyphicon glyphicon-remove row-remove'><span
-                                            aria-hidden="true">×</span></button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+
+                <div id="new">
+                    <fieldset
+                        style="border: black solid 0.5px;margin-bottom: 15px; padding: 20px;margin: 0 auto 15px auto; ">
+                        <legend style="width: auto !important; border: 1px solid black;border-radius: 20px;"> </legend>
+                        <div class="btn btn-secondary float-right "
+                            style="margin-top:-1.8em !important; margin-right:-1.3em" onclick="supprimer()">X</div>
+                        <div id="reseaux">
+                            <div class="row clearfix">
+                                <div class="col-md-12 table-responsive">
+                                    <table class="table table-bordered table-hover table-sortable" id="tab_logic">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">
+                                                    Vos réseaux sociaux
+                                                </th>
+                                                <th class="text-center"
+                                                    style="border-top: 1px solid #ffffff; border-right: 1px solid #ffffff;">
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr id='addr0' data-id="0" class="hidden">
+                                                <td data-name="lien">
+                                                    <input type="text" name='lien[]' placeholder='Lien'
+                                                        class="form-control" />
+                                                </td>
+                                                <td data-name="del">
+                                                    <button name="del0"
+                                                        class='btn btn-danger glyphicon glyphicon-remove row-remove'><span
+                                                            aria-hidden="true">×</span></button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <a style="color: white" id="add_row" class="btn btn-primary float-right">Ajouter réseaux</a>
+                        </div>
+
                 </div>
-            </div>
-            <a style="color: white" id="add_row" class="btn btn-primary float-right">Ajouter réseaux</a>
-        </div>
-    </fieldset>
-</div>
+                </fieldset>
                 
-                
-{{-- deuxieme cadre --}}
+
                 
                 <div id="new1">z
                    
@@ -252,8 +231,8 @@ $Var = "Profil Organisateurs";
                         <div id="experience">
                             <div class="row clearfix">
                                 <div class="col-md-12 table-responsive">
-                                    <table class="table table-bordered table-hover table-sortable" id="tab_logic1" style="width: 180%">
-                                        <h5 class="text-center"> <b>Vos expériences passés <b style="color: red">*</b></b> </h5>
+                                    <table class="table table-bordered table-hover table-sortable" id="tab_logic1" style="width: 103%">
+                                        <h5 class="text-center"> <b>Vos expériences passés </b> </h5>
                                         <thead>
                                             <tr>
                                                 <th class="text-center">
@@ -286,30 +265,30 @@ $Var = "Profil Organisateurs";
                                             <tr id='addr0' data-id="0" class="hidden">
                                                 <td data-name="satisfaction">
                                                     <input type="text" name='satisfaction[]'
-                                                        placeholder='% de satisfaction du client' required class="form-control" />
+                                                        placeholder='% de satisfaction du client' class="form-control" />
                                                 </td>
                                                 <td data-name="évènement">
-                                                    <input type="text" name='évènement[]' required placeholder='Nom de lévènement'
+                                                    <input type="text" name='évènement[]' placeholder='Nom de lévènement'
                                                         class="form-control" />
                                                 </td>
                                                 <td data-name="missions">
-                                                    <input type="text" name='mission[]' required placeholder='missions'
+                                                    <input type="text" name='mission[]' placeholder='missions'
                                                         class="form-control" />
                                                 </td>
                                                 <td data-name="annee">
-                                                    <input type="date" name='annee[]' required placeholder='La date de lexpérience'
+                                                    <input type="date" name='annee[]' placeholder='La date de lexpérience'
                                                         class="form-control" style="border-color: cornflowerblue; border-radius: 20px"/>
                                                 </td>
                                                 <td data-name="référents">
-                                                    <input type="text" name='référents[]' required placeholder='Le/Les référents'
+                                                    <input type="text" name='référents[]' placeholder='Le/Les référents'
                                                         class="form-control" />
                                                 </td>
                                                 <td data-name="commentaire">
-                                                    <input type="text" name='commentaire[]' required placeholder='Dites-nous en quelques lignes'
+                                                    <input type="text" name='commentaire[]' placeholder='Dites-nous en quelques lignes'
                                                         class="form-control" />
                                                 </td>
                                                 <td data-name="image">
-                                                    <input type="file" name='image[]'  required placeholder=''
+                                                    <input type="text" name='image[]' placeholder='image'
                                                         class="form-control" />
                                                 </td>
 
@@ -325,11 +304,11 @@ $Var = "Profil Organisateurs";
                             </div>
                             <a style="color: white" id="add_row1" class="btn btn-primary float-right">Ajouter expériences</a>
                         </div>
-                    </fieldset>
-                </div>
-               
 
-{{-- troisieme cadre --}}
+                </div>
+                </fieldset>
+
+
 
 
                 <div id="new2">
@@ -341,8 +320,8 @@ $Var = "Profil Organisateurs";
                         <div id="experience">
                             <div class="row clearfix">
                                 <div class="col-md-12 table-responsive">
-                                    <table class="table table-bordered table-hover table-sortable" id="tab_logic2" style="width: 180%">
-                                        <h5 class="text-center" > <b>Votre equipe <b style="color: red">*</b></b> </h5>
+                                    <table class="table table-bordered table-hover table-sortable" id="tab_logic2" style="width: 103%">
+                                        <h5 class="text-center" > <b>Votre equipe </b> </h5>
                                         <thead>
                                             <tr>
                                                 <th class="text-center">
@@ -373,7 +352,7 @@ $Var = "Profil Organisateurs";
                                                         class="form-control" />
                                                 </td>
                                                 <td data-name="titre">
-                                                    <input type="text" name='titre[]' placeholder='Titre du collaborateur' required
+                                                    <input type="text" name='titre[]' placeholder='Titre du collaborateur'
                                                         class="form-control" />
                                                 </td>
                                                 <td data-name="experience">
@@ -392,10 +371,10 @@ $Var = "Profil Organisateurs";
                             </div>
                             <a style="color: white" id="add_row2" class="btn btn-primary float-right">Ajouter equipe</a>
                         </div>
-                    </fieldset>
-                </div>
 
-                {{-- quatrieme cadre --}}
+                </div>
+                </fieldset>
+
                 <div id="new3">
                     <fieldset
                         style="border: black solid 0.5px;margin-bottom: 15px; padding: 20px;margin: 0 auto 15px auto; ">
@@ -405,11 +384,11 @@ $Var = "Profil Organisateurs";
                         <div id="reseaux">
                             <div class="row clearfix">
                                 <div class="col-md-12 table-responsive">
-                                    <table class="table table-bordered table-hover table-sortable" id="tab_logic3" style="width: 115%">
+                                    <table class="table table-bordered table-hover table-sortable" id="tab_logic3">
                                         <thead>
                                             <tr>
                                                 <th class="text-center">
-                                                    Vos valeurs <b style="color: red">*</b>
+                                                    Vos valeurs
                                                 </th>
                                                 <th class="text-center"
                                                     style="border-top: 1px solid #ffffff; border-right: 1px solid #ffffff;">
@@ -419,7 +398,7 @@ $Var = "Profil Organisateurs";
                                         <tbody>
                                             <tr id='addr0' data-id="0" class="hidden">
                                                 <td data-name="valeur">
-                                                    <input type="text" name='valeur[]' placeholder='' required
+                                                    <input type="text" name='valeur[]' placeholder=''
                                                         class="form-control" />
                                                 </td>
                                                 <td data-name="del">
@@ -434,67 +413,15 @@ $Var = "Profil Organisateurs";
                             </div>
                             <a style="color: white" id="add_row3" class="btn btn-primary float-right">Ajouter valeur</a>
                         </div>
-                    </fieldset>
+        
                 </div>
-                
-        {{-- cinquieme cadre --}}
-        <div id="newb">
-            <fieldset
-                style="border: black solid 0.5px;margin-bottom: 15px; padding: 20px;margin: 0 auto 15px auto; ">
-                <legend style="width: auto !important; border: 1px solid black;border-radius: 20px;"> </legend>
-                <div class="btn btn-secondary float-right "
-                    style="margin-top:-1.8em !important; margin-right:-1.3em" onclick="supprimer()">X</div>
-                <div id="reseaux">
-                    <div class="row clearfix">
-                        <div class="col-md-12 table-responsive">
-                            <table class="table table-bordered table-hover table-sortable" id="tab_logic_banque" style="width: 180%">
-                                <thead>
-                                    <tr>
-                                        <th class="text-center">
-                                            Vos coordonnées bancaire <b style="color: red">*</b>
-                                        </th>
-                                        <th class="text-center"
-                                            style="border-top: 1px solid #ffffff; border-right: 1px solid #ffffff;">
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr id='addr0' data-id="0" class="hidden">
-                                        <td data-name="nomB">
-                                            <input type="text" name='nomB[]' placeholder='Nom de la banque' 
-                                                class="form-control" />
-                                        </td>
-                                        <td data-name="nom">
-                                            <input type="text" name='nom[]' placeholder='Nom du titulaire' 
-                                                class="form-control" />
-                                        </td>
-                                        <td data-name="prenom">
-                                            <input type="text" name='prenom[]' placeholder='Prenom du titulaire' 
-                                                class="form-control" />
-                                        </td>
-                                        <td data-name="numeroI">
-                                            <input type="text" name='numeroI[]' placeholder='Numero IBAN' 
-                                                class="form-control" />
-                                        </td>
-                                        <td data-name="numeroB">
-                                            <input type="text" name='numeroB[]' placeholder='Numero BIC'
-                                                class="form-control" />
-                                        </td>
-                                        <td data-name="del">
-                                            <button name="del0"
-                                                class='btn btn-danger glyphicon glyphicon-remove row-remove'><span
-                                                    aria-hidden="true">×</span></button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <a style="color: white" id="add_row_banque" class="btn btn-primary float-right">Ajouter coordonnées</a>
-                </div>
-            </fieldset>
-        </div>
+                </fieldset>
 
+
+                <div id="bloc"></div>
+
+                <div class="btn btn-primary float-right mt-2 d-inline" onclick="ajoutbloc()">Ajouter un bloc</div>
+        </div>
         <div class="form-group row ">
             <div id="nom" class="col-sm-6 ">
                 <label for="">Condition de paiement</label>
@@ -517,10 +444,10 @@ $Var = "Profil Organisateurs";
                 <button type="reset" class="btn btn-secondary bouton">Annuler</button>
             </div>
         </div>
-     </form>
+        </form>
     </div>
     </div>
-@endsection
+<?php $__env->stopSection(); ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <script>
@@ -842,75 +769,28 @@ $Var = "Profil Organisateurs";
     });
 
 </script>
-
-
 <script>
-    $(document).ready(function() {
-        $("#add_row_banque").on("click", function() {
-            // Dynamic Rows Code
-
-            // Get max row id and set new id
-            var newid = 0;
-            $.each($("#tab_logic_banque tr"), function() {
-                if (parseInt($(this).data("id")) > newid) {
-                    newid = parseInt($(this).data("id"));
-                }
-            });
-            newid++;
-
-            var tr = $("<tr></tr>", {
-                id: "addr" + newid,
-                "data-id": newid
-            });
-
-            // loop through each td and create new elements with name of newid
-            $.each($("#tab_logic_banque tbody tr:nth(0) td"), function() {
-                var td;
-                var cur_td = $(this);
-
-                var children = cur_td.children();
-
-                // add new td and element if it has a nane
-                if ($(this).data("name") !== undefined) {
-                    td = $("<td></td>", {
-                        "data-name": $(cur_td).data("name")
-                    });
-
-                    var c = $(cur_td).find($(children[0]).prop('tagName')).clone().val("");
-                    c.attr("name", $(cur_td).data("name") + newid);
-                    c.appendTo($(td));
-                    td.appendTo($(tr));
-                } else {
-                    td = $("<td></td>", {
-                        'text': $('#tab_logic_banque tr').length
-                    }).appendTo($(tr));
-                }
-            });
-
-            $(tr).appendTo($('#tab_logic_banque'));
-
-            $(tr).find("td button.row-remove").on("click", function() {
-                $(this).closest("tr").remove();
-            });
-        });
-        // Sortable Code
-        var fixHelperModified = function(e, tr) {
-            var $originals = tr.children();
-            var $helper = tr.clone();
-
-            $helper.children().each(function(index) {
-                $(this).width($originals.eq(index).width())
-            });
-
-            return $helper;
-        };
-
-        $(".table-sortable tbody").sortable({
-            helper: fixHelperModified
-        }).disableSelection();
-
-        $(".table-sortable thead").disableSelection();
-        $("#add_row_banque").trigger("click");
-    });
+    var i = 0;
 
 </script>
+<script>
+    function ajoutbloc() {
+        i++;
+        console.log(i);
+
+        var elmnt = document.getElementById("new");
+        var fied = document.getElementById("bloc");
+        var cln = elmnt.cloneNode(true);
+        document.getElementById("new").id = 'non';
+        fied.appendChild(cln);
+    }
+
+    function supprimer() {
+        var supprimer = document.getElementById("non");
+        supprimer.remove();
+    }
+
+</script>
+
+
+<?php echo $__env->make('organisateurs.model-organisateurs-account', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\user\Documents\GitHub\cible_project\resources\views/organisateurs/profile-organisateurs.blade.php ENDPATH**/ ?>

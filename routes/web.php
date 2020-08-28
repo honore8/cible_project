@@ -34,7 +34,7 @@ Route::post('/nouscontacter',['as'=>'contact','uses'=>'ContactController@send'])
     Route::post('/addcomment',['as'=>'commenter',
     'uses'=>'CommentaireController@store'])->middleware('auth');
 Route::get('/connexion',['as'=>'connexion',
-'uses'=>'AcceuilController@connexion']);
+'uses'=>'AcceuilController@connexion']);//->middleware('guest');
 // agence evenementielle
 Route::view('agence','agence.compte-agence');
 Route::view('info','agence.info');
@@ -132,8 +132,9 @@ Route::group(['prefix' => 'profil',  'middleware' => 'auth'], function()
 {
     Route::get('home', 'ProfilController@index')->name('home');
     Route::post('enregistrer', 'ProfilController@store')->name('store');
-    Route::post('enregistrer/entreprise','ProfilController@storeEntrepise')->name('saveEntreprise');
-    Route::post('enregistrer/personne','ProfilController@storePersonne')->name('savePersonne');
+    Route::get('enregistrer/entreprise','ProfilController@storeEntrepise')->name('saveEntreprise');
+    Route::get('enregistrer/personne','ProfilController@storePersonne')->name('savePersonne');
+Route::get('user','ProfilController@Rdirect')->name('saveOrganisateur');
     });
 });
 

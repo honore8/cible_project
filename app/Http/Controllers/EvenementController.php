@@ -37,7 +37,7 @@ array_push($dates,$request->date[i].'|'.$request->heure_deb[i].'|'.$request->heu
         $request->doc->move(public_path('documents'), $name);
      }
 
-         $event = Evenement::create($request);
+         $event = Evenement::create($request->all());
           $event->associate($id);
   return redirect()->back()->with('success', 'Evenement créé avec succès. Vous pouvez desormais le retrouvez dans la liste de vos evenements');
 
@@ -170,7 +170,7 @@ public function deleteTicket(Request $request, $id){
 public function find_transfert()
 {
   $id= Organisateur::where('user_id','=',auth()->user());
- return Organisateeur::find($id)->transferts;
+ return Organisateur::find($id)->transferts;
 }
 
 public function inviter(Request $request, $id)
@@ -186,4 +186,40 @@ $subject=$evt->nom.'(invitation)';
     return back()->with('success', 'Invitation reussie');
 }
 
+public function edit(Request $request, $id)
+
+{
+  $evement= Evenement::find($id);
+
+  for($i=o; i<$request->date.count();$i++)
+array_push($dates,$request->date[i].'|'.$request->heure_deb[i].'|'.$request->heure_fin[i]);
+
+       $request->date=implodes("|", $dates);
+       $request->acteurs_principaux= implode("|", $request->acteurs_principaux);
+       $request->invites_speciaux= implode("|", $request->invites_speciaux);
+
+     if($request->image)
+       { $imageName = time().'.'.$request->image->extension(); 
+          $request->image->move(public_path('images'),     $imageName);
+       }
+    if($request->doc)
+    { $name = time().'.'.$request->doc->extension(); 
+        $request->doc->move(public_path('documents'), $name);
+     }
+
+         $event->update($request->all(0));
+}
+
+public function cancel($id)
+{
+  
+}
+
+public function organised(EvenementRepositoryInterface $evenement)
+{
+  $id = Organisateur::where('user_id', '=', auth()->user()->id);
+  $evts= $this->evenement->organised();
+
+  return view();
+}
 }

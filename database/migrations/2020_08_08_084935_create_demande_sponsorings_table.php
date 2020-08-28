@@ -16,6 +16,7 @@ class CreateDemandeSponsoringsTable extends Migration {
 			$table->datetime('date_limite');
 			$table->string('contact');
 			$table->text('beneficiaires');
+			$table->boolean('actif')->default(true);
 			$table->foreignId('evenement_id')->references('id') ->on('evenements');
 			$table->softDeletes();
 			$table->timestamps();
